@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella's AI 新聞日報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F0EBE3;
+      --surface: #FAF7F3;
+      --border: #D6CBB8;
+      --accent: #8B3A2A;
+      --accent-light: #C4735F;
+      --text: #2C2318;
+      --text-muted: #7A6A58;
+      --highlight-bg: #FFF3CD;
+    }
+
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(44,35,24,0.08);
+    }
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .controls {
+      display: flex;
+      gap: 0.6rem;
+      flex: 1;
+      min-width: 0;
+      flex-wrap: wrap;
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 160px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 0.65rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    input[type="search"], select {
+      font-family: inherit;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 0.45rem 0.75rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input[type="search"] {
+      padding-left: 2rem;
+      width: 100%;
+    }
+    input[type="search"]:focus, select:focus {
+      border-color: var(--accent-light);
+    }
+    select {
+      min-width: 130px;
+      cursor: pointer;
+    }
+    .count-badge {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    /* ── Layout ── */
+    .main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+    }
+    .sidebar-title {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .date-list {
+      list-style: none;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+    .date-list::-webkit-scrollbar { width: 4px; }
+    .date-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .date-item {
+      padding: 0.45rem 0.7rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 5px;
+      color: var(--text-muted);
+      transition: background 0.12s, color 0.12s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .date-item:hover { background: var(--border); color: var(--text); }
+    .date-item.active { background: var(--accent); color: #fff; font-weight: 500; }
+    .date-item.hidden { display: none; }
+
+    /* ── Articles ── */
+    .articles { min-width: 0; }
+    .no-results {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: box-shadow 0.15s;
+    }
+    .article-card:hover { box-shadow: 0 4px 16px rgba(44,35,24,0.12); }
+    .article-card.hidden { display: none; }
+
+    .card-header {
+      padding: 1rem 1.25rem 0.75rem;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .card-date-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+    .card-title-wrap { flex: 1; min-width: 0; }
+    .card-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .card-summary {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      line-height: 1.6;
+    }
+    .card-toggle {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      transition: transform 0.2s;
+      margin-top: 2px;
+    }
+    .article-card.open .card-toggle { transform: rotate(180deg); }
+
+    .card-body {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .article-card.open .card-body { display: block; }
+
+    /* ── Article content styles ── */
+    .card-body h1 { display: none; }
+    .card-body h2 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.2rem 0 0.6rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.04em;
+    }
+    .card-body h3 {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text);
+      margin: 0.9rem 0 0.3rem;
+    }
+    .card-body p {
+      font-size: 0.82rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .card-body blockquote {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-left: 2px solid var(--accent-light);
+      padding-left: 0.75rem;
+      margin: 0.5rem 0 0.8rem;
+      font-style: italic;
+    }
+    .card-body ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-body li {
+      font-size: 0.81rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+    .card-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+    .card-body a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+    .card-body a:hover { text-decoration: underline; }
+    .card-body strong { font-weight: 500; }
+    .card-body .footer-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    mark {
+      background: var(--highlight-bg);
+      color: var(--text);
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 620px) {
+      .main { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .header-inner { gap: 0.5rem; }
+      .site-title { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">📰 Bella's AI 日報</div>
+    <div class="controls">
+      <div class="search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" id="searchInput" placeholder="搜尋關鍵字…" autocomplete="off">
+      </div>
+      <select id="dateSelect">
+        <option value="">全部日期</option>
+      </select>
+      <span class="count-badge" id="countBadge"></span>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <div class="sidebar-title">日期索引</div>
+    <ul class="date-list" id="dateList"></ul>
+  </aside>
+
+  <section class="articles" id="articleList">
+    <div class="no-results" id="noResults" style="display:none">找不到相關內容</div>
+  </section>
+</div>
+
+<script>
+let allEntries = [];
+let activeDate = '';
+
+async function loadData() {
+  const res = await fetch('news.json');
+  allEntries = await res.json();
+  buildUI();
+}
+
+function buildUI() {
+  const dateSelect = document.getElementById('dateSelect');
+  const dateList = document.getElementById('dateList');
+
+  allEntries.forEach(entry => {
+    // Dropdown option
+    const opt = document.createElement('option');
+    opt.value = entry.date;
+    opt.textContent = formatDate(entry.date);
+    dateSelect.appendChild(opt);
+
+    // Sidebar item
+    const li = document.createElement('li');
+    li.className = 'date-item';
+    li.dataset.date = entry.date;
+    li.textContent = formatDate(entry.date);
+    li.addEventListener('click', () => {
+      setActiveDate(entry.date === activeDate ? '' : entry.date);
+    });
+    dateList.appendChild(li);
+  });
+
+  renderArticles(allEntries);
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return `${d.getMonth() + 1}/${d.getDate()}`;
+}
+
+function renderArticles(entries) {
+  const list = document.getElementById('articleList');
+  const noResults = document.getElementById('noResults');
+  const countBadge = document.getElementById('countBadge');
+
+  // Remove old cards
+  list.querySelectorAll('.article-card').forEach(el => el.remove());
+
+  if (entries.length === 0) {
+    noResults.style.display = 'block';
+    countBadge.textContent = '';
+    return;
+  }
+  noResults.style.display = 'none';
+  countBadge.textContent = `${entries.length} 篇`;
+
+  const kw = document.getElementById('searchInput').value.trim().toLowerCase();
+
+  entries.forEach(entry => {
+    const card = document.createElement('div');
+    card.className = 'article-card';
+    card.dataset.date = entry.date;
+
+    const d = new Date(entry.date + 'T00:00:00');
+    const dateLabel = `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
+
+    let contentHtml = entry.content_html;
+    if (kw) contentHtml = highlightKeyword(contentHtml, kw);
+
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="card-date-badge">${dateLabel}</span>
+        <div class="card-title-wrap">
+          <div class="card-title">${kw ? highlightKeyword(entry.title, kw) : entry.title}</div>
+          ${entry.summary ? `<div class="card-summary">${kw ? highlightKeyword(entry.summary, kw) : entry.summary}</div>` : ''}
+        </div>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">${contentHtml}</div>
+    `;
+
+    card.querySelector('.card-header').addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
+
+    list.appendChild(card);
+  });
+}
+
+function highlightKeyword(html, kw) {
+  if (!kw) return html;
+  const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return html.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+}
+
+function filter() {
+  const kw = document.getElementById('searchInput').value.trim().toLowerCase();
+  const dateFilter = activeDate;
+
+  let results = allEntries;
+
+  if (dateFilter) {
+    results = results.filter(e => e.date === dateFilter);
+  }
+
+  if (kw) {
+    results = results.filter(e =>
+      e.content_text.includes(kw) ||
+      e.title.toLowerCase().includes(kw) ||
+      e.summary.toLowerCase().includes(kw)
+    );
+  }
+
+  renderArticles(results);
+
+  // Sync sidebar
+  document.querySelectorAll('.date-item').forEach(li => {
+    const d = li.dataset.date;
+    const inResults = results.some(e => e.date === d);
+    li.classList.toggle('hidden', !inResults && !!kw);
+    li.classList.toggle('active', d === activeDate);
+  });
+
+  // Auto-open if single result
+  if (results.length === 1) {
+    document.querySelector('.article-card')?.classList.add('open');
+  }
+}
+
+function setActiveDate(date) {
+  activeDate = date;
+  document.getElementById('dateSelect').value = date;
+  filter();
+  if (date) {
+    document.querySelector(`.date-item[data-date="${date}"]`)?.scrollIntoView({ block: 'nearest' });
+    document.querySelector('.article-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+document.getElementById('searchInput').addEventListener('input', () => {
+  activeDate = '';
+  document.getElementById('dateSelect').value = '';
+  filter();
+});
+
+document.getElementById('dateSelect').addEventListener('change', e => {
+  setActiveDate(e.target.value);
+});
+
+loadData().catch(() => {
+  document.getElementById('articleList').innerHTML =
+    '<div class="no-results">無法載入資料，請確認 news.json 存在。</div>';
+});
+</script>
+</body>
+</html>
