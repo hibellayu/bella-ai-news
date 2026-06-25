@@ -126,23 +126,60 @@
       margin-bottom: 0.6rem;
       font-weight: 500;
     }
-    .date-list {
+    .tree {
       list-style: none;
       max-height: calc(100vh - 140px);
       overflow-y: auto;
     }
-    .date-list::-webkit-scrollbar { width: 4px; }
-    .date-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-    .date-item {
-      padding: 0.45rem 0.7rem;
-      font-size: 0.8rem;
+    .tree::-webkit-scrollbar { width: 4px; }
+    .tree::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* Year row */
+    .tree-year > .tree-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text);
+      padding: 0.4rem 0.5rem;
       cursor: pointer;
-      border-radius: 5px;
-      color: var(--text-muted);
-      transition: background 0.12s, color 0.12s;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      border-radius: 5px;
+      user-select: none;
+    }
+    .tree-year > .tree-label:hover { background: var(--border); }
+    .tree-year > .tree-label .arrow { font-size: 0.55rem; color: var(--text-muted); transition: transform 0.18s; }
+    .tree-year.open > .tree-label .arrow { transform: rotate(90deg); }
+
+    /* Month row */
+    .tree-month-list { display: none; padding-left: 0.75rem; }
+    .tree-year.open > .tree-month-list { display: block; }
+    .tree-month > .tree-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 5px;
+      user-select: none;
+    }
+    .tree-month > .tree-label:hover { background: var(--border); color: var(--text); }
+    .tree-month > .tree-label .arrow { font-size: 0.5rem; transition: transform 0.18s; }
+    .tree-month.open > .tree-label { color: var(--text); }
+    .tree-month.open > .tree-label .arrow { transform: rotate(90deg); }
+
+    /* Day row */
+    .tree-day-list { display: none; padding-left: 0.75rem; }
+    .tree-month.open > .tree-day-list { display: block; }
+    .date-item {
+      padding: 0.32rem 0.5rem;
+      font-size: 0.76rem;
+      cursor: pointer;
+      border-radius: 4px;
+      color: var(--text-muted);
+      transition: background 0.12s, color 0.12s;
     }
     .date-item:hover { background: var(--border); color: var(--text); }
     .date-item.active { background: var(--accent); color: #fff; font-weight: 500; }
@@ -316,7 +353,7 @@
 <div class="main">
   <aside class="sidebar">
     <div class="sidebar-title">日期索引</div>
-    <ul class="date-list" id="dateList"></ul>
+    <ul class="tree" id="dateTree"></ul>
   </aside>
 
   <section class="articles" id="articleList">
@@ -336,24 +373,70 @@ async function loadData() {
 
 function buildUI() {
   const dateSelect = document.getElementById('dateSelect');
-  const dateList = document.getElementById('dateList');
+  const tree = document.getElementById('dateTree');
 
+  // Group: year → month → days
+  const grouped = {};
   allEntries.forEach(entry => {
+    const [y, m] = entry.date.split('-');
+    if (!grouped[y]) grouped[y] = {};
+    if (!grouped[y][m]) grouped[y][m] = [];
+    grouped[y][m].push(entry.date);
+
     // Dropdown option
     const opt = document.createElement('option');
     opt.value = entry.date;
-    opt.textContent = formatDate(entry.date);
+    const d = new Date(entry.date + 'T00:00:00');
+    opt.textContent = `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
     dateSelect.appendChild(opt);
+  });
 
-    // Sidebar item
-    const li = document.createElement('li');
-    li.className = 'date-item';
-    li.dataset.date = entry.date;
-    li.textContent = formatDate(entry.date);
-    li.addEventListener('click', () => {
-      setActiveDate(entry.date === activeDate ? '' : entry.date);
+  const MONTHS_ZH = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  Object.keys(grouped).sort((a,b) => b-a).forEach(year => {
+    const yearLi = document.createElement('li');
+    yearLi.className = 'tree-year open';
+
+    const yearLabel = document.createElement('div');
+    yearLabel.className = 'tree-label';
+    yearLabel.innerHTML = `<span class="arrow">▶</span>${year} 年`;
+    yearLabel.addEventListener('click', () => yearLi.classList.toggle('open'));
+    yearLi.appendChild(yearLabel);
+
+    const monthUl = document.createElement('ul');
+    monthUl.className = 'tree-month-list';
+
+    Object.keys(grouped[year]).sort((a,b) => b-a).forEach(month => {
+      const monthLi = document.createElement('li');
+      monthLi.className = 'tree-month open';
+
+      const monthLabel = document.createElement('div');
+      monthLabel.className = 'tree-label';
+      monthLabel.innerHTML = `<span class="arrow">▶</span>${MONTHS_ZH[+month]}`;
+      monthLabel.addEventListener('click', () => monthLi.classList.toggle('open'));
+      monthLi.appendChild(monthLabel);
+
+      const dayUl = document.createElement('ul');
+      dayUl.className = 'tree-day-list';
+
+      grouped[year][month].forEach(date => {
+        const d = new Date(date + 'T00:00:00');
+        const dayLi = document.createElement('li');
+        dayLi.className = 'date-item';
+        dayLi.dataset.date = date;
+        dayLi.textContent = `${d.getMonth()+1}/${d.getDate()}`;
+        dayLi.addEventListener('click', () => {
+          setActiveDate(date === activeDate ? '' : date);
+        });
+        dayUl.appendChild(dayLi);
+      });
+
+      monthLi.appendChild(dayUl);
+      monthUl.appendChild(monthLi);
     });
-    dateList.appendChild(li);
+
+    yearLi.appendChild(monthUl);
+    tree.appendChild(yearLi);
   });
 
   renderArticles(allEntries);
@@ -439,12 +522,22 @@ function filter() {
 
   renderArticles(results);
 
-  // Sync sidebar
+  // Sync sidebar day items
   document.querySelectorAll('.date-item').forEach(li => {
     const d = li.dataset.date;
     const inResults = results.some(e => e.date === d);
     li.classList.toggle('hidden', !inResults && !!kw);
     li.classList.toggle('active', d === activeDate);
+  });
+
+  // Auto-expand month/year that has visible items when searching
+  document.querySelectorAll('.tree-month').forEach(monthLi => {
+    const hasDays = [...monthLi.querySelectorAll('.date-item')].some(li => !li.classList.contains('hidden'));
+    if (kw) monthLi.classList.toggle('open', hasDays);
+  });
+  document.querySelectorAll('.tree-year').forEach(yearLi => {
+    const hasMonths = [...yearLi.querySelectorAll('.date-item')].some(li => !li.classList.contains('hidden'));
+    if (kw) yearLi.classList.toggle('open', hasMonths);
   });
 
   // Auto-open if single result
