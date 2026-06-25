@@ -1,147 +1,97 @@
 #!/usr/bin/env python3
 """
-Convert AI daily news MD files to news.json for the web viewer.
+Build news.json for the Bella AI News viewer.
+
+Sources (JSON takes priority over MD for the same date):
+  1. ai-news-github/digests/*.json  — structured JSON from Cowork (preferred)
+  2. 日報AI新聞動態/AI日報_YYYYMMDD.md — MD backups (fallback for older entries)
+
 Usage: python scripts/build.py
 """
-import os
-import json
-import re
-import glob
+import os, json, re, glob
 from datetime import datetime
 
-MD_DIR = os.path.join(os.path.dirname(__file__), "../../日報AI新聞動態")
-OUTPUT = os.path.join(os.path.dirname(__file__), "../news.json")
+BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+JSON_DIR = os.path.join(BASE, "ai-news-github/digests")
+MD_DIR   = os.path.join(BASE, "日報AI新聞動態")
+OUTPUT   = os.path.abspath(os.path.join(os.path.dirname(__file__), "../news.json"))
 
 
-def md_to_html(md: str) -> str:
-    """Simple MD → HTML converter (no dependencies)."""
-    lines = md.split("\n")
-    html_lines = []
-    in_ul = False
+# ── JSON source ────────────────────────────────────────────────────────────────
 
-    for line in lines:
-        # Blockquote
-        if line.startswith("> "):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<blockquote>{line[2:]}</blockquote>')
-            continue
-
-        # H1
-        if line.startswith("# "):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<h1>{_inline(line[2:])}</h1>')
-            continue
-
-        # H2
-        if line.startswith("## "):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<h2>{_inline(line[3:])}</h2>')
-            continue
-
-        # H3
-        if line.startswith("### "):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<h3>{_inline(line[4:])}</h3>')
-            continue
-
-        # HR
-        if re.match(r'^-{3,}$', line.strip()):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append('<hr>')
-            continue
-
-        # List item
-        if line.startswith("- "):
-            if not in_ul:
-                html_lines.append("<ul>")
-                in_ul = True
-            html_lines.append(f'<li>{_inline(line[2:])}</li>')
-            continue
-
-        # Numbered list
-        m = re.match(r'^(\d+)\. (.+)', line)
-        if m:
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<li>{_inline(m.group(2))}</li>')
-            continue
-
-        # Empty line
-        if line.strip() == "":
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append("")
-            continue
-
-        # Italic line (footer note)
-        if line.startswith("*") and line.endswith("*"):
-            if in_ul:
-                html_lines.append("</ul>")
-                in_ul = False
-            html_lines.append(f'<p class="footer-note">{_inline(line)}</p>')
-            continue
-
-        # Normal paragraph
-        if in_ul:
-            html_lines.append("</ul>")
-            in_ul = False
-        html_lines.append(f'<p>{_inline(line)}</p>')
-
-    if in_ul:
-        html_lines.append("</ul>")
-
-    return "\n".join(html_lines)
-
-
-def _inline(text: str) -> str:
-    """Process inline MD: bold, italic, links."""
-    # Links [text](url)
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)',
-                  r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
-    # Bold **text**
-    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    # Italic *text* (not at start of line)
-    text = re.sub(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', r'<em>\1</em>', text)
-    return text
-
-
-def strip_html(html: str) -> str:
-    return re.sub(r'<[^>]+>', '', html)
-
-
-def parse_md_file(filepath: str) -> dict | None:
-    filename = os.path.basename(filepath)
-    m = re.match(r'AI日報_(\d{8})\.md', filename)
-    if not m:
-        return None
-    date_str = m.group(1)
-    date = datetime.strptime(date_str, "%Y%m%d").strftime("%Y-%m-%d")
-
+def entry_from_json(filepath: str) -> dict | None:
     with open(filepath, "r", encoding="utf-8") as f:
-        raw = f.read()
+        try:
+            d = json.load(f)
+        except Exception as e:
+            print(f"  JSON parse error {filepath}: {e}")
+            return None
 
-    # Extract title from first H1
-    title_m = re.search(r'^# (.+)', raw, re.MULTILINE)
-    title = title_m.group(1).strip() if title_m else f"AI 日報｜{date}"
+    if not isinstance(d, dict):
+        return None
 
-    # Extract summary (blockquote)
-    summary_m = re.search(r'^> (.+)', raw, re.MULTILINE)
-    summary = summary_m.group(1).strip() if summary_m else ""
+    date = d.get("date")
+    if not date:
+        return None
 
-    content_html = md_to_html(raw)
-    content_text = strip_html(content_html).lower()
+    title   = f"📰 AI 新聞日報｜{d.get('display_date', date)}"
+    summary = d.get("summary", "")
+
+    html_parts = [f"<h1>{title}</h1>"]
+    if summary:
+        html_parts.append(f"<blockquote>{summary}</blockquote>")
+
+    # Big news
+    if d.get("big_news"):
+        html_parts.append('<h2>🔥 大事件</h2>')
+        for item in d["big_news"]:
+            html_parts.append(f'<p><strong>{item["title"]}</strong></p>')
+            html_parts.append(f'<p>{item["content"]}</p>')
+            if item.get("source_urls"):
+                links = "、".join(
+                    f'<a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]}</a>'
+                    for s in item["source_urls"]
+                )
+                html_parts.append(f'<p class="sources">來源：{links}</p>')
+            if item.get("tip"):
+                html_parts.append(f'<p class="tip">💡 {item["tip"]}</p>')
+
+    # Tool updates
+    if d.get("tool_updates"):
+        html_parts.append('<h2>🛠️ 工具更新</h2>')
+        for item in d["tool_updates"]:
+            html_parts.append(f'<p><strong>{item["title"]}</strong></p>')
+            html_parts.append(f'<p>{item["content"]}</p>')
+            if item.get("source_urls"):
+                links = "、".join(
+                    f'<a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]}</a>'
+                    for s in item["source_urls"]
+                )
+                html_parts.append(f'<p class="sources">來源：{links}</p>')
+            if item.get("tip"):
+                html_parts.append(f'<p class="tip">💡 {item["tip"]}</p>')
+
+    # Trends
+    if d.get("trends"):
+        html_parts.append('<h2>📈 值得追蹤的趨勢</h2>')
+        for item in d["trends"]:
+            html_parts.append(f'<p><strong>{item["title"]}</strong></p>')
+            html_parts.append(f'<p>{item["content"]}</p>')
+            if item.get("tip"):
+                html_parts.append(f'<p class="tip">💡 {item["tip"]}</p>')
+
+    # Tips summary
+    if d.get("tips_summary"):
+        html_parts.append('<h2>💡 應用切角彙整</h2><ul>')
+        for tip in d["tips_summary"]:
+            html_parts.append(f'<li>{tip}</li>')
+        html_parts.append('</ul>')
+
+    if d.get("generated_at"):
+        html_parts.append(f'<p class="footer-note">生成時間：{d["generated_at"]}</p>')
+
+    content_html = "\n".join(html_parts)
+    content_text = re.sub(r'<[^>]+>', '', content_html).lower()
 
     return {
         "date": date,
@@ -149,35 +99,115 @@ def parse_md_file(filepath: str) -> dict | None:
         "summary": summary,
         "content_html": content_html,
         "content_text": content_text,
+        "source": "json",
     }
 
 
+# ── MD source ──────────────────────────────────────────────────────────────────
+
+def _inline(text: str) -> str:
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)',
+                  r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', r'<em>\1</em>', text)
+    return text
+
+def md_to_html(md: str) -> str:
+    lines = md.split("\n")
+    html_lines = []
+    in_ul = False
+    for line in lines:
+        if line.startswith("> "):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<blockquote>{_inline(line[2:])}</blockquote>'); continue
+        if line.startswith("# "):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<h1>{_inline(line[2:])}</h1>'); continue
+        if line.startswith("## "):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<h2>{_inline(line[3:])}</h2>'); continue
+        if line.startswith("### "):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<h3>{_inline(line[4:])}</h3>'); continue
+        if re.match(r'^-{3,}$', line.strip()):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append('<hr>'); continue
+        if line.startswith("- "):
+            if not in_ul: html_lines.append("<ul>"); in_ul = True
+            html_lines.append(f'<li>{_inline(line[2:])}</li>'); continue
+        m = re.match(r'^(\d+)\. (.+)', line)
+        if m:
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<li>{_inline(m.group(2))}</li>'); continue
+        if line.strip() == "":
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(""); continue
+        if line.startswith("*") and line.endswith("*"):
+            if in_ul: html_lines.append("</ul>"); in_ul = False
+            html_lines.append(f'<p class="footer-note">{_inline(line)}</p>'); continue
+        if in_ul: html_lines.append("</ul>"); in_ul = False
+        html_lines.append(f'<p>{_inline(line)}</p>')
+    if in_ul:
+        html_lines.append("</ul>")
+    return "\n".join(html_lines)
+
+def entry_from_md(filepath: str) -> dict | None:
+    m = re.match(r'AI日報_(\d{8})\.md', os.path.basename(filepath))
+    if not m:
+        return None
+    date = datetime.strptime(m.group(1), "%Y%m%d").strftime("%Y-%m-%d")
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        raw = f.read()
+
+    title_m = re.search(r'^# (.+)', raw, re.MULTILINE)
+    title = title_m.group(1).strip() if title_m else f"AI 日報｜{date}"
+    summary_m = re.search(r'^> (.+)', raw, re.MULTILINE)
+    summary = summary_m.group(1).strip() if summary_m else ""
+
+    content_html = md_to_html(raw)
+    content_text = re.sub(r'<[^>]+>', '', content_html).lower()
+
+    return {
+        "date": date,
+        "title": title,
+        "summary": summary,
+        "content_html": content_html,
+        "content_text": content_text,
+        "source": "md",
+    }
+
+
+# ── Main ───────────────────────────────────────────────────────────────────────
+
 def main():
-    md_dir = os.path.abspath(MD_DIR)
-    if not os.path.isdir(md_dir):
-        print(f"MD directory not found: {md_dir}")
-        return
+    entries: dict[str, dict] = {}
 
-    files = sorted(glob.glob(os.path.join(md_dir, "AI日報_*.md")))
-    print(f"Found {len(files)} MD files")
-
-    entries = []
-    for f in files:
-        entry = parse_md_file(f)
+    # 1. Load MD files first (lower priority)
+    for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md")):
+        entry = entry_from_md(f)
         if entry:
-            entries.append(entry)
-            print(f"  ✓ {entry['date']}")
-        else:
-            print(f"  ✗ skipped: {os.path.basename(f)}")
+            entries[entry["date"]] = entry
 
-    # Sort newest first
-    entries.sort(key=lambda e: e["date"], reverse=True)
+    # 2. Overwrite with JSON files (higher priority, skip manifest.json)
+    for f in glob.glob(os.path.join(JSON_DIR, "????????.json")):
+        entry = entry_from_json(f)
+        if entry:
+            entries[entry["date"]] = entry
 
-    output_path = os.path.abspath(OUTPUT)
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(entries, f, ensure_ascii=False, indent=2)
+    sorted_entries = sorted(entries.values(), key=lambda e: e["date"], reverse=True)
 
-    print(f"\nWrote {len(entries)} entries → {output_path}")
+    # Remove internal 'source' field before writing
+    for e in sorted_entries:
+        e.pop("source", None)
+
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(sorted_entries, f, ensure_ascii=False, indent=2)
+
+    json_count = sum(1 for f in glob.glob(os.path.join(JSON_DIR, "????????.json")))
+    md_count   = sum(1 for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md")))
+    print(f"JSON 來源：{json_count} 篇　MD 來源：{md_count} 篇　合計輸出：{len(sorted_entries)} 篇")
+    print(f"→ {OUTPUT}")
 
 
 if __name__ == "__main__":
