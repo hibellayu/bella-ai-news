@@ -1,0 +1,45 @@
+{
+  "date": "2026-06-28",
+  "date_key": "20260628",
+  "display_date": "2026年06月28日",
+  "summary": "今日精選：1 條 AI 相關動態｜聚焦 AI 生產力轉型、產品思維崛起",
+  "big_news": [
+    {
+      "title": "Claude Code 讓工程師產能變三倍，瓶頸從寫程式移到「決定做什麼」",
+      "content": "Anthropic 內部因 Claude Code 的導入，工程團隊的實際出貨速度達到人數的三倍，但隨之而來的瓶頸不再是開發速度，而是「產品決策力」的稀缺。Anthropic 因此開始大量招聘 PM（產品經理），而非工程師。這個現象正在蔓延到更多科技公司，代表 AI 時代的組織瓶頸已從執行端移向思維端。",
+      "source_urls": [
+        {
+          "name": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/claude-code-turned-every-engineer-into-three-now-companies-need-more-product-thinkers"
+        }
+      ],
+      "tip": "【What】AI 工具讓技術執行不再是稀缺資源，真正值錢的是「知道要做什麼」的判斷力——這和行銷策略師的角色高度重疊。【So What】品牌端的行銷人若還停在執行層（排版、發文、改文案），很快會被 AI 工具取代；但能定義「品牌要傳達什麼、對誰說、為什麼」的策略人才，反而會更搶手。【Now What】這週花 30 分鐘審視你目前的工作清單，把任務分成「AI 可替代的執行項」和「需要人判斷的策略項」，主動和主管討論如何把你的時間重心移向後者，讓自己站在價值鏈更高的位置。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Claude Code — 工程生產力的結構性躍升",
+      "content": "Claude Code 已在 Anthropic 內部實現讓單一工程師產出相當於三人份的開發量，並非誇大的行銷說詞，而是反映在組織人力規劃的實際決策上。這也是目前 AI coding 工具中，少數被親身導入並引發組織架構調整的案例。對非工程背景的行銷人而言，意味著技術門檻正在快速下降，自建輕量工具或自動化流程的可行性大幅提升。",
+      "source_urls": [
+        {
+          "name": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/claude-code-turned-every-engineer-into-three-now-companies-need-more-product-thinkers"
+        }
+      ],
+      "tip": "【What】Claude Code 這類 AI coding 工具讓非工程師也能用自然語言描述需求、快速生成可用工具，數位行銷人現在有機會自己建 dashboard、自動化報表或簡單爬蟲。【So What】以往需要排工程資源的小型需求（例如抓競品官網價格、自動生成每週報告），現在可能一個行銷人加上 AI 就能搞定，減少跨部門等待時間。【Now What】這週試著用 Claude Code 或 ChatGPT 的 code interpreter，把一個你每週手動做的數據彙整（例如社群數據匯出整理），嘗試讓 AI 幫你寫一段自動化腳本，哪怕只節省 20 分鐘也是好的開始。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI 時代的稀缺資源從「執行力」變成「判斷力」",
+      "content": "Anthropic 的案例清楚示範：當 AI 把執行速度拉高三倍，組織的真正瓶頸就變成「決定做什麼」的產品與策略思維。這個邏輯不只適用於工程團隊，同樣適用於行銷、設計、內容等所有創意執行職位。越早把自己定位成「策略思考者」而非「內容生產者」，職涯護城河就越深。",
+      "tip": "【What】AI 正在壓縮所有「可描述、可重複」的工作價值，行銷人的差異化必須建立在洞察、判斷和品牌直覺上。【So What】純靠執行量撐業績的行銷人或小型代理商，在 AI 工具普及後議價能力會快速下滑；能提供策略方向和品牌主張的人，反而更有價值。【Now What】這週開始在你的工作日誌或個人品牌（LinkedIn、Newsletter）中，記錄並公開分享一個你做過的「策略判斷」過程，不是說你做了什麼，而是說你「為什麼這樣決定」——這才是 AI 無法取代的部分。"
+    }
+  ],
+  "tips_summary": [
+    "Claude Code 生產力躍升 → 這週花 30 分鐘把你的工作任務分類，主動把時間從執行型工作移向策略型工作，並跟主管溝通你的定位轉型",
+    "AI coding 工具平民化 → 挑一個你每週手動做的數據整理任務，試著用 Claude Code 或 ChatGPT 寫自動化腳本，降低對工程資源的依賴",
+    "判斷力成稀缺資源 → 在 LinkedIn 或自媒體分享一次你的策略決策思路（不只說做了什麼，要說為什麼這樣決定），建立個人策略品牌"
+  ],
+  "generated_at": "2026-06-28 09:00"
+}

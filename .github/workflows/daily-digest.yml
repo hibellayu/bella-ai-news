@@ -1,0 +1,46 @@
+name: Daily AI News Digest
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # UTC 23:00 = 台北時間 07:00
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '補跑指定日期（YYYYMMDD），留空則自動抓昨天'
+        required: false
+
+jobs:
+  generate-digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic feedparser requests
+
+      - name: Generate digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TARGET_DATE: ${{ inputs.date }}
+        run: python scripts/generate_digest.py
+
+      - name: Build news.json
+        run: python scripts/build.py
+
+      - name: Commit and push
+        run: |
+          git config user.email "bella.lomo@gmail.com"
+          git config user.name "Bella AI Bot"
+          git add digests/ news.json
+          git diff --staged --quiet && echo "no changes" || \
+            git commit -m "auto: daily update $(TZ=Asia/Taipei date +%Y%m%d)" && \
+            git push
