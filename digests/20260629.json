@@ -1,0 +1,98 @@
+{
+  "date": "2026-06-29",
+  "date_key": "20260629",
+  "display_date": "2026年06月29日",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦工具更新 / 新創融資 / 自媒體 AI 應用",
+  "big_news": [
+    {
+      "title": "Gemini 個人化 AI 圖像生成正式對美國用戶免費開放",
+      "content": "Google 宣布 Gemini 的個人化圖像生成功能向美國所有用戶免費開放，此前該功能僅限 Plus、Pro、Ultra 訂閱用戶使用。系統會根據 Gemini 對用戶偏好的理解，自動生成貼合個人風格的圖像，無需在提示詞中逐一描述。",
+      "source_urls": [{"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/"}],
+      "tip": "若你有 Google 帳號，現在可以直接測試 Gemini 個人化圖像功能，用於社群封面或品牌視覺發想。"
+    },
+    {
+      "title": "OpenAI 發布 GPT-5.6 三款新模型 Sol、Terra、Luna（目前限定合作夥伴預覽）",
+      "content": "OpenAI 正式宣布 GPT-5.6 系列模型，包含 Sol、Terra、Luna 三個版本，目前僅限美國政府指定的合作夥伴存取。這三款模型據報在推理、多模態與長文本處理上均有顯著提升，預計未來逐步對外開放。",
+      "source_urls": [{"name": "VentureBeat", "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov"}],
+      "tip": "密切關注 OpenAI 開放時程，GPT-5.6 一旦商用化，將大幅提升行銷自動化與內容生成的品質上限。"
+    },
+    {
+      "title": "亞洲 AI 新創搶推類 Mythos 模型，填補 Anthropic 出口禁令空缺",
+      "content": "受美國 Anthropic 出口管制影響，部分亞洲市場無法存取 Claude Mythos。多家亞洲 AI 新創趁勢推出功能相近的替代模型，試圖搶佔企業市場。此趨勢顯示 AI 地緣政治正在加速重塑全球模型生態。",
+      "source_urls": [{"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"}],
+      "tip": "關注亞洲替代模型發展，台灣企業若有 Claude 使用需求受阻，可提前評估備案方案。"
+    },
+    {
+      "title": "Cursor 母公司 Anysphere 完成 23 億美元 D 輪融資，估值達 293 億美元",
+      "content": "AI 程式開發工具 Cursor 的母公司 Anysphere 宣布完成 23 億美元 D 輪融資，估值近乎翻三倍至 293 億美元。Cursor 的年化營收（ARR）已突破 10 億美元，成為 AI 工具商業化最快的標竿案例之一。",
+      "source_urls": [{"name": "Crunchbase News", "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-marketing-robotics-baseten/"}],
+      "tip": "Cursor 的爆發說明「AI 輔助工作流程」的商業價值已被市場驗證，可觀察類似工具在行銷領域的應用潛力。"
+    },
+    {
+      "title": "白宮發布 AI 創新與安全行政命令，強化美國 AI 主導地位",
+      "content": "美國白宮正式發布新的 AI 行政命令，聚焦推動先進 AI 創新並同步強化安全機制。此舉被視為美國在 AI 主導權競爭中的政策加碼，將影響未來 AI 模型出口與國際合作規範。",
+      "source_urls": [{"name": "The White House", "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/"}],
+      "tip": "行政命令走向直接影響 AI 工具的全球可用性，建議持續追蹤以提前掌握工具存取風險。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Gemini — 個人化圖像生成功能免費化",
+      "content": "Google Gemini 將原本訂閱限定的個人化圖像生成功能擴大至免費用戶（美國地區）。該功能可根據 Gemini 對用戶喜好的理解自動生成風格圖像，無需手動下提示詞。後續預計擴展至更多地區。",
+      "source_urls": [{"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/"}],
+      "tip": "可用於快速生成符合個人品牌風格的社群圖，省去每次描述風格的提示詞工夫。"
+    },
+    {
+      "title": "Figma — 新增程式碼圖層、動畫支援與更多 AI 功能",
+      "content": "Figma 在最新更新中加入程式碼圖層（Code Layers）、動畫支援及多項 AI 輔助設計功能，大幅縮短設計到開發的交接流程。AI 功能新增自動建議元件樣式與版面調整，讓非設計師也能快速上手。",
+      "source_urls": [{"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/"}],
+      "tip": "行銷人員可用 Figma AI 功能快速製作活動頁面 mockup，溝通視覺方向時更有說服力。"
+    },
+    {
+      "title": "Meta Facebook — 「AI Mode」正式上線，整合公開資訊回答問題",
+      "content": "Meta 在 Facebook 推出「AI Mode」，可從平台公開資訊中擷取內容來回答用戶問題，類似 Perplexity 的 AI 搜尋體驗。初期功能聚焦在問答與資訊摘要，後續預計整合更多社群資料。",
+      "source_urls": [{"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/15/metas-new-ai-mode-on-facebook-pulls-from-public-info-across-its-platforms/"}],
+      "tip": "品牌在 Facebook 的公開貼文可能被 AI Mode 引用，確保品牌資訊與關鍵字準確度比以往更重要。"
+    },
+    {
+      "title": "Google Veo 3 — 影片與音效同步生成成為業界新基準",
+      "content": "Google Veo 3 被業界列為 2026 年影片生成品質基準，支援對話、環境音效與影片同步生成，大幅降低影片製作門檻。對自媒體創作者而言，可快速生成帶聲音的短影音素材。",
+      "source_urls": [{"name": "marketersgo.com", "url": "https://www.marketersgo.com/media-collaboration/sunmedia/202604/2026%E5%B9%B4ai%E5%B7%A5%E5%85%B7%E7%94%9F%E6%85%8B%E7%B3%BB%E6%88%90%E5%BD%A2-%E5%B0%88%E6%A5%AD%E5%8C%96%E3%80%81%E4%BB%A3%E7%90%86%E5%9E%8Bai%E4%B8%BB%E5%B0%8E%E6%9C%AA%E4%BE%86%E8%B6%A8%E5%8B%A2/"}],
+      "tip": "想嘗試 AI 影片創作的行銷人，Veo 3 是目前品質最穩定的選項，適合製作品牌短片或說明影片。"
+    },
+    {
+      "title": "Baseten 完成 15 億美元 F 輪融資，AI 推論基礎設施持續受資本青睞",
+      "content": "AI 推論基礎設施供應商 Baseten 完成 15 億美元 F 輪融資，專注提供企業 AI 應用工作負載的系統軟體。同期 Groq 也宣布完成 6.5 億美元新輪融資，顯示 AI 底層算力市場競爭加劇。",
+      "source_urls": [{"name": "Crunchbase News", "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-marketing-robotics-baseten/"}],
+      "tip": "AI 推論基礎設施的成熟代表 API 調用成本持續下降，未來企業自建 AI 工作流的門檻將更低。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI 衝擊內容產業：人類寫手需求反增，「溫度」成稀缺資源",
+      "content": "2026 年最熱門的 AI 寫作副業包含 LinkedIn 代筆、專業 SEO 寫手、品牌聲音顧問等，需求居高不下。原因在於 AI 氾濫後，具備真實觀點與情感連結的內容反而更稀缺、更值錢。Adobe 調查亦顯示 87% 創作者認為 AI 工具加速了業務或粉絲成長。",
+      "tip": "資深行銷人的優勢不在「會用 AI」，而在「懂品牌溫度」——這正是市場最需要的差異化能力。"
+    },
+    {
+      "title": "代理型 AI（Agentic AI）成為 2026 下半年主旋律",
+      "content": "2026 年 AI 工具生態系加速成形，專業化的 Agentic AI（可自主執行多步驟任務的 AI 代理）正在取代單一功能工具。從監控產業動態、生成草稿、排程發布，到跨平台自動化，AI 代理讓行銷人得以釋放 80% 的執行工作。",
+      "tip": "現在是建立個人 AI 工作流的最佳時機，掌握 Agentic AI 的人將在未來 12 個月建立明顯的效率優勢。"
+    },
+    {
+      "title": "AI 融資集中化：88% 資金流向美國，亞洲替代生態系加速崛起",
+      "content": "2026 年至今 AI 相關創投融資中，88% 集中於美國企業，Q1 單季融資額已達 2,420 億美元的歷史新高。但隨著美國出口管制收緊，亞洲本土 AI 生態系加速發展，形成平行競爭格局，對台灣企業選擇 AI 工具策略將產生影響。",
+      "tip": "企業在選擇 AI 工具供應商時，需開始評估「地緣政治風險」，避免核心工具因出口管制而突然斷線。"
+    }
+  ],
+  "tips_summary": [
+    "Gemini 個人化圖像免費化 → 品牌視覺發想成本歸零，立即測試個人風格圖生成",
+    "GPT-5.6 系列發布 → 追蹤開放時程，提前規劃 API 整合或工具升級",
+    "亞洲替代模型崛起 → 評估備案 AI 供應商，分散工具依賴風險",
+    "Cursor 23 億美元融資 → AI 工作流工具商業價值獲驗證，行銷版本工具即將湧現",
+    "Facebook AI Mode 上線 → 確保品牌 Facebook 公開資訊準確，優化被 AI 引用的關鍵字",
+    "Veo 3 影片音效同步 → 短影音製作成本大降，適合測試 AI 品牌影片",
+    "AI 寫作副業需求逆增 → 「人味內容」定價空間提升，資深行銷人可考慮副業顧問方向",
+    "Agentic AI 主導趨勢 → 現在開始建立自動化工作流，12 個月後效率差距將顯著拉開"
+  ],
+  "generated_at": "2026-06-30 07:00"
+}

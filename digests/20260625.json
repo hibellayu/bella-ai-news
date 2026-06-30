@@ -1,0 +1,96 @@
+{
+  "date": "2026-06-25",
+  "date_key": "20260625",
+  "display_date": "2026年06月25日",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦平台 AI 化 / 行銷工具 / 創作者經濟",
+  "big_news": [
+    {
+      "title": "Apple Siri AI 正式採用 Google Gemini，史上最大 AI 跨廠合作落地",
+      "content": "Apple 宣布 Siri AI 將由 Google Gemini 模型驅動，雙方簽署數十億美元合作協議。這是兩大科技巨頭罕見的跨平台 AI 整合，代表 Apple 短期不打算自建大型語言模型，改以整合策略快速提升 Siri 能力。新 Siri AI 預計隨 iOS 更新推出。",
+      "source_urls": [{"name": "StartupHub AI", "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/ai-models-chatgpt-claude-gemini-and-beyond"}],
+      "tip": "Apple 生態系用戶將可在 iPhone 直接享有 Gemini 等級的 AI，行銷人可開始思考 Siri 語音查詢的 SEO 優化策略（AEO）。"
+    },
+    {
+      "title": "Google Search 正式整合 Agentic AI，搜尋不再只是「找答案」",
+      "content": "Google 宣布將 Agentic AI 能力內建進 Search，未來 AI 可以代替用戶直接完成訂購、填表、比較等任務，而非單純提供連結。同時 Google 在 AI Mode 中開放廣告版位，讓品牌可在 AI 生成回答旁曝光。",
+      "source_urls": [{"name": "Boot Camp Digital", "url": "https://bootcampdigital.com/blog/june-2026-digital-news-updates/"}, {"name": "Search Engine Journal", "url": "https://www.searchenginejournal.com/google-introduces-new-ad-formats-in-ai-mode/575354/"}],
+      "tip": "AI Mode 廣告是 Google 近年最重要的廣告格局改變，行銷預算需提前布局 AI Search 廣告投放策略。"
+    },
+    {
+      "title": "Meta 在 Facebook 推出 Creator Assistant，AI 個人化創作顧問正式上線",
+      "content": "Meta 在 Facebook 內建 Creator Assistant，可根據創作者自己的帳號數據提供個人化建議，包含內容表現分析、受眾行為洞察和成長策略建議。同步宣布 Facebook 推出獨立社群 App「Forum」，專注強化 Groups 功能。",
+      "source_urls": [{"name": "Boot Camp Digital", "url": "https://bootcampdigital.com/blog/june-2026-digital-news-updates/"}, {"name": "Facebook Creators", "url": "https://creators.facebook.com/blog/meet-creator-assistant"}],
+      "tip": "經營 Facebook 品牌頁或社群的行銷人應立即啟用 Creator Assistant，讓 AI 根據你的真實數據提供優化建議。"
+    },
+    {
+      "title": "Adobe 報告：87% 創作者表示 AI 正在幫助他們擴大業務與受眾",
+      "content": "Adobe 2026 Creators' Toolkit 報告顯示，絕大多數創作者認為 AI 工具在內容創作效率、受眾成長方面帶來正面影響。然而同期研究也指出，過度依賴 AI 生成內容可能損害創作者的個人信譽與品牌形象。",
+      "source_urls": [{"name": "Adobe News", "url": "https://news.adobe.com/news/2026/06/creators-toolkit-report-2026"}],
+      "tip": "AI 輔助而非 AI 替代是關鍵：用 AI 提升效率，但保留個人觀點與風格，才能在 AI 內容氾濫時代維持差異化。"
+    },
+    {
+      "title": "LinkedIn 宣布打壓 AI 生成通用內容，同步推出小企業變現新工具",
+      "content": "LinkedIn 宣佈將降低套版 AI 生成貼文的能見度，強調平台要回歸真實互動。與此同時，LinkedIn 推出新功能讓顧問與自由接案者可直接在個人頁面設定服務諮詢預約與付款，開放商業變現管道。",
+      "source_urls": [{"name": "LinkedIn Pulse", "url": "https://www.linkedin.com/pulse/keeping-conversations-real-linkedin-laura-lorenzetti-9821e/"}, {"name": "LinkedIn News", "url": "https://news.linkedin.com/2026/LinkedIn-Tools-to-Help-Small-Businesses-Scale-Up"}],
+      "tip": "個人品牌在 LinkedIn 的優勢將進一步擴大——真實觀點、案例分享比 AI 套文更有曝光優勢，同時可測試直接接單功能。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Google Analytics — 新增 AI 助理流量來源追蹤",
+      "content": "Google Analytics 新增專屬報告，可識別並追蹤來自 AI 助理（如 ChatGPT、Gemini、Perplexity 等）的網站流量。行銷人首次可在 GA4 中看到 AI 驅動的流量佔比與用戶行為差異。",
+      "source_urls": [{"name": "Google Analytics Support", "url": "https://support.google.com/analytics/answer/9164320?hl=en"}, {"name": "Boot Camp Digital", "url": "https://bootcampdigital.com/blog/june-2026-digital-news-updates/"}],
+      "tip": "立即在 GA4 開啟此報告，了解有多少流量來自 AI 入口，這對評估 GEO（生成式引擎優化）效果至關重要。"
+    },
+    {
+      "title": "Instagram — 新增內建提詞機、Profile Grid 自由排序",
+      "content": "Instagram 推出原生提詞機功能，讓創作者錄影時可對著鏡頭念稿，同時新增個人頁貼文自由排序功能。搭配 Instagram Plus 訂閱制（含 Story Spotlight、多重受眾設定、擴充洞察數據等），全面強化創作者工具箱。",
+      "source_urls": [{"name": "Instagram About", "url": "https://about.instagram.com/blog/announcements/introducing-instagram-plus"}, {"name": "Social Media Today", "url": "https://www.socialmediatoday.com/news/instagram-introduces-teleprompter-tool/821564/"}],
+      "tip": "提詞機功能非常適合錄製教學型或品牌介紹影片，降低拍攝門檻；Grid 排序則讓品牌視覺呈現更具規劃性。"
+    },
+    {
+      "title": "TikTok Symphony + Dreamina Seedance 2.0 — AI 影片生成升級",
+      "content": "TikTok 擴展 Symphony 和 Dreamina Seedance 2.0 AI 影片創作工具，幫助行銷人更快速生成短影音內容。新推出的 TopReach 廣告版位則為品牌提供高曝光廣告位置，適合大型活動或新品上市。",
+      "source_urls": [{"name": "TikTok Business Blog", "url": "https://ads.tiktok.com/business/en-US/blog/transforming-video-creation-tiktok-symphony-dreamina-seedance"}],
+      "tip": "Seedance 2.0 可大幅降低短影音製作成本，適合快速測試不同創意角度；品牌可搭配 TopReach 加大新品首波曝光。"
+    },
+    {
+      "title": "Adobe GenStudio — 企業 AI 內容管理套件升級",
+      "content": "Adobe GenStudio 更新企業產品套件，整合 AI 自動匹配品牌色彩、Logo、設計系統與語氣規範，並支援從創意生成到合規審核再到行銷分析的全流程管理。",
+      "source_urls": [{"name": "Adobe Business", "url": "https://business.adobe.com/resources/digital-trends-report.html"}],
+      "tip": "對於需要管理大量品牌素材的行銷團隊，GenStudio 可有效解決「AI 輸出與品牌不符」的痛點，值得列入工具評估清單。"
+    },
+    {
+      "title": "LinkedIn — AI 引用研究出爐，揭示如何提升內容被 AI 引用率",
+      "content": "LinkedIn 與 Meltwater 合作分析 900 萬筆 AI 引用數據，發現結構清晰的內容、思想領導力文章、教育資源、比較分析和原創見解最容易被 AI 系統引用，對品牌 GEO 策略有重要參考價值。",
+      "source_urls": [{"name": "LinkedIn Marketing", "url": "https://www.linkedin.com/business/marketing/blog/ai-search/new-meltwater-research-shares-5-insights-from-9-million-citations"}],
+      "tip": "調整 LinkedIn 內容策略，多產出具結構的清單型文章、獨家數據洞察或行業比較，提高品牌在 AI 搜尋中的曝光機會。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "各大平台全面 AI 化：搜尋、社群、廣告都在重構",
+      "content": "Google、Meta、Instagram、LinkedIn、TikTok 在同期密集推出 AI 功能，涵蓋 Agentic Search、AI 廣告版位、AI 創作助理等。平台 AI 化已不是趨勢預測，而是當下進行式——行銷工作流程必須快速調適。",
+      "tip": "建議每月固定盤點主要平台的 AI 新功能，優先測試與自身內容或廣告業務最相關的 2-3 個功能，避免全面跟進導致資源分散。"
+    },
+    {
+      "title": "AI 內容真實性危機：平台開始反制 AI 垃圾內容",
+      "content": "LinkedIn 降權 AI 套版文、Google 推出 AI 內容識別工具、YouTube 強化 AI 生成標籤——主要平台都在同步對抗低品質 AI 內容氾濫。這標誌著「有 AI 就夠」的紅利期結束，人類觀點與風格的差異化價值正在上升。",
+      "tip": "對數位行銷從業者而言，個人品牌、真實案例分享、獨特洞察將是對抗 AI 內容洪流最有效的護城河。"
+    },
+    {
+      "title": "AI 創業投資持續沸騰：Q1 2026 創投金額高達 3000 億美元",
+      "content": "Crunchbase 數據顯示 2026 Q1 全球創投金額達 3000 億美元，其中 80% 流向 AI 相關公司。OpenAI、Anthropic、xAI 等頭部公司已融資數百億，產業資本高度集中於基礎設施與垂直 AI 應用兩個方向。",
+      "tip": "AI 工具市場的整合正在加速，評估採用哪些 AI 工具時，優先選擇資本雄厚或已有穩定 ARR 的廠商，降低工具突然停服的風險。"
+    }
+  ],
+  "tips_summary": [
+    "Google AI Mode 廣告 → 提前布局 AI Search 廣告投放，爭取新版位紅利期",
+    "LinkedIn 打壓 AI 套文 → 個人品牌真實內容更有優勢，加強原創觀點輸出",
+    "GA4 AI 流量報告 → 立即啟用，追蹤 AI 助理帶來的新流量來源",
+    "Instagram 提詞機 → 降低拍攝門檻，適合快速製作教學或品牌說明影片",
+    "Creator Assistant（Facebook）→ 啟用 AI 顧問，根據真實帳號數據優化內容策略",
+    "AI 內容識別工具全面普及 → 維持個人風格與人性溫度，才能在 AI 時代脫穎而出"
+  ],
+  "generated_at": "2026-06-26 07:00"
+}

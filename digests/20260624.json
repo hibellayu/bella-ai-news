@@ -1,0 +1,100 @@
+{
+  "date": "2026-06-24",
+  "date_key": "20260624",
+  "display_date": "2026年6月24日",
+  "summary": "今日精選：11 條 AI 相關動態｜聚焦工具 / 創業 / 自媒體",
+  "big_news": [
+    {
+      "title": "史上最擁擠的 AI 月份：GPT-5.6、Gemini 3.5 Pro、Claude 4.8 同步登場",
+      "content": "2026 年 6 月被稱為「AI 史上最塞爆的一個月」，OpenAI、Google、Anthropic 三大巨頭同期推出旗艦新模型。Claude 4.8 已於 5 月 28 日上線，主打 Agent 任務與長程規劃；GPT-5.6 預計延伸 context window 至 150 萬 token；Gemini 3.5 Pro 擁有 200 萬 token 上下文，Deep Think 推理能力大幅提升，預計 6 月底正式 GA。",
+      "source_urls": [
+        {"name": "Essa Mamdani Blog", "url": "https://www.essamamdani.com/blog/june-2026-ai-model-flood-gpt-gemini-claude"},
+        {"name": "LLM Stats", "url": "https://llm-stats.com/llm-updates"}
+      ],
+      "tip": "三大模型都強化 Agentic 能力，可評估將重複性行銷工作流（如競品監測、報告彙整）交由 AI Agent 自動執行，選擇最適合任務的模型組合。"
+    },
+    {
+      "title": "Meta 推出 Facebook AI Creator Companion App，挑戰第三方工具",
+      "content": "Meta 正式發布獨立的 AI 創作者助理 App，從 Creator Studio 拆分出來。核心功能包含智能留言管理（以創作者語氣起草回覆）、每日早報（貼文表現 + 目標追蹤 + 待回覆留言）。Meta 目的是讓創作者不再需要另開 ChatGPT 腦力激盪，同時鎖住創作者生態在 Facebook 內。",
+      "source_urls": [
+        {"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/24/facebook-rolls-out-an-ai-companion-app-for-creators/"},
+        {"name": "FourWeekMBA", "url": "https://fourweekmba.com/facebook-ai-companion-app-creators-tone-matching/"}
+      ],
+      "tip": "若有 Facebook 創作者帳號，可優先申請測試資格，用 AI 管理品牌留言、節省社群互動時間。"
+    },
+    {
+      "title": "Figma Config 2026：Code Layers、動態設計、AI Shader 全面升級",
+      "content": "Figma 年度大會 Config 2026（6/23–25，舊金山）發布重大更新：Code Layers 讓設計師直接在畫布中操作程式碼庫；內建 Motion 動畫與 3D 轉場；AI Shader 填充效果讓設計師用文字生成視覺材質；Design Agent 新增 Web 搜尋能力，可即時抓取真實內容替換 placeholder。",
+      "source_urls": [
+        {"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/"},
+        {"name": "Figma Blog", "url": "https://www.figma.com/blog/config-2026-recap/"}
+      ],
+      "tip": "Figma AI 能力已升級為半自動產出工具，品牌素材製作流程可大幅提速，值得與設計夥伴一起探索。"
+    },
+    {
+      "title": "Anthropic 估值 9,650 億美元超越 OpenAI，AI 獨角獸 IPO 潮啟動",
+      "content": "Anthropic 完成 Series H 後估值達 9,650 億美元，首度超越 OpenAI（8,520 億美元），年化營收也領先（$470 億 vs $240 億+）。OpenAI 目標 2026 年 9 月 IPO，Anthropic 則可能緊接在 10 月跟進，AI 獨角獸 IPO 潮正式啟動。",
+      "source_urls": [
+        {"name": "Crunchbase News", "url": "https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/"}
+      ],
+      "tip": "關注 ESG 及科技股的投資人可留意 OpenAI 與 Anthropic 的 IPO 時程，提早做功課研究投資機會。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Gemini App — Daily Brief、Spark Agent、Omni 影片模型",
+      "content": "Google 大幅改版 Gemini App：Daily Brief 每日自動整合 Gmail + Calendar 生成優先清單；Gemini Spark 是 24/7 背景 Agent，在手機鎖定時也持續工作；Gemini Omni 整合 YouTube Shorts 的生成式影片能力，提供 Google AI 訂閱用戶使用。",
+      "source_urls": [
+        {"name": "TechCrunch", "url": "https://techcrunch.com/2026/05/19/google-updates-its-gemini-app-to-take-on-chatgpt-and-claude-at-io-2026/"}
+      ],
+      "tip": "Daily Brief 類似個人 Chief of Staff，適合行程繁忙者快速掌握每日重點，可與 Google Calendar 深度整合試用。"
+    },
+    {
+      "title": "Microsoft Surface RTX Spark Dev Box — 本地端跑 1200 億參數模型",
+      "content": "Microsoft 推出 AI 開發者工作站，搭載 NVIDIA Blackwell 架構 RTX Spark 晶片 + 128GB 統一記憶體，AI 算力達 1 petaflop，可在本地執行超過 1200 億參數模型，完全不需雲端 API，預計 2026 年底美國上市，售價 $3,000–3,500 美元。",
+      "source_urls": [
+        {"name": "VentureBeat", "url": "https://venturebeat.com/infrastructure/microsoft-debuts-surface-rtx-spark-dev-box-to-run-large-ai-models-without-cloud-costs"}
+      ],
+      "tip": "對於需要大量 AI 生成工作的重度用戶，本地端 AI 工作站將成為長期降本選項。"
+    },
+    {
+      "title": "Deezer Remix Lab — 授權音樂讓粉絲改版並支付版稅",
+      "content": "Deezer 推出 Remix Lab，允許粉絲在取得藝人授權後對歌曲進行改編（調整節奏、加混響、變換曲風等），且不使用 AI 生成，每次串流都支付版稅給原藝人，目前在法國測試中。",
+      "source_urls": [
+        {"name": "TechCrunch", "url": "https://techcrunch.com/2026/06/24/deezer-says-its-new-feature-lets-fans-remix-songs-with-artist-consent/"},
+        {"name": "Deezer Newsroom", "url": "https://newsroom-deezer.com/2026/06/deezer-launches-remix-lab-and-lets-fans-remix-songs/"}
+      ],
+      "tip": "有在用 Suno 做音樂創作的人，可關注這類「人機共創 + 版權合規」的音樂平台趨勢。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "Agentic AI 從實驗進入主流商業應用",
+      "content": "2026 年 6 月標誌著 AI Agent 從問答工具升級為「接管工作流」的關鍵轉折點。AWS、Google Cloud、Microsoft 等巨頭都以 Agent 為核心更新自家平台；ChatGPT Agent 現在能自主執行多步驟網頁操作、填表、串接 App，不再只是生成文字。市場問題已從「AI Agent 有效嗎？」轉變為「我公司哪個部門先被 Agent 化？」",
+      "tip": "行銷職能（競品追蹤、數據報表、社群排程）是最容易被 AI Agent 接手的工作，主動掌握相關工具能成為職場加分點，也是轉職時的差異化競爭力。"
+    },
+    {
+      "title": "AI 內容創作者工具「平台鎖定戰」開打",
+      "content": "Meta（Facebook Creator App）、Adobe（87% 創作者已用 AI 加速成長）、Figma（Design Agent）等平台都在把 AI 能力內建進自家工具，讓創作者不需要離開平台就能完成全流程。這場鎖定戰將重塑數位行銷從業者的工具選擇。",
+      "tip": "現在選擇主力工具平台比以往更重要，平台綁定程度更深；建議在選用前評估各平台的 AI 開放性與可移植性。"
+    },
+    {
+      "title": "AI 副業需求逆勢成長，「人的溫度」成稀缺資源",
+      "content": "儘管 AI 大量滲透，專業 LinkedIn 代筆、SEO 策略顧問、品牌聲音設計等需要人類判斷力的工作反而需求增加。Adobe 報告指出 87% 創作者認為 AI 加速了業務成長，但「有個人視角的內容」市場需求也在同步上升。",
+      "tip": "15 年品牌策略經驗是 AI 難以取代的深度判斷力，轉職或接案時可將「AI 驅動的品牌策略顧問」作為獨特定位。"
+    }
+  ],
+  "tips_summary": [
+    "GPT-5.6 / Claude 4.8 / Gemini 3.5 → 評估 AI Agent 自動化行銷工作流（競品、報告）",
+    "Facebook Creator AI App → 申請測試資格，節省社群互動時間",
+    "Figma Config 2026 → 與設計夥伴探索 AI 素材加速流程",
+    "Anthropic / OpenAI IPO → 提早研究科技股投資機會",
+    "Gemini Daily Brief → 整合 Gmail + Calendar 的每日晨間摘要",
+    "Microsoft Dev Box → 留意本地端 AI 算力的長期降本趨勢",
+    "Deezer Remix Lab → 關注 AI 音樂授權新模式對自媒體配樂的影響",
+    "Agentic AI 主流化 → 主動學習 Agent 工具，建立轉職差異化競爭力",
+    "平台 AI 鎖定戰 → 選工具前評估開放性與可移植性",
+    "人類判斷力稀缺 → 以「AI 驅動品牌策略顧問」定位差異化"
+  ],
+  "generated_at": "2026-06-25 07:00"
+}

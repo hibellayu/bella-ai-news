@@ -3,17 +3,18 @@
 Build news.json for the Bella AI News viewer.
 
 Sources (JSON takes priority over MD for the same date):
-  1. ai-news-github/digests/*.json  — structured JSON from Cowork (preferred)
-  2. 日報AI新聞動態/AI日報_YYYYMMDD.md — MD backups (fallback for older entries)
+  1. digests/*.json  — structured JSON (preferred)
+  2. 日報AI新聞動態/AI日報_YYYYMMDD.md — MD backups, local-only fallback
 
 Usage: python scripts/build.py
 """
 import os, json, re, glob
 from datetime import datetime
 
-BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-JSON_DIR = os.path.join(BASE, "ai-news-github/digests")
-MD_DIR   = os.path.join(BASE, "日報AI新聞動態")
+BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+JSON_DIR = os.path.join(BASE, "digests")
+_md_path = os.path.join(BASE, "日報AI新聞動態")
+MD_DIR   = _md_path if os.path.isdir(_md_path) else None
 OUTPUT   = os.path.abspath(os.path.join(os.path.dirname(__file__), "../news.json"))
 
 
@@ -183,11 +184,12 @@ def entry_from_md(filepath: str) -> dict | None:
 def main():
     entries: dict[str, dict] = {}
 
-    # 1. Load MD files first (lower priority)
-    for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md")):
-        entry = entry_from_md(f)
-        if entry:
-            entries[entry["date"]] = entry
+    # 1. Load MD files first (lower priority, local-only)
+    if MD_DIR:
+        for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md")):
+            entry = entry_from_md(f)
+            if entry:
+                entries[entry["date"]] = entry
 
     # 2. Overwrite with JSON files (higher priority, skip manifest.json)
     for f in glob.glob(os.path.join(JSON_DIR, "????????.json")):
@@ -205,7 +207,7 @@ def main():
         json.dump(sorted_entries, f, ensure_ascii=False, indent=2)
 
     json_count = sum(1 for f in glob.glob(os.path.join(JSON_DIR, "????????.json")))
-    md_count   = sum(1 for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md")))
+    md_count   = sum(1 for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md"))) if MD_DIR else 0
     print(f"JSON 來源：{json_count} 篇　MD 來源：{md_count} 篇　合計輸出：{len(sorted_entries)} 篇")
     print(f"→ {OUTPUT}")
 
