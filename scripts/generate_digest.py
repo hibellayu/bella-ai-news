@@ -17,7 +17,7 @@ def get_target_date():
     if os.environ.get("TARGET_DATE"):
         d = datetime.strptime(os.environ["TARGET_DATE"], "%Y%m%d").replace(tzinfo=TAIPEI)
     else:
-        d = datetime.now(TAIPEI) - timedelta(days=1)
+        d = datetime.now(TAIPEI)
     return d.strftime("%Y%m%d"), d.strftime("%Y年%m月%d日"), d.strftime("%Y-%m-%d"), d
 
 
@@ -145,7 +145,7 @@ def generate_digest(articles, date_key, display_date, date_iso):
 
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=4096,
+        max_tokens=8192,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
     )

@@ -2,11 +2,11 @@ name: Daily AI News Digest
 
 on:
   schedule:
-    - cron: '0 23 * * *'   # UTC 23:00 = 台北時間 07:00
+    - cron: '30 15 * * *'  # UTC 15:30 = 台北時間 23:30
   workflow_dispatch:
     inputs:
       date:
-        description: '補跑指定日期（YYYYMMDD），留空則自動抓昨天'
+        description: '補跑指定日期（YYYYMMDD），留空則自動抓今天'
         required: false
 
 jobs:
