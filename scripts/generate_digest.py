@@ -14,11 +14,22 @@ TAIPEI = ZoneInfo("Asia/Taipei")
 # ── 日期 ────────────────────────────────────────────────────────────────────────
 
 def get_target_date():
+    """
+    display_d = 日報名稱（生成當日，filename / header 用）
+    data_d    = 資料收集範圍（D-1，文章篩選用）
+    """
     if os.environ.get("TARGET_DATE"):
-        d = datetime.strptime(os.environ["TARGET_DATE"], "%Y%m%d").replace(tzinfo=TAIPEI)
+        display_d = datetime.strptime(os.environ["TARGET_DATE"], "%Y%m%d").replace(tzinfo=TAIPEI)
     else:
-        d = datetime.now(TAIPEI)
-    return d.strftime("%Y%m%d"), d.strftime("%Y年%m月%d日"), d.strftime("%Y-%m-%d"), d
+        display_d = datetime.now(TAIPEI)
+    data_d = display_d - timedelta(days=1)
+    return (
+        display_d.strftime("%Y%m%d"),       # date_key
+        display_d.strftime("%Y年%m月%d日"),  # display_date
+        display_d.strftime("%Y-%m-%d"),      # date_iso
+        data_d,                              # target_date（文章篩選）
+        data_d.strftime("%Y-%m-%d"),         # data_date_iso（顯示用）
+    )
 
 
 # ── RSS 來源（PRD F2）────────────────────────────────────────────────────────────
@@ -37,6 +48,8 @@ RSS_FEEDS = [
     ("iThome",              "https://www.ithome.com.tw/rss"),
     ("數位時代",             "https://www.bnext.com.tw/rss"),
     ("INSIDE",              "https://www.inside.com.tw/feed"),
+    ("科技新報",             "https://technews.tw/category/ai/feed/"),
+    ("AI郵報",              "https://www.aiposthub.com/feed/"),
 ]
 
 AI_KEYWORDS = [
@@ -77,7 +90,7 @@ def fetch_articles(target_date):
 
 # ── Claude API 整理 ───────────────────────────────────────────────────────────────
 
-def generate_digest(articles, date_key, display_date, date_iso):
+def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
     client = anthropic.Anthropic()
 
     articles_text = "\n\n".join([
@@ -100,7 +113,7 @@ def generate_digest(articles, date_key, display_date, date_iso):
 避免：「旨在」「總的來說」等冗詞"""
 
     user_prompt = f"""今天是 {display_date}（台北時間）。
-以下是從各 AI 媒體抓取到的昨日新聞，請整理成日報 JSON。
+以下是從各 AI 媒體抓取到的昨日（{data_date_iso}）新聞，請整理成日報 JSON。
 
 新聞列表：
 {articles_text}
@@ -110,6 +123,7 @@ def generate_digest(articles, date_key, display_date, date_iso):
   "date": "{date_iso}",
   "date_key": "{date_key}",
   "display_date": "{display_date}",
+  "data_date": "{data_date_iso}",
   "summary": "今日精選：N 條 AI 相關動態｜聚焦 [2–3 個關鍵詞]",
   "big_news": [
     {{
@@ -159,7 +173,7 @@ def generate_digest(articles, date_key, display_date, date_iso):
 # ── Main ──────────────────────────────────────────────────────────────────────────
 
 def main():
-    date_key, display_date, date_iso, target_date = get_target_date()
+    date_key, display_date, date_iso, target_date, data_date_iso = get_target_date()
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.join(script_dir, f"../digests/{date_key}.json")
 
@@ -167,14 +181,13 @@ def main():
         print(f"⏭️  {date_key}.json 已存在，跳過")
         sys.exit(0)
 
-    print(f"📅 目標日期：{display_date}")
+    print(f"📅 日報日期：{display_date}｜資料收集：{data_date_iso}")
     print(f"📡 抓取 RSS 來源（{len(RSS_FEEDS)} 個）...")
     articles = fetch_articles(target_date)
     print(f"✅ 找到 {len(articles)} 條 AI 相關文章")
 
     if len(articles) < 3:
         print("⚠️  文章數量不足（< 3 條），嘗試放寬條件...")
-        # 放寬：不過濾關鍵字，只過濾日期
         articles = []
         for source_name, url in RSS_FEEDS:
             try:
@@ -200,7 +213,7 @@ def main():
         sys.exit(1)
 
     print("🤖 呼叫 Claude API 整理日報...")
-    digest = generate_digest(articles, date_key, display_date, date_iso)
+    digest = generate_digest(articles, date_key, display_date, date_iso, data_date_iso)
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:

@@ -39,6 +39,21 @@ def entry_from_json(filepath: str) -> dict | None:
     summary = d.get("summary", "")
 
     html_parts = [f"<h1>{title}</h1>"]
+
+    # 資料收集說明
+    data_date = d.get("data_date", "")
+    if data_date:
+        html_parts.append(
+            f'<div class="data-note">'
+            f'<p>📡 <strong>資料收集說明</strong></p>'
+            f'<p>台灣媒體（iThome、數位時代、INSIDE、科技新報、AI郵報）<br>'
+            f'收集 {data_date} 00:00–23:59（台北時間）發布的文章</p>'
+            f'<p>國際媒體（TechCrunch、VentureBeat、Wired 等）<br>'
+            f'以台北時間為基準收集 {data_date} 當日文章<br>'
+            f'因美東時差約 -13 小時，對應美東前一日上午 ～ {data_date} 上午的報導</p>'
+            f'</div>'
+        )
+
     if summary:
         html_parts.append(f"<blockquote>{summary}</blockquote>")
 
