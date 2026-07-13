@@ -1,0 +1,159 @@
+{
+  "date": "2026-07-14",
+  "date_key": "20260714",
+  "display_date": "2026年07月14日",
+  "data_date": "2026-07-13",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦模型定價戰、資安新威脅、AI 疲勞現象",
+  "big_news": [
+    {
+      "title": "蘋果控告 OpenAI 系統性竊取商業機密，逾 400 名前員工已跳槽",
+      "content": "蘋果正式向美國聯邦法院提告 OpenAI 及旗下硬體新創 io Products，指控 OpenAI 透過招募、面試與供應鏈合作等管道，持續取得蘋果未公開產品設計與供應鏈機密。此案牽涉逾 400 名前蘋果員工跳槽 OpenAI，兩家 AI 巨頭的法律攻防正式開打。這場訴訟可能讓整個 AI 硬體生態的人才流動規則與 NDA 執行標準被重新檢視。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/177258"
+        }
+      ],
+      "tip": "【What】AI 公司之間的人才競爭已升級到法律層面，暗示 AI 硬體與應用的「秘密研發競賽」比外界想像的激烈。【So What】品牌若正在評估與 AI 硬體新創合作，需更謹慎審查對方的技術來源與法律風險，合作踩雷的代價正在提高。【Now What】這週盤點你目前使用或洽談中的 AI 工具供應商，確認其技術來源是否有未解決的 IP 爭議，避免品牌聲譽受到波及。"
+    },
+    {
+      "title": "Meta AI 圖像生成引發版權爭議，Muse Image 下架 @ 公開帳號功能",
+      "content": "Meta 發表圖像生成模型 Muse Image，支援在 Meta AI 中 @ 標註公開 Instagram 帳號來參考生成圖像，但此功能迅速引發創作者強烈反彈，Meta 已緊急撤下。這個事件再次點燃 AI 生成圖像與原創者版權之間的核心矛盾，也讓品牌在使用 AI 圖像工具時的合規壓力更高。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/13/meta-suspends-ai-image-feature/"
+        },
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/meta-ai-7-yue-shang-xun-da-bao-fa-muse-mu-xing-iris-ke-zhi-jing-pian-yu-gu-jia-biao-sheng-quan-jie-xi/"
+        }
+      ],
+      "tip": "【What】AI 生成圖像工具若允許「參考特定創作者風格」，已踩入版權地雷區，品牌跟進使用前必須確認工具的訓練資料來源與使用條款。【So What】社群行銷團隊若大量依賴 AI 圖像生成，使用有版權爭議的素材可能讓品牌成為連帶受害方，競爭對手也可能用此作為輿論攻擊點。【Now What】這週審查你的 AI 圖像生成工具（如 Midjourney、Adobe Firefly、Meta AI），確認其是否有「參考公開帳號或特定創作者」功能，暫時停用此類功能並記錄審查結果。"
+    },
+    {
+      "title": "Phia AI 購物 App 遭控暗植 Cookie 偷走行銷分潤，比爾蓋茲女兒新創爆醜聞",
+      "content": "由比爾蓋茲小女兒 Phoebe Gates 共同創辦的 AI 購物推薦 App「Phia」，被彭博社與研究人員指控透過偽造點擊暗植 Cookie，不當竊取聯盟行銷（affiliate）分潤。這不只是新創公信力危機，更是 AI 購物推薦工具是否能信任的警訊，直接衝擊品牌商的聯盟行銷佈局。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://infosecu.technews.tw/2026/07/13/phoebe-gates-ai-shopping-app-phia-reportedly-claimed-unearned-affiliate-sales-through-fake-clicks/"
+        }
+      ],
+      "tip": "【What】AI 購物推薦工具若暗中操弄 Cookie 歸因，品牌的聯盟行銷數據會被污染，ROI 分析完全失真。【So What】電商品牌與使用聯盟行銷的團隊，都面臨「AI 流量來源是否可信」的核查壓力；廣告代理商也需要向客戶說明歸因清查機制。【Now What】這週登入你的聯盟行銷後台，篩選近 30 天「首次接觸來源為 AI 購物工具或 App 導流」的轉換紀錄，比對轉換路徑是否異常集中，發現問題立即暫停該來源合作。"
+    },
+    {
+      "title": "AI 大廠「合理使用」雙標風波：爬別人資料叫合理使用，自家模型被抄卻喊侵權",
+      "content": "Business Insider 指出，Anthropic、OpenAI 等 AI 巨頭一方面以「合理使用」為由大量爬取網路內容訓練模型，另一方面卻在自家模型輸出遭仿製時高舉版權大旗。這場雙標批評在創作者社群引發強烈共鳴，也讓「AI 訓練資料倫理」議題的討論熱度再次升溫。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/13/ai-giants-learn-what-everyone-else-on-the-modern-internet-already-knows/"
+        }
+      ],
+      "tip": "【What】AI 公司的版權雙標問題正在加速推動各國立法，品牌未來使用 AI 生成內容的合規成本會上升。【So What】內容創作者、出版品牌、媒體代理商是最直接受影響的族群，他們的內容授權談判籌碼正在增加。【Now What】這週整理你的品牌內容資產清單，確認哪些內容已被 AI 爬取、是否有 robots.txt 設定保護，並評估是否需要加入 AI 訓練內容授權標示（如 C2PA 標準）。"
+    },
+    {
+      "title": "DeepSeek 降價 75%，但 AI Agent 的 100 倍 Token 消耗讓省錢效果幾乎歸零",
+      "content": "DeepSeek 大幅削減 V4-Pro 模型定價，理論上對企業是利多，但 VentureBeat 分析指出，AI Agent 系統的 Token 消耗速度遠超過降價幅度，導致整體推論成本壓力依然沉重。這意味著「模型便宜了，跑 Agent 還是很貴」的矛盾正在困擾各大企業 AI 導入計畫。",
+      "source_urls": [
+        {
+          "name": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/deepseek-cut-prices-75-the-100x-problem-remains"
+        }
+      ],
+      "tip": "【What】AI Agent 的 Token 使用量與成本結構，和傳統 API 呼叫完全不同，行銷自動化導入 Agent 前必須先做成本建模。【So What】正在評估或已導入 AI 行銷自動化（如內容批量生產、社群排程 Agent）的團隊，實際成本可能比概念驗證階段高出 10 倍以上。【Now What】這週為你現有的 AI 工作流程計算一次真實 Token 消耗量，對比每月預算，若超出 20% 就需要重新設計 Agent 的 prompt 長度與呼叫頻率。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Claude Fable 5 — 付費訂閱用戶使用期限再延長至 7/19",
+      "content": "Anthropic 宣布二度延長 Claude Fable 5 的使用期限，所有付費訂閱用戶可免費多用一週至 7 月 19 日，無額外收費。與此同時，OpenAI 也暫時移除 GPT-5.6 Sol 的 5 小時使用限制，兩大 AI 平台幾乎同步祭出讓利措施搶奪重度用戶黏性。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/13/anthropic-again-extends-access-to-claude-fable-5-on-all-paid-plans-through-july-19/"
+        },
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/ai-model-quota-war-claude-fable-5-vs-chatgpt-5-6-sol-2/"
+        }
+      ],
+      "tip": "【What】AI 平台正從「功能競賽」轉向「使用時長競賽」，這代表他們更在乎你的工作流程是否依賴他們，而不只是你覺得模型好不好用。【So What】對行銷團隊來說，這是免費測試高階模型在實際內容生產流程中表現的黃金視窗，現在不用白不用。【Now What】在 7/19 截止前，把一個你平常用 GPT-4 跑的內容工作流程（如競品分析、EDM 主旨 A/B 測試）改用 Claude Fable 5 跑一遍，記錄輸出品質差異，作為下一輪訂閱選擇的依據。"
+    },
+    {
+      "title": "Waze — 整合 Google Gemini AI，新增個人化與智慧功能",
+      "content": "Waze 更新導入 Google Gemini AI 助理，帶來更智慧的路況預測與個人化導航體驗，同時升級客製化選項以強化與 Apple Maps 的競爭力。這是 Google 將 Gemini 全面整合進旗下產品的具體行動之一，也反映 AI 助理正從獨立工具滲透進日常消費行為路徑。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/13/waze-adds-new-ai-powered-features-and-customization-updates/"
+        }
+      ],
+      "tip": "【What】Gemini 進入 Waze 代表 Google 的 AI 觸角已延伸至「移動中的消費決策時刻」，對在地商家與 LBS 廣告的影響不可忽視。【So What】使用 Google 在地廣告（Local Campaigns）的品牌，未來廣告觸及時機可能被 Gemini 的導航推薦邏輯影響，早佈局「AI 推薦友善」的商家資料越有優勢。【Now What】這週登入 Google 商家檔案（Google Business Profile），確認你的營業時間、照片、評論回覆是否都是最新狀態，這些是 Gemini 推薦演算法的基礎訓練資料。"
+    },
+    {
+      "title": "Claude Code — Anthropic 公開 AI Agent 的 4 種 Loop 設計框架",
+      "content": "Anthropic 官方整理了 Claude Code 的 4 種 Agent 循環設計：Turn-based（回合制）、Goal-based（目標導向）、Time-based（時間觸發）與 Proactive（主動式），並說明各自適用情境、驗證方式與 Token 控制重點。這份框架讓開發者與行銷自動化設計者能更系統化地架構 AI 工作流程。",
+      "source_urls": [
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/claude-code-agent-loops-guide/"
+        }
+      ],
+      "tip": "【What】這套 Loop 框架不只是給工程師用的，行銷自動化設計者也能用它來思考「這個自動化任務應該在什麼條件下停止、什麼條件下繼續」。【So What】目前市面上大多數 AI 行銷工具的工作流程設計都屬於 Turn-based，升級到 Goal-based 或 Proactive 模式可以大幅減少人工干預次數。【Now What】這週把你目前最常用的一個 AI 自動化流程（如社群貼文批量生產）用這 4 種 Loop 框架重新描述一遍，找出哪個環節缺少「停止條件」，補上去後重跑看是否減少錯誤輸出。"
+    },
+    {
+      "title": "Anthropic Claude — 印度盧比計價訂閱方案正式上線",
+      "content": "Anthropic 開始針對印度市場推出本地盧比計價的訂閱方案，反映印度已成為 Claude 美國以外最大市場。本地化定價是 AI 工具打入新興市場的標準動作，也暗示 Anthropic 正在將全球市場策略從北美中心轉向多極佈局。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/13/anthropic-starts-localizing-claude-pricing-for-india-its-biggest-market-after-the-us/"
+        }
+      ],
+      "tip": "【What】AI 工具本地化定價代表這些平台開始認真經營非英語母語市場，繁體中文市場（台灣、香港）的本地化定價跟服務品質可能也在觀察名單上。【So What】對台灣的數位行銷從業者來說，越早熟練使用英語介面的 AI 工具，就越能在本地化版本上市前建立競爭優勢，不等本地化才開始學。【Now What】這週挑一個你還沒用過的 Claude 功能（如 Projects 或 Artifacts），花 30 分鐘跟著官方文件做一個行銷用途的實際測試，建立使用習慣。"
+    },
+    {
+      "title": "AI 競賽進入「省錢」時代 — OpenAI、xAI、Meta 新模型齊打成本效率牌",
+      "content": "OpenAI、xAI 與 Meta 上週相繼推出強調「推理能力與成本效率並進」的新模型，AI 軍備競賽的主旋律從「誰的模型更強」轉向「誰讓你用得更划算」。這對需要大量 AI 生成內容的行銷團隊來說，意味著每月 AI 工具預算的使用效益有望持續提升。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/13/competition-to-develop-more-cost-efficient-ai-models/"
+        }
+      ],
+      "tip": "【What】模型成本效率競爭加速，意味著今天貴的 AI 功能，三到六個月後可能便宜一半，行銷預算規劃需要更動態地重新分配。【So What】目前以「成本太高」為理由擱置 AI 導入的品牌，很快會失去這個藉口；先行者正在用低成本建立工作流程護城河。【Now What】這週列出你的行銷預算中，哪三件事最耗人工時間但內容重複性高（如週報整理、競品監測、廣告文案變體），找一個對應的 AI 工具試跑，計算省下的人力時數。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI 疲勞正在蔓延：工具越多、生產力越高，但人也越空洞",
+      "content": "Midjourney 創辦人 David Holz 在 X 發文引爆共鳴，描述許多工程師使用 AI Coding 工具後「更有生產力但極度疲憊」的矛盾處境。科技新報同日報導「AI 正悄悄取代職場人際關係」，演算法開始代替人與人的溝通，專家示警這是難以量化卻真實存在的組織副作用。",
+      "tip": "【What】AI 疲勞不只是個人感受，它會影響團隊創意品質與品牌溝通的「人味」，這對需要情感共鳴的品牌內容策略是直接威脅。【So What】過度自動化的品牌內容會開始顯得千篇一律，反而讓「有溫度的品牌聲音」成為差異化競爭優勢，回歸人工創作的品牌可能因此脫穎而出。【Now What】這週做一個小實驗：挑一篇即將發布的品牌貼文，把「完全 AI 生成版本」與「人工潤稿版本」的互動率做比較，讓數據告訴你受眾是否感受得到差異。"
+    },
+    {
+      "title": "CIPA 與數位追蹤法規收緊，行銷人的 Cookie 時代正式進入倒數",
+      "content": "MarTech 報導 CIPA（加州侵入性隱私法）正在改變企業對數位追蹤與同意機制的整體思路，促使行銷人重新檢視數據收集策略。這個趨勢與 AI 購物 App Phia 的 Cookie 偽造醜聞同日爆發，讓「第一方數據策略」的重要性在一天內被放大了兩次。",
+      "tip": "【What】依賴第三方 Cookie 與聯盟行銷追蹤的廣告策略，正面臨法規與技術的雙重壓縮，第一方數據建設不再是「未來計畫」而是「現在緊急任務」。【So What】沒有自有 CRM 與訂閱名單的品牌，在 Cookie 全面失效後廣告再行銷能力會大幅下降，競爭對手若已建立第一方數據護城河，差距將在 2027 年迅速拉大。【Now What】這週評估你的官網是否已設置符合最新規範的 Cookie 同意橫幅，並新增一個主動收集第一方數據的入口（如 newsletter 訂閱、會員專屬內容），目標是這個月多收 100 筆同意名單。"
+    },
+    {
+      "title": "AI 安全威脅全面升級：Vibe Coding 惡意工具、圖片提示注入、PhaaS 釣魚平台同步爆發",
+      "content": "iThome 與科技新報同日報導三起 AI 相關資安事件：攻擊者用 Vibe Coding 快速製造 AD 資訊竊取工具、研究員示範將提示注入藏進 PNG 圖片攻擊 AI 助理、新型 PhaaS 平台 Forg365 用 AI 鎖定 Microsoft 365 帳號。AI 降低了攻擊者的技術門檻，威脅的多樣性與速度都在加快。",
+      "tip": "【What】AI 生成圖像、AI 助理、AI Coding 工具這三個行銷團隊最常用的功能，現在同時也是攻擊者的入侵向量，資安不再只是 IT 部門的事。【So What】品牌社群帳號、行銷自動化平台、廣告後台一旦被入侵，不只是數據損失，還可能發布假內容損害品牌形象，且修復時間遠比技術恢復更長。【Now What】這週為你的 Meta Business Suite、Google Ads、HubSpot 等核心行銷工具帳號開啟雙重驗證（2FA），並確認團隊成員的帳號權限是否最小化原則設定，移除離職或不活躍成員的存取權限。"
+    }
+  ],
+  "tips_summary": [
+    "蘋果告 OpenAI → 這週盤點合作 AI 工具的 IP 來源風險，避免品牌成為法律連帶受害方",
+    "Meta Muse Image 下架 → 審查現用 AI 圖像工具是否有「參考公開帳號」功能，暫時停用以規避版權風險",
+    "Phia Cookie 醜聞 → 登入聯盟行銷後台，篩查近 30 天 AI 導流轉換路徑是否異常",
+    "Claude Fable 5 延長至 7/19 → 把一個慣用 GPT-4 的工作流程改用 Fable 5 跑，記錄輸出差異",
+    "DeepSeek 降價但 Token 成本不降 → 計算現有 AI 自動化流程的真實 Token 消耗，對比月預算並重設呼叫頻率",
+    "Waze 整合 Gemini → 更新 Google 商家檔案，讓 AI 推薦演算法抓得到最新店家資料",
+    "Claude Code 4 種 Loop 框架 → 重新描述你的 AI 自動化流程，補上缺少的「停止條件」",
+    "CIPA 追蹤法規收緊 → 設置合規 Cookie 同意橫幅 + 新增第一方數據收集入口，這個月目標多 100 筆同意名單",
+    "AI 疲勞趨勢 → 對比 AI 生成與人工潤稿貼文的互動率，用數據決定品牌內容的人機比例",
+    "AI 資安威脅三連爆 → 為核心行銷工具帳號開啟 2FA，移除不活躍成員的存取權限"
+  ],
+  "generated_at": "2026-07-14 07:43"
+}
