@@ -63,22 +63,6 @@
       justify-content: flex-end;
       flex-wrap: wrap;
     }
-    select {
-      font-family: inherit;
-      font-size: 0.82rem;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      border-radius: 6px;
-      padding: 0.45rem 0.75rem;
-      outline: none;
-      transition: border-color 0.15s;
-      min-width: 130px;
-      cursor: pointer;
-    }
-    select:focus {
-      border-color: var(--accent-light);
-    }
     .count-badge {
       font-size: 0.72rem;
       color: var(--text-muted);
@@ -100,6 +84,7 @@
     .sidebar {
       position: sticky;
       top: 80px;
+      min-width: 0;
     }
     .sidebar-title {
       font-size: 0.62rem;
@@ -378,7 +363,7 @@
     /* ── Mobile ── */
     @media (max-width: 620px) {
       .main { grid-template-columns: 1fr; }
-      .sidebar { display: none; }
+      .sidebar { position: static; margin-bottom: 1.25rem; }
       .header-inner { gap: 0.5rem; }
       .site-title { font-size: 0.9rem; }
       .twn-row { grid-template-columns: 74px 1fr; gap: 0.6rem; padding: 0.6rem 0.7rem; }
@@ -391,9 +376,6 @@
   <div class="header-inner">
     <div class="site-title">📰 Bella's AI 日報</div>
     <div class="controls">
-      <select id="dateSelect">
-        <option value="">全部日期</option>
-      </select>
       <span class="count-badge" id="countBadge"></span>
     </div>
   </div>
@@ -435,17 +417,7 @@ async function loadData() {
 }
 
 function buildUI() {
-  const dateSelect = document.getElementById('dateSelect');
-
-  allEntries.forEach(entry => {
-    entryDateSet.add(entry.date);
-
-    const opt = document.createElement('option');
-    opt.value = entry.date;
-    const d = new Date(entry.date + 'T00:00:00');
-    opt.textContent = `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
-    dateSelect.appendChild(opt);
-  });
+  allEntries.forEach(entry => entryDateSet.add(entry.date));
 
   if (allEntries.length) {
     const latest = new Date(allEntries[0].date + 'T00:00:00');
@@ -598,7 +570,6 @@ function filter() {
 
 function setActiveDate(date) {
   activeDate = date;
-  document.getElementById('dateSelect').value = date;
 
   if (date) {
     const d = new Date(date + 'T00:00:00');
@@ -612,10 +583,6 @@ function setActiveDate(date) {
     document.querySelector('.article-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-
-document.getElementById('dateSelect').addEventListener('change', e => {
-  setActiveDate(e.target.value);
-});
 
 loadData().catch(() => {
   document.getElementById('articleList').innerHTML =
