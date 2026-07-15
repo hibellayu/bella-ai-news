@@ -86,21 +86,57 @@
       top: 80px;
       min-width: 0;
     }
-    .sidebar-title {
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-    }
-
-    /* ── Calendar ── */
-    .calendar {
+    .calendar-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
+      padding: 0.6rem 0.85rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .calendar-toggle:hover { border-color: var(--accent-light); }
+    .calendar-toggle.is-open { border-radius: 10px 10px 0 0; border-bottom-color: var(--surface); }
+    .calendar-toggle-title {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .calendar-toggle-hint {
+      font-size: 0.72rem;
+      color: var(--accent);
+      flex: 1;
+      min-width: 0;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .calendar-toggle-arrow {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      transition: transform 0.18s;
+      flex-shrink: 0;
+    }
+    .calendar-toggle.is-open .calendar-toggle-arrow { transform: rotate(90deg); }
+
+    /* ── Calendar ── */
+    .calendar {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
       padding: 0.85rem;
     }
+    .calendar.open { display: block; }
     .calendar-header {
       display: flex;
       align-items: center;
@@ -383,7 +419,11 @@
 
 <div class="main">
   <aside class="sidebar">
-    <div class="sidebar-title">日期選擇</div>
+    <button class="calendar-toggle" id="calendarToggle" type="button" aria-expanded="false">
+      <span class="calendar-toggle-title">日期選擇</span>
+      <span class="calendar-toggle-hint" id="calendarToggleHint"></span>
+      <span class="calendar-toggle-arrow">▸</span>
+    </button>
     <div class="calendar" id="calendar">
       <div class="calendar-header">
         <button class="cal-nav-btn" id="calPrev" type="button" aria-label="上個月">‹</button>
@@ -409,6 +449,7 @@ let activeDate = '';
 let entryDateSet = new Set();
 let calYear = 0, calMonth = 0;   // calMonth: 1-12
 let minYM = 0, maxYM = 0;        // year*12+month bounds
+let calendarOpen = false;
 
 async function loadData() {
   const res = await fetch('news.json');
@@ -440,8 +481,27 @@ function buildUI() {
   });
   document.getElementById('calReset').addEventListener('click', () => setActiveDate(''));
 
+  document.getElementById('calendarToggle').addEventListener('click', () => {
+    setCalendarOpen(!calendarOpen);
+  });
+
   renderCalendar();
+  updateCalendarToggleHint();
   renderArticles(allEntries);
+}
+
+function setCalendarOpen(open) {
+  calendarOpen = open;
+  document.getElementById('calendar').classList.toggle('open', calendarOpen);
+  document.getElementById('calendarToggle').classList.toggle('is-open', calendarOpen);
+  document.getElementById('calendarToggle').setAttribute('aria-expanded', String(calendarOpen));
+}
+
+function updateCalendarToggleHint() {
+  const hint = document.getElementById('calendarToggleHint');
+  if (!activeDate) { hint.textContent = ''; return; }
+  const d = new Date(activeDate + 'T00:00:00');
+  hint.textContent = `已選 ${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
 }
 
 function pad2(n) { return String(n).padStart(2, '0'); }
@@ -577,6 +637,7 @@ function setActiveDate(date) {
     calMonth = d.getMonth() + 1;
   }
   renderCalendar();
+  updateCalendarToggleHint();
   filter();
 
   if (date) {
