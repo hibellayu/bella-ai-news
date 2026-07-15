@@ -59,22 +59,11 @@
       gap: 0.6rem;
       flex: 1;
       min-width: 0;
+      align-items: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
     }
-    .search-wrap {
-      position: relative;
-      flex: 1;
-      min-width: 160px;
-    }
-    .search-wrap svg {
-      position: absolute;
-      left: 0.65rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    input[type="search"], select {
+    select {
       font-family: inherit;
       font-size: 0.82rem;
       border: 1px solid var(--border);
@@ -84,23 +73,16 @@
       padding: 0.45rem 0.75rem;
       outline: none;
       transition: border-color 0.15s;
-    }
-    input[type="search"] {
-      padding-left: 2rem;
-      width: 100%;
-    }
-    input[type="search"]:focus, select:focus {
-      border-color: var(--accent-light);
-    }
-    select {
       min-width: 130px;
       cursor: pointer;
+    }
+    select:focus {
+      border-color: var(--accent-light);
     }
     .count-badge {
       font-size: 0.72rem;
       color: var(--text-muted);
       white-space: nowrap;
-      align-self: center;
     }
 
     /* ── Layout ── */
@@ -126,64 +108,102 @@
       margin-bottom: 0.6rem;
       font-weight: 500;
     }
-    .tree {
-      list-style: none;
-      max-height: calc(100vh - 140px);
-      overflow-y: auto;
-    }
-    .tree::-webkit-scrollbar { width: 4px; }
-    .tree::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-    /* Year row */
-    .tree-year > .tree-label {
+    /* ── Calendar ── */
+    .calendar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem;
+    }
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.65rem;
+    }
+    .cal-nav-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text-muted);
+      width: 1.6rem;
+      height: 1.6rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.12s, color 0.12s;
+    }
+    .cal-nav-btn:hover:not(:disabled) { background: var(--border); color: var(--text); }
+    .cal-nav-btn:disabled { opacity: 0.3; cursor: default; }
+    .cal-month-label {
       font-size: 0.78rem;
       font-weight: 500;
       color: var(--text);
-      padding: 0.4rem 0.5rem;
-      cursor: pointer;
+      letter-spacing: 0.02em;
+    }
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+    .cal-day {
+      aspect-ratio: 1;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      justify-content: center;
+      font-size: 0.72rem;
       border-radius: 5px;
-      user-select: none;
-    }
-    .tree-year > .tree-label:hover { background: var(--border); }
-    .tree-year > .tree-label .arrow { font-size: 0.55rem; color: var(--text-muted); transition: transform 0.18s; }
-    .tree-year.open > .tree-label .arrow { transform: rotate(90deg); }
-
-    /* Month row */
-    .tree-month-list { display: none; padding-left: 0.75rem; }
-    .tree-year.open > .tree-month-list { display: block; }
-    .tree-month > .tree-label {
-      font-size: 0.75rem;
       color: var(--text-muted);
-      padding: 0.35rem 0.5rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      border-radius: 5px;
-      user-select: none;
+      position: relative;
     }
-    .tree-month > .tree-label:hover { background: var(--border); color: var(--text); }
-    .tree-month > .tree-label .arrow { font-size: 0.5rem; transition: transform 0.18s; }
-    .tree-month.open > .tree-label { color: var(--text); }
-    .tree-month.open > .tree-label .arrow { transform: rotate(90deg); }
-
-    /* Day row */
-    .tree-day-list { display: none; padding-left: 0.75rem; }
-    .tree-month.open > .tree-day-list { display: block; }
-    .date-item {
-      padding: 0.32rem 0.5rem;
-      font-size: 0.76rem;
+    .cal-day.pad { visibility: hidden; }
+    .cal-day.has-entry {
+      color: var(--text);
       cursor: pointer;
-      border-radius: 4px;
+      font-weight: 500;
+    }
+    .cal-day.has-entry::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent-light);
+    }
+    .cal-day.has-entry:hover { background: var(--border); }
+    .cal-day.active { background: var(--accent); color: #fff; }
+    .cal-day.active::after { background: #fff; }
+    .cal-day.empty { opacity: 0.35; }
+    .cal-reset {
+      margin-top: 0.7rem;
+      width: 100%;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.4rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      transition: background 0.12s, color 0.12s;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
     }
-    .date-item:hover { background: var(--border); color: var(--text); }
-    .date-item.active { background: var(--accent); color: #fff; font-weight: 500; }
-    .date-item.hidden { display: none; }
+    .cal-reset:hover { background: var(--border); color: var(--text); }
+    .cal-reset.is-filtered { border-color: var(--accent); color: var(--accent); }
 
     /* ── Articles ── */
     .articles { min-width: 0; }
@@ -203,7 +223,6 @@
       transition: box-shadow 0.15s;
     }
     .article-card:hover { box-shadow: 0 4px 16px rgba(44,35,24,0.12); }
-    .article-card.hidden { display: none; }
 
     .card-header {
       padding: 1rem 1.25rem 0.75rem;
@@ -314,26 +333,46 @@
       padding-top: 0.5rem;
       border-top: 1px solid var(--border);
     }
-    .card-body .tip {
-      font-size: 0.79rem;
-      color: var(--accent);
-      background: rgba(139,58,42,0.06);
-      border-radius: 5px;
-      padding: 0.45rem 0.7rem;
-      margin: 0.3rem 0 0.8rem;
-      line-height: 1.75;
-    }
     .card-body .sources {
       font-size: 0.72rem;
       color: var(--text-muted);
       margin-bottom: 0.3rem;
     }
     .card-body .sources a { font-size: 0.72rem; }
-    mark {
-      background: var(--highlight-bg);
+
+    /* ── What / So What / Now What card ── */
+    .twn-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0.4rem 0 0.9rem;
+      background: var(--bg);
+    }
+    .twn-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 0.9rem;
+      padding: 0.7rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .twn-row:last-child { border-bottom: none; }
+    .twn-label .en {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 600;
       color: var(--text);
-      border-radius: 2px;
-      padding: 0 2px;
+    }
+    .twn-label .zh {
+      display: block;
+      font-size: 0.66rem;
+      color: var(--accent);
+      margin-top: 2px;
+      letter-spacing: 0.02em;
+    }
+    .twn-content {
+      font-size: 0.81rem;
+      line-height: 1.85;
+      color: var(--text);
     }
 
     /* ── Mobile ── */
@@ -342,6 +381,7 @@
       .sidebar { display: none; }
       .header-inner { gap: 0.5rem; }
       .site-title { font-size: 0.9rem; }
+      .twn-row { grid-template-columns: 74px 1fr; gap: 0.6rem; padding: 0.6rem 0.7rem; }
     }
   </style>
 </head>
@@ -351,12 +391,6 @@
   <div class="header-inner">
     <div class="site-title">📰 Bella's AI 日報</div>
     <div class="controls">
-      <div class="search-wrap">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="search" id="searchInput" placeholder="搜尋關鍵字…" autocomplete="off">
-      </div>
       <select id="dateSelect">
         <option value="">全部日期</option>
       </select>
@@ -367,8 +401,19 @@
 
 <div class="main">
   <aside class="sidebar">
-    <div class="sidebar-title">日期索引</div>
-    <ul class="tree" id="dateTree"></ul>
+    <div class="sidebar-title">日期選擇</div>
+    <div class="calendar" id="calendar">
+      <div class="calendar-header">
+        <button class="cal-nav-btn" id="calPrev" type="button" aria-label="上個月">‹</button>
+        <span class="cal-month-label" id="calMonthLabel"></span>
+        <button class="cal-nav-btn" id="calNext" type="button" aria-label="下個月">›</button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <button class="cal-reset" id="calReset" type="button">顯示全部</button>
+    </div>
   </aside>
 
   <section class="articles" id="articleList">
@@ -379,6 +424,9 @@
 <script>
 let allEntries = [];
 let activeDate = '';
+let entryDateSet = new Set();
+let calYear = 0, calMonth = 0;   // calMonth: 1-12
+let minYM = 0, maxYM = 0;        // year*12+month bounds
 
 async function loadData() {
   const res = await fetch('news.json');
@@ -388,17 +436,10 @@ async function loadData() {
 
 function buildUI() {
   const dateSelect = document.getElementById('dateSelect');
-  const tree = document.getElementById('dateTree');
 
-  // Group: year → month → days
-  const grouped = {};
   allEntries.forEach(entry => {
-    const [y, m] = entry.date.split('-');
-    if (!grouped[y]) grouped[y] = {};
-    if (!grouped[y][m]) grouped[y][m] = [];
-    grouped[y][m].push(entry.date);
+    entryDateSet.add(entry.date);
 
-    // Dropdown option
     const opt = document.createElement('option');
     opt.value = entry.date;
     const d = new Date(entry.date + 'T00:00:00');
@@ -406,60 +447,69 @@ function buildUI() {
     dateSelect.appendChild(opt);
   });
 
-  const MONTHS_ZH = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  if (allEntries.length) {
+    const latest = new Date(allEntries[0].date + 'T00:00:00');
+    const earliest = new Date(allEntries[allEntries.length - 1].date + 'T00:00:00');
+    calYear = latest.getFullYear();
+    calMonth = latest.getMonth() + 1;
+    maxYM = latest.getFullYear() * 12 + (latest.getMonth() + 1);
+    minYM = earliest.getFullYear() * 12 + (earliest.getMonth() + 1);
+  }
 
-  Object.keys(grouped).sort((a,b) => b-a).forEach(year => {
-    const yearLi = document.createElement('li');
-    yearLi.className = 'tree-year open';
-
-    const yearLabel = document.createElement('div');
-    yearLabel.className = 'tree-label';
-    yearLabel.innerHTML = `<span class="arrow">▶</span>${year} 年`;
-    yearLabel.addEventListener('click', () => yearLi.classList.toggle('open'));
-    yearLi.appendChild(yearLabel);
-
-    const monthUl = document.createElement('ul');
-    monthUl.className = 'tree-month-list';
-
-    Object.keys(grouped[year]).sort((a,b) => b-a).forEach(month => {
-      const monthLi = document.createElement('li');
-      monthLi.className = 'tree-month open';
-
-      const monthLabel = document.createElement('div');
-      monthLabel.className = 'tree-label';
-      monthLabel.innerHTML = `<span class="arrow">▶</span>${MONTHS_ZH[+month]}`;
-      monthLabel.addEventListener('click', () => monthLi.classList.toggle('open'));
-      monthLi.appendChild(monthLabel);
-
-      const dayUl = document.createElement('ul');
-      dayUl.className = 'tree-day-list';
-
-      grouped[year][month].forEach(date => {
-        const d = new Date(date + 'T00:00:00');
-        const dayLi = document.createElement('li');
-        dayLi.className = 'date-item';
-        dayLi.dataset.date = date;
-        dayLi.textContent = `${d.getMonth()+1}/${d.getDate()}`;
-        dayLi.addEventListener('click', () => {
-          setActiveDate(date === activeDate ? '' : date);
-        });
-        dayUl.appendChild(dayLi);
-      });
-
-      monthLi.appendChild(dayUl);
-      monthUl.appendChild(monthLi);
-    });
-
-    yearLi.appendChild(monthUl);
-    tree.appendChild(yearLi);
+  document.getElementById('calPrev').addEventListener('click', () => {
+    calMonth--;
+    if (calMonth < 1) { calMonth = 12; calYear--; }
+    renderCalendar();
   });
+  document.getElementById('calNext').addEventListener('click', () => {
+    calMonth++;
+    if (calMonth > 12) { calMonth = 1; calYear++; }
+    renderCalendar();
+  });
+  document.getElementById('calReset').addEventListener('click', () => setActiveDate(''));
 
+  renderCalendar();
   renderArticles(allEntries);
 }
 
-function formatDate(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00');
-  return `${d.getMonth() + 1}/${d.getDate()}`;
+function pad2(n) { return String(n).padStart(2, '0'); }
+
+function renderCalendar() {
+  const label = document.getElementById('calMonthLabel');
+  const grid = document.getElementById('calendarGrid');
+  const prevBtn = document.getElementById('calPrev');
+  const nextBtn = document.getElementById('calNext');
+  const resetBtn = document.getElementById('calReset');
+
+  label.textContent = `${calYear} 年 ${calMonth} 月`;
+
+  const curYM = calYear * 12 + calMonth;
+  prevBtn.disabled = curYM <= minYM;
+  nextBtn.disabled = curYM >= maxYM;
+  resetBtn.classList.toggle('is-filtered', !!activeDate);
+
+  grid.innerHTML = '';
+
+  const firstWeekday = new Date(calYear, calMonth - 1, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth, 0).getDate();
+
+  for (let i = 0; i < firstWeekday; i++) {
+    const pad = document.createElement('div');
+    pad.className = 'cal-day pad';
+    grid.appendChild(pad);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${calYear}-${pad2(calMonth)}-${pad2(day)}`;
+    const cell = document.createElement('div');
+    cell.textContent = day;
+    cell.className = 'cal-day' + (entryDateSet.has(dateStr) ? ' has-entry' : ' empty');
+    if (dateStr === activeDate) cell.classList.add('active');
+    if (entryDateSet.has(dateStr)) {
+      cell.addEventListener('click', () => setActiveDate(dateStr === activeDate ? '' : dateStr));
+    }
+    grid.appendChild(cell);
+  }
 }
 
 function renderArticles(entries) {
@@ -467,7 +517,6 @@ function renderArticles(entries) {
   const noResults = document.getElementById('noResults');
   const countBadge = document.getElementById('countBadge');
 
-  // Remove old cards
   list.querySelectorAll('.article-card').forEach(el => el.remove());
 
   if (entries.length === 0) {
@@ -478,8 +527,6 @@ function renderArticles(entries) {
   noResults.style.display = 'none';
   countBadge.textContent = `${entries.length} 篇`;
 
-  const kw = document.getElementById('searchInput').value.trim().toLowerCase();
-
   entries.forEach(entry => {
     const card = document.createElement('div');
     card.className = 'article-card';
@@ -488,20 +535,22 @@ function renderArticles(entries) {
     const d = new Date(entry.date + 'T00:00:00');
     const dateLabel = `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
 
-    let contentHtml = entry.content_html;
-    if (kw) contentHtml = highlightKeyword(contentHtml, kw);
-
     card.innerHTML = `
       <div class="card-header">
         <span class="card-date-badge">${dateLabel}</span>
         <div class="card-title-wrap">
-          <div class="card-title">${kw ? highlightKeyword(entry.title, kw) : entry.title}</div>
-          ${entry.summary ? `<div class="card-summary">${kw ? highlightKeyword(entry.summary, kw) : entry.summary}</div>` : ''}
+          <div class="card-title">${entry.title}</div>
+          ${entry.summary ? `<div class="card-summary">${entry.summary}</div>` : ''}
         </div>
         <span class="card-toggle">▼</span>
       </div>
-      <div class="card-body">${contentHtml}</div>
+      <div class="card-body">${entry.content_html}</div>
     `;
+
+    card.querySelectorAll('.card-body .tip').forEach(tipEl => {
+      const tableHtml = buildTwnTable(tipEl.textContent);
+      if (tableHtml) tipEl.outerHTML = tableHtml;
+    });
 
     card.querySelector('.card-header').addEventListener('click', () => {
       card.classList.toggle('open');
@@ -509,73 +558,60 @@ function renderArticles(entries) {
 
     list.appendChild(card);
   });
+
+  if (entries.length === 1) {
+    document.querySelector('.article-card')?.classList.add('open');
+  }
 }
 
-function highlightKeyword(html, kw) {
-  if (!kw) return html;
-  const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return html.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+function buildTwnTable(text) {
+  const cleaned = text.replace(/^\s*💡\s*/, '').trim();
+  const match = cleaned.match(/【What】([\s\S]*?)【So What】([\s\S]*?)【Now What】([\s\S]*)$/);
+  if (!match) return null;
+
+  const rows = [
+    ['What', '事件本質', match[1].trim()],
+    ['So What', '影響判讀', match[2].trim()],
+    ['Now What', '具體行動', match[3].trim()],
+  ];
+
+  const rowsHtml = rows.map(([en, zh, content]) => `
+    <div class="twn-row">
+      <div class="twn-label"><span class="en">${en}</span><span class="zh">${zh}</span></div>
+      <div class="twn-content">${escapeHtml(content)}</div>
+    </div>
+  `).join('');
+
+  return `<div class="twn-card">${rowsHtml}</div>`;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
 }
 
 function filter() {
-  const kw = document.getElementById('searchInput').value.trim().toLowerCase();
-  const dateFilter = activeDate;
-
-  let results = allEntries;
-
-  if (dateFilter) {
-    results = results.filter(e => e.date === dateFilter);
-  }
-
-  if (kw) {
-    results = results.filter(e =>
-      e.content_text.includes(kw) ||
-      e.title.toLowerCase().includes(kw) ||
-      e.summary.toLowerCase().includes(kw)
-    );
-  }
-
+  const results = activeDate ? allEntries.filter(e => e.date === activeDate) : allEntries;
   renderArticles(results);
-
-  // Sync sidebar day items
-  document.querySelectorAll('.date-item').forEach(li => {
-    const d = li.dataset.date;
-    const inResults = results.some(e => e.date === d);
-    li.classList.toggle('hidden', !inResults && !!kw);
-    li.classList.toggle('active', d === activeDate);
-  });
-
-  // Auto-expand month/year that has visible items when searching
-  document.querySelectorAll('.tree-month').forEach(monthLi => {
-    const hasDays = [...monthLi.querySelectorAll('.date-item')].some(li => !li.classList.contains('hidden'));
-    if (kw) monthLi.classList.toggle('open', hasDays);
-  });
-  document.querySelectorAll('.tree-year').forEach(yearLi => {
-    const hasMonths = [...yearLi.querySelectorAll('.date-item')].some(li => !li.classList.contains('hidden'));
-    if (kw) yearLi.classList.toggle('open', hasMonths);
-  });
-
-  // Auto-open if single result
-  if (results.length === 1) {
-    document.querySelector('.article-card')?.classList.add('open');
-  }
 }
 
 function setActiveDate(date) {
   activeDate = date;
   document.getElementById('dateSelect').value = date;
-  filter();
+
   if (date) {
-    document.querySelector(`.date-item[data-date="${date}"]`)?.scrollIntoView({ block: 'nearest' });
+    const d = new Date(date + 'T00:00:00');
+    calYear = d.getFullYear();
+    calMonth = d.getMonth() + 1;
+  }
+  renderCalendar();
+  filter();
+
+  if (date) {
     document.querySelector('.article-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-
-document.getElementById('searchInput').addEventListener('input', () => {
-  activeDate = '';
-  document.getElementById('dateSelect').value = '';
-  filter();
-});
 
 document.getElementById('dateSelect').addEventListener('change', e => {
   setActiveDate(e.target.value);
