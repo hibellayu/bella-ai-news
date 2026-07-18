@@ -1,0 +1,151 @@
+{
+  "date": "2026-07-19",
+  "date_key": "20260719",
+  "display_date": "2026年07月19日",
+  "data_date": "2026-07-18",
+  "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI Agent 安全架構、開源模型競局、影片創作工具",
+  "big_news": [
+    {
+      "title": "Apple 控告 OpenAI 竊取商業機密，400 名前員工成關鍵證據",
+      "content": "Apple 對 OpenAI 提起商業機密訴訟，指控不當行為涉及最高層主管，並點出超過 400 名前 Apple 員工現任職於 OpenAI。此案時機敏感，OpenAI 正規劃 IPO，訴訟可能對估值與投資人信心帶來直接衝擊。OpenAI 目前回應措辭謹慎，雙方角力仍在持續。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/video/how-apples-big-lawsuit-could-disrupt-openais-ipo-plans/"
+        }
+      ],
+      "tip": "【What】Apple vs OpenAI 的法律戰，讓品牌主多了一個合規風險評估點——當你把創意或研發流程接入第三方 AI 工具，智慧財產的歸屬問題變得更真實。【So What】使用 AI 工具協助廣告創意、品牌策略的行銷團隊，若沒有明確的 AI 使用政策，就像站在法律灰色地帶工作。中小型行銷代理商尤其容易輕忽這一塊。【Now What】這週先盤點一下公司內部用了哪些 AI 工具、輸入了什麼等級的資訊（客戶資料、產品機密、創意簡報），並擬定一份簡單的 AI 工具使用準則，列出「可以輸入」vs「不能輸入」的資訊類型。"
+    },
+    {
+      "title": "中國開源模型 Kimi K3 震撼市場，美半導體股應聲下跌",
+      "content": "月之暗面（Moonshot AI）發布最新開源模型 Kimi K3，性能表現強勁，僅靠開源工具便達到令市場驚豔的水準，引發外界對「DeepSeek 時刻重演」的聯想。消息一出，美國半導體類股出現明顯波動。中國開源模型的競爭力正持續對全球 AI 格局施壓。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/18/china-new-ai-model-kimi-k3/"
+        }
+      ],
+      "tip": "【What】開源強模型不斷湧現，代表高品質 AI 能力的取得成本持續下降——行銷團隊未來能用更低門檻接入強大模型，自建工作流的可行性愈來愈高。【So What】對依賴單一 AI 服務商（如 OpenAI）的行銷操作者來說，市場競爭加劇意味著功能與定價都會持續優化，但也意味著工具選擇更複雜。【Now What】這週可以花 30 分鐘追蹤一下 Kimi K3 的實際應用評測（X 或 Reddit 上已有不少），評估它是否適合取代或補充你現在用的 AI 寫作／分析工具。"
+    },
+    {
+      "title": "Meta 擬出租算力給 Anthropic，潛在規模高達 100 億美元",
+      "content": "據外媒報導，Meta Platforms 正與 Anthropic 洽談大規模算力租賃合作，金額最高可達 100 億美元。這不只是一筆商業交易，更反映出 AI 算力已成為科技巨頭的核心戰略資產。此舉也讓 Claude 系列模型的未來發展有了更強的基礎設施支撐。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/07/18/meta-anthropic-in-talks-for-compute-deal/"
+        }
+      ],
+      "tip": "【What】Meta 與 Anthropic 的算力合作，意味著 Claude 的服務穩定性與擴展能力可能進一步提升，對重度使用 Claude API 做內容自動化的行銷人來說是好消息。【So What】AI 算力集中在少數巨頭手中，長期而言可能影響各平台的定價策略與功能優先序。目前投入 Claude 或 Llama 生態系的行銷自動化團隊，要留意這類生態重組。【Now What】如果你的內容工作流依賴某個特定 AI 平台，這週可以做一個簡單的「替代方案清單」，確保主力工具有備援選項。"
+    },
+    {
+      "title": "AI 會議筆記工具暗藏風險：聲紋與商業機密可能成資安破口",
+      "content": "專家警告，企業大量使用 AI 會議筆記工具（如 Otter.ai、Fireflies 等）時，錄音與轉寫過程中產生的「聲紋資料」與討論內容，可能成為新的資安漏洞。在遠距辦公普及的環境下，許多企業對於這類工具的資料流向缺乏有效管控。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://infosecu.technews.tw/2026/07/18/ai-meeting-note-tools-efficiency-privacy-trap/"
+        }
+      ],
+      "tip": "【What】行銷團隊開會討論客戶策略、產品上市計畫時，若使用未經審查的 AI 筆記工具，等同把核心機密暴露在外部伺服器上。【So What】代理商與品牌行銷團隊最容易中招，因為會議內容常涉及客戶機密、預算規模與競爭策略，一旦外洩後果嚴重。【Now What】這週開一個小組討論，確認目前在用哪些 AI 筆記工具、這些工具的資料儲存地點與隱私政策，並決定哪些等級的會議「禁止使用 AI 筆記」。"
+    },
+    {
+      "title": "Fireworks AI 完成 15 億美元融資，AI 基礎設施投資熱度不退",
+      "content": "根據 Crunchbase 統計，本週最大融資案是企業 AI 新創 Fireworks AI 獲得 15 億美元融資，顯示市場對 AI 推論基礎設施的投資興趣依然強勁。整體 AI 領域資金流向持續集中在基礎建設與企業應用層。",
+      "source_urls": [
+        {
+          "name": "Crunchbase News",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-fintech-robotics/"
+        }
+      ],
+      "tip": "【What】大量資金持續湧入 AI 基礎設施，代表未來一兩年內，AI 工具的速度、穩定性與功能深度都會快速進化，行銷人可用的自動化工具會愈來愈強。【So What】現在還在觀望「要不要導入 AI」的品牌或代理商，競爭者已經在跑了。遲疑的成本正在累積。【Now What】選定一個你這個月最想用 AI 改善的行銷環節（例如：廣告文案 A/B 測試、社群排程、成效報告），這週就開始用一個工具實際跑看看，不要停留在「研究階段」。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "1Password for Claude — AI 代理可登入網站但看不到密碼",
+      "content": "1Password 與 Anthropic 合作推出 1Password for Claude，讓 Claude 在執行瀏覽器自動化任務時，可在使用者授權下完成網站登入，但密碼與一次性驗證碼不會傳入模型上下文或 Anthropic 系統。憑證全程由 1Password 保管，僅在任務需要時注入，安全架構相當完整。這是 AI Agent 安全實務的一個重要里程碑。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/177407"
+        }
+      ],
+      "tip": "【What】AI Agent 現在可以在不洩露密碼的前提下自動登入平台操作，這讓行銷自動化的可能性大幅擴張——從自動排程發文到自動拉取廣告後台數據，都更安全了。【So What】過去很多人不敢讓 AI 代理碰帳號，就是因為安全疑慮。這個整合降低了最大的心理與技術障礙，預計會加速企業採用 AI Agent 執行重複性行銷任務。【Now What】如果你的團隊有在用 Claude 做任何涉及帳號操作的任務（如社群管理、廣告後台），這週可以去了解 1Password for Claude 的申請方式，評估是否能納入工作流。"
+    },
+    {
+      "title": "Google Gemini — 新費率規則上線，使用量計算方式改變",
+      "content": "Google 調整了 Gemini 的使用量計算邏輯，新的配額規則讓部分用戶實際可用的 AI 回應次數比過去少。Wired 提供了詳細的追蹤方式說明，幫助用戶了解自己的使用狀況。對重度依賴 Gemini 做內容生產的使用者影響最直接。",
+      "source_urls": [
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/how-googles-new-gemini-rates-work-and-how-to-track-your-usage/"
+        }
+      ],
+      "tip": "【What】如果你的內容工作流依賴 Gemini（特別是免費或低階方案），新的費率可能讓你在月底前就耗盡配額，打亂發布節奏。【So What】單一工具依賴的風險再次浮現。使用 AI 工具做內容生產的個人創作者與小型團隊最容易受影響，大型企業有 API 方案通常影響較小。【Now What】這週登入 Google 帳號檢查 Gemini 的使用量儀表板，確認目前配額用量，並決定是否需要升級方案或分散到其他工具（如 Claude 或 ChatGPT）。"
+    },
+    {
+      "title": "HeyGen HyperFrames — AI 影片工作流 Day 1～12 完整教學",
+      "content": "HeyGen 推出 HyperFrames 功能，主打從 Figma 設計到動態字幕、Prompt 驅動的 AI 影片工作流。AI郵報整理了「30 Days of HyperFrames」前 12 天的完整教學，涵蓋安裝、設計整合到動畫輸出，適合想建立品牌影片自動化流程的行銷人。",
+      "source_urls": [
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/heygen-hyperframes-30-days-day-1-12/"
+        }
+      ],
+      "tip": "【What】HyperFrames 讓品牌可以用 Prompt 驅動方式批量生成帶有動態字幕與動畫的影片，大幅降低影片製作的人力成本，特別適合需要多語言或多版本內容的品牌。【So What】社群影片內容的製作效率將成為差異化競爭點——能快速生成高品質影片的品牌，在演算法推播上會取得先機。【Now What】這週找一支你想重新包裝的舊影片或產品介紹，用 HeyGen HyperFrames 試做一個帶字幕動畫的版本，測試製作時間與品質是否符合你的需求。"
+    },
+    {
+      "title": "Claude Code + HyperFrames — AI 自動剪輯、加字幕、輸出 MP4",
+      "content": "AI郵報教學示範如何搭配 Claude Code 與 HyperFrames，完成從剪輯到字幕、動畫再到 MP4 輸出的完整 AI 影片工作流，並與 CapCut 和 Remotion 做了實際比較。這個組合讓不懂剪輯的行銷人也能用 Prompt 完成影片製作。",
+      "source_urls": [
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/claude-code-hyperframes-video-editing-guide/"
+        }
+      ],
+      "tip": "【What】行銷人終於可以用自然語言指令完成影片後製，不再需要依賴設計師或剪輯師處理常規格式的內容輸出。【So What】對預算有限的中小品牌或個人自媒體來說，這類工具組合可以大幅壓縮影片製作成本，但同時也意味著影片產量將進一步爆炸，差異化的重點會從「有沒有影片」轉移到「創意與品牌調性」。【Now What】這週用 Claude Code 寫一個簡單的影片製作 Prompt（例如：「幫我把這段口播影片加上繁體中文字幕，並在重點處加入文字動畫」），測試工具能力的上限在哪。"
+    },
+    {
+      "title": "Capital One VulnHunter — 開源 AI 資安工具，主動找程式漏洞",
+      "content": "Capital One 將內部自建的 AI 資安工具 VulnHunter 開源，以 Apache 2.0 授權釋出於 GitHub。這個 Agentic AI 工具能掃描原始碼漏洞、模擬攻擊路徑並提出修復建議，在程式部署前就完成安全審查。對行銷科技（MarTech）自建工具的團隊是實用的安全補強。",
+      "source_urls": [
+        {
+          "name": "VentureBeat",
+          "url": "https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do"
+        }
+      ],
+      "tip": "【What】有在自建行銷工具、串接 API 或開發客製化自動化腳本的行銷技術團隊，現在有了一個免費的 AI 資安掃描工具可以用。【So What】MarTech 自建工具常因為快速上線而忽略資安，客戶資料外洩或廣告帳號被入侵的風險其實不低。【Now What】如果你的團隊有任何自建的行銷自動化工具或腳本，這週可以把 VulnHunter 的 GitHub 頁面加入書籤，安排工程師在下次更新時跑一次掃描。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI Agent 安全架構正在成熟：從「能不能用」走向「怎麼安全用」",
+      "content": "從 1Password for Claude 的密碼隔離機制，到 Brex 的 CrabTrap 代理政策框架，再到 Intuit 四個月內兩度重建 Agent 架構，本週多則消息都指向同一個方向：企業已經不再爭論「要不要用 AI Agent」，而是在認真解決「如何讓 Agent 安全、可控地運作」。行銷自動化的門檻正在被系統性地降低。",
+      "tip": "【What】AI Agent 基礎設施的安全問題被大型企業認真解決，代表接下來 12 個月，行銷自動化工具的可靠性與安全性會有明顯提升，導入阻力會更小。【So What】現在搶先建立 AI Agent 工作流的行銷團隊，等工具更成熟時會有明顯的先行者優勢，而持續觀望的團隊則會面臨更大的差距。【Now What】這週選一個你最重複在做的行銷任務（例如：每週的成效報告彙整），研究是否有 AI Agent 工具可以接手，並評估導入的第一步是什麼。"
+    },
+    {
+      "title": "開源 AI 模型持續顛覆競爭格局，品牌自建工作流的成本優勢擴大",
+      "content": "Kimi K3 的發布再次展示了開源模型逼近頂尖閉源模型的趨勢，而 Databricks 以 1880 億美元估值持續擴張，背後正是企業對開放權重模型（open weight model）節省成本的高度期待。這個趨勢對行銷人的意義是：自建 AI 工作流的邊際成本正在快速下降。",
+      "tip": "【What】開源強模型的普及讓「自建 AI 內容工作流」不再是大企業的專利，中小型品牌和個人創作者也能低成本接入高品質模型。【So What】依賴昂貴 SaaS AI 工具的行銷團隊，可以開始評估部分任務是否能轉移到開源模型上，降低工具成本。競爭者也在同步評估，市場差異化的重點將從「有沒有 AI 工具」轉向「AI 工具用得好不好」。【Now What】這週花 20 分鐘了解一個開源模型平台（例如 Together AI 或 Hugging Face 的推論 API），看看你目前花費最多的 AI 工具有沒有開源替代方案。"
+    },
+    {
+      "title": "AI 影片創作工具快速普及，社群影片生產效率將成差異化關鍵",
+      "content": "ChatCut with Codex、HeyGen HyperFrames、Claude Code 影片剪輯教學在同一天密集出現，反映出 AI 影片工具鏈正在快速成熟。從口播剪輯、字幕生成到動畫輸出，整個流程已經可以用 Prompt 驅動，行銷人不再需要專業剪輯背景就能產出社群影片。",
+      "tip": "【What】AI 影片工作流的成熟，讓內容產量不再受限於剪輯人力，品牌可以更快速地回應熱門話題，也能更低成本地測試不同影片格式。【So What】影片內容的競爭門檻被大幅拉低，意味著「有影片」已不足以脫穎而出，創意概念與品牌一致性將成為真正的差異化點。社群小編與內容創作者的角色會從「執行製作」轉向「概念與策略」。【Now What】這週規劃一個「快速影片測試」：選一個近期想嘗試的內容主題，用 AI 工具在兩小時內做出一個 60 秒影片並發布，用實際數據來判斷這類工具是否值得正式導入工作流。"
+    }
+  ],
+  "tips_summary": [
+    "Apple vs OpenAI 訴訟 → 這週建立一份公司 AI 工具使用準則，列出哪些資訊可以輸入 AI、哪些不行",
+    "Kimi K3 開源模型 → 花 30 分鐘追蹤實際評測，評估能否取代或補充現有 AI 寫作工具",
+    "Meta x Anthropic 算力合作 → 為主力 AI 工具建立替代方案清單，確保工作流有備援",
+    "AI 會議筆記資安風險 → 盤點公司在用的 AI 筆記工具，制定哪些等級會議禁止錄音的規則",
+    "Fireworks AI 融資熱潮 → 選定一個最想改善的行銷環節，這週就用一個 AI 工具實際跑，不要停留在研究",
+    "1Password for Claude → 評估是否能將 1Password for Claude 納入涉及帳號操作的行銷自動化工作流",
+    "Google Gemini 新費率 → 登入帳號檢查 Gemini 使用量儀表板，決定是否需要升級或分散工具",
+    "HeyGen HyperFrames → 選一支舊影片，用 HyperFrames 試做帶動態字幕的版本，測試製作效率",
+    "Claude Code 影片剪輯 → 用自然語言 Prompt 測試 Claude Code 的影片字幕功能，確認工具能力上限",
+    "開源模型趨勢 → 了解一個開源模型推論平台，評估是否能替代部分現有 AI 工具以降低成本"
+  ],
+  "generated_at": "2026-07-19 07:43"
+}
