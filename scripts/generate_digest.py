@@ -104,7 +104,7 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
 應用切角（tip）必須包含三層，聚焦數位行銷實務：
 【What】這個 AI 動態對數位行銷的具體意義
 【So What】對競爭格局或行銷作業的影響，誰受影響
-【Now What】這週可採取的一個具體行動（不空泛，要可執行）
+【Now What】一個可行的具體小行動（不空泛、不用指定時間，要可執行）
 
 每則新聞（big_news / tool_updates / trends）都要附上 tags：剛好 2 個繁體中文主題標籤，
 4-6 字為主，例如「AI 政策法規」「品牌溝通」「行銷科技」，用來讓讀者依主題篩選，
@@ -156,7 +156,7 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
     }}
   ],
   "tips_summary": [
-    "新聞縮寫 → 可執行的行動建議（具體到這週能做的事）"
+    "新聞縮寫 → 可執行的具體行動建議（不用指定時間）"
   ],
   "generated_at": "{datetime.now(TAIPEI).strftime('%Y-%m-%d %H:%M')}"
 }}
