@@ -1,654 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella's AI 新聞日報</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella's AI 日報｜行銷 × 品牌視角的 AI 趨勢判讀</title>
+<meta name="description" content="Bella's AI 日報：從數位行銷與品牌策略視角，每日整理 AI 產業動態、工具更新與趨勢觀察，附上可執行的行銷判讀。">
+<style>
     :root {
-      --bg: #F0EBE3;
-      --surface: #FAF7F3;
-      --border: #D6CBB8;
-      --accent: #8B3A2A;
-      --accent-light: #C4735F;
-      --text: #2C2318;
-      --text-muted: #7A6A58;
-      --highlight-bg: #FFF3CD;
+      --ink: #201C18;
+      --ink-2: #2C2620;
+      --cream: #F1E9D8;
+      --paper: #FBF6EC;
+      --terracotta: #C1442F;
+      --terracotta-ink: #8F311F;
+      --khaki: #B99A55;
+      --khaki-bg: #EBDFBE;
+      --frame-bg: #F3E7C7;
+      --muted: #74695A;
+      --line: #E0D3B4;
     }
-
+    * { box-sizing: border-box; }
     body {
-      font-family: "Noto Sans TC", "PingFang TC", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Header ── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(44,35,24,0.08);
+    /* ── Masthead ── */
+    .topbar { background: var(--ink); border-bottom: 3px solid var(--terracotta); }
+    .topbar-inner {
+      max-width: 1180px; margin: 0 auto; padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
     }
-    .header-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; cursor: pointer; }
+    .brand-mark {
+      background: var(--terracotta); color: #fff; font-weight: 800; font-size: 0.9rem;
+      letter-spacing: 0.02em; padding: 0.4rem 0.6rem; line-height: 1;
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
     }
-    .site-title {
-      font-family: "Noto Serif TC", serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .controls {
-      display: flex;
-      gap: 0.6rem;
-      flex: 1;
-      min-width: 0;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-    }
-    .count-badge {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      white-space: nowrap;
+    .brand-text strong { display: block; color: #F5F0E6; font-size: 1.02rem; font-weight: 800; letter-spacing: 0.01em; }
+    .brand-text small { display: block; color: #9C9186; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+    .date-picker { display: flex; align-items: center; gap: 0.5rem; }
+    .date-picker label { display: flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: #9C9186; }
+    .date-picker select {
+      appearance: none; background: var(--ink-2); border: 1px solid #4A4136; color: #F5F0E6;
+      font-family: "SF Mono", Menlo, monospace; font-size: 0.78rem; padding: 0.35rem 0.55rem; border-radius: 4px;
     }
 
-    /* ── Layout ── */
-    .main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 1.5rem 1rem;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 1.25rem;
-      align-items: start;
+    /* ── Shell ── */
+    .shell {
+      max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem 5rem;
+      display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start;
     }
 
-    /* ── Sidebar ── */
-    .sidebar {
-      position: sticky;
-      top: 80px;
-      min-width: 0;
+    /* ── Sidebar / Today's Signal ── */
+    .signal {
+      position: sticky; top: 1.5rem; background: var(--paper); border: 1px solid var(--line);
+      border-radius: 4px; padding: 1.6rem 1.5rem; overflow: hidden;
     }
-    .calendar-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.6rem 0.85rem;
-      font-family: inherit;
-      cursor: pointer;
-      transition: border-color 0.15s;
+    .signal::before {
+      content: ''; position: absolute; top: 0; right: 0; width: 46px; height: 46px;
+      background: var(--terracotta); clip-path: polygon(100% 0, 0 0, 100% 100%);
     }
-    .calendar-toggle:hover { border-color: var(--accent-light); }
-    .calendar-toggle.is-open { border-radius: 10px 10px 0 0; border-bottom-color: var(--surface); }
-    .calendar-toggle-title {
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      font-weight: 500;
-      white-space: nowrap;
-      flex-shrink: 0;
+    .eyebrow { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta-ink); margin: 0 0 0.7rem; }
+    .signal-title { font-size: 1.1rem; font-weight: 800; line-height: 1.55; margin: 0 0 1.1rem; text-wrap: balance; padding-right: 1rem; min-height: 1.5em; }
+    .meta-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem 0.6rem; padding: 1rem 0;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 1.2rem;
     }
-    .calendar-toggle-hint {
-      font-size: 0.72rem;
-      color: var(--accent);
-      flex: 1;
-      min-width: 0;
-      text-align: right;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .calendar-toggle-arrow {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      transition: transform 0.18s;
-      flex-shrink: 0;
-    }
-    .calendar-toggle.is-open .calendar-toggle-arrow { transform: rotate(90deg); }
+    .meta-grid dt { font-size: 0.64rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 2px; }
+    .meta-grid dd { margin: 0; font-size: 0.8rem; font-weight: 600; font-family: "SF Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
 
-    /* ── Calendar ── */
-    .calendar {
-      display: none;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 10px 10px;
-      padding: 0.85rem;
+    .section-nav { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.3rem; }
+    .section-nav a {
+      font-size: 0.8rem; font-weight: 600; color: var(--ink); text-decoration: none;
+      padding: 0.5rem 0.7rem; border-radius: 3px; background: var(--khaki-bg); border-left: 3px solid var(--khaki);
     }
-    .calendar.open { display: block; }
-    .calendar-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.65rem;
+    .section-nav a:hover { border-left-color: var(--terracotta); }
+
+    .action-list-title { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; color: var(--ink); margin: 0 0 0.6rem; text-transform: uppercase; }
+    .action-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+    .action-list li { font-size: 0.75rem; line-height: 1.6; color: var(--muted); padding-left: 1rem; position: relative; }
+    .action-list li::before { content: ''; position: absolute; left: 0; top: 0.4em; width: 6px; height: 6px; background: var(--terracotta); }
+
+    /* ── Main content ── */
+    .content { min-width: 0; }
+
+    .tag-filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .tag-filter-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; margin-right: 0.3rem; }
+    .tag-filter-bar .chip {
+      font-size: 0.72rem; padding: 0.3rem 0.75rem; border-radius: 999px; background: var(--khaki-bg);
+      color: #6B5726; font-weight: 600; cursor: pointer; border: 1px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
-    .cal-nav-btn {
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      color: var(--text-muted);
-      width: 1.6rem;
-      height: 1.6rem;
-      cursor: pointer;
-      font-size: 0.85rem;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.12s, color 0.12s;
+    .tag-filter-bar .chip:hover { border-color: var(--khaki); }
+    .tag-filter-bar .chip.active { background: var(--terracotta-ink); color: #F8F2E6; }
+    .tag-filter-bar .chip-reset { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+    .section-block { margin-bottom: 2.75rem; scroll-margin-top: 1.5rem; }
+    .section-head {
+      display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem;
+      padding-bottom: 0.6rem; border-bottom: 3px solid var(--ink);
     }
-    .cal-nav-btn:hover:not(:disabled) { background: var(--border); color: var(--text); }
-    .cal-nav-btn:disabled { opacity: 0.3; cursor: default; }
-    .cal-month-label {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: 0.02em;
+    .section-head h2 { font-size: 1.1rem; font-weight: 800; margin: 0; letter-spacing: 0.01em; }
+    .section-count { font-size: 0.7rem; color: #fff; background: var(--terracotta); padding: 0.15rem 0.55rem; border-radius: 3px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+    .article-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .article { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 1.3rem 1.5rem; }
+    .article-source { font-size: 0.7rem; color: var(--muted); margin: 0 0 0.4rem; }
+    .article-source a { color: var(--terracotta-ink); text-decoration: none; }
+    .article-source a:hover { text-decoration: underline; }
+    .article-title { font-size: 0.98rem; font-weight: 700; line-height: 1.6; margin: 0 0 0.65rem; }
+    .article-lede { font-size: 0.83rem; line-height: 1.85; color: var(--ink); margin: 0 0 0.85rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .tag-row span {
+      font-size: 0.68rem; background: var(--khaki-bg); color: #6B5726; padding: 0.2rem 0.6rem;
+      border-radius: 3px; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s;
     }
-    .calendar-weekdays {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      text-align: center;
-      font-size: 0.6rem;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 2px;
-    }
-    .cal-day {
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      border-radius: 5px;
-      color: var(--text-muted);
+    .tag-row span:hover { background: var(--khaki); color: #fff; }
+    .tag-row span.active { background: var(--terracotta-ink); color: #F8F2E6; }
+
+    .frame {
       position: relative;
+      background-image: url("data:image/jpeg;base64,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");
+      background-size: cover; background-position: center;
+      border-radius: 3px; padding: 1.3rem 1.4rem 1.35rem 1.5rem; margin-top: 0.3rem; overflow: hidden;
     }
-    .cal-day.pad { visibility: hidden; }
-    .cal-day.has-entry {
-      color: var(--text);
-      cursor: pointer;
-      font-weight: 500;
+    .frame::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--terracotta-ink); }
+    .frame-eyebrow {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.66rem; font-weight: 800;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta-ink); margin: 0 0 1rem;
     }
-    .cal-day.has-entry::after {
-      content: '';
-      position: absolute;
-      bottom: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--accent-light);
-    }
-    .cal-day.has-entry:hover { background: var(--border); }
-    .cal-day.active { background: var(--accent); color: #fff; }
-    .cal-day.active::after { background: #fff; }
-    .cal-day.empty { opacity: 0.35; }
-    .cal-reset {
-      margin-top: 0.7rem;
-      width: 100%;
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.4rem;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.12s, color 0.12s, border-color 0.12s;
-    }
-    .cal-reset:hover { background: var(--border); color: var(--text); }
-    .cal-reset.is-filtered { border-color: var(--accent); color: var(--accent); }
+    .frame-eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--terracotta-ink); transform: rotate(45deg); flex-shrink: 0; }
+    .frame-rows { display: flex; flex-direction: column; gap: 0.95rem; }
+    .frame-row { display: grid; grid-template-columns: 108px 1fr; gap: 1rem; }
+    .frame-row + .frame-row { padding-top: 0.95rem; border-top: 1px solid rgba(143,49,31,0.16); }
+    .frame-row .lab { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.05em; color: var(--terracotta-ink); }
+    .frame-row .lab small { display: block; font-size: 0.62rem; font-weight: 400; color: #8A7355; margin-top: 3px; letter-spacing: 0; }
+    .frame-row .val { font-size: 0.84rem; line-height: 1.85; color: #2E2416; }
 
-    /* ── Articles ── */
-    .articles { min-width: 0; }
-    .no-results {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
+    .no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: 0.9rem; }
 
-    .article-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      transition: box-shadow 0.15s;
+    /* ── Footer ── */
+    .site-footer { background: var(--ink); border-top: 3px solid var(--terracotta); margin-top: 3rem; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; padding: 1.8rem 1.5rem 2.2rem; }
+    .footer-notice { font-size: 0.74rem; line-height: 1.85; color: #B7AE9F; max-width: 62ch; margin: 0 0 1rem; }
+    .footer-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; padding-top: 1rem;
+      border-top: 1px solid #3A342B; font-size: 0.72rem; color: #8B8175; font-family: "SF Mono", Menlo, monospace;
     }
-    .article-card:hover { box-shadow: 0 4px 16px rgba(44,35,24,0.12); }
+    .footer-meta strong { color: #D9A971; font-family: inherit; font-weight: 700; }
+    .footer-meta .sep { color: #4A4136; }
 
-    .card-header {
-      padding: 1rem 1.25rem 0.75rem;
-      cursor: pointer;
-      user-select: none;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+    @media (max-width: 720px) {
+      .shell { grid-template-columns: 1fr; }
+      .signal { position: static; }
+      .frame-row { grid-template-columns: 84px 1fr; gap: 0.6rem; }
+      .topbar-inner { gap: 0.8rem; }
+      .date-picker { flex-wrap: wrap; }
     }
-    .card-date-badge {
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.68rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-top: 2px;
-      letter-spacing: 0.04em;
-    }
-    .card-title-wrap { flex: 1; min-width: 0; }
-    .card-title {
-      font-family: "Noto Serif TC", serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .card-summary {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-      line-height: 1.6;
-    }
-    .card-toggle {
-      flex-shrink: 0;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      transition: transform 0.2s;
-      margin-top: 2px;
-    }
-    .article-card.open .card-toggle { transform: rotate(180deg); }
-
-    .card-body {
-      display: none;
-      padding: 0 1.25rem 1.25rem;
-      border-top: 1px solid var(--border);
-    }
-    .article-card.open .card-body { display: block; }
-
-    /* ── Article content styles ── */
-    .card-body h1 { display: none; }
-    .card-body h2 {
-      font-family: "Noto Serif TC", serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin: 1.2rem 0 0.6rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: 0.04em;
-    }
-    .card-body h3 {
-      font-size: 0.84rem;
-      font-weight: 500;
-      color: var(--text);
-      margin: 0.9rem 0 0.3rem;
-    }
-    .card-body p {
-      font-size: 0.82rem;
-      line-height: 1.85;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    .card-body blockquote {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      border-left: 2px solid var(--accent-light);
-      padding-left: 0.75rem;
-      margin: 0.5rem 0 0.8rem;
-      font-style: italic;
-    }
-    .card-body ul {
-      padding-left: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .card-body li {
-      font-size: 0.81rem;
-      line-height: 1.85;
-      color: var(--text);
-      margin-bottom: 0.15rem;
-    }
-    .card-body hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 1rem 0;
-    }
-    .card-body a {
-      color: var(--accent-light);
-      text-decoration: none;
-    }
-    .card-body a:hover { text-decoration: underline; }
-    .card-body strong { font-weight: 500; }
-    .card-body .footer-note {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: 1rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .card-body .sources {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-    .card-body .sources a { font-size: 0.72rem; }
-
-    /* ── What / So What / Now What card ── */
-    .twn-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 0.4rem 0 0.9rem;
-      background: var(--bg);
-    }
-    .twn-row {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 0.9rem;
-      padding: 0.7rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .twn-row:last-child { border-bottom: none; }
-    .twn-label .en {
-      display: block;
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .twn-label .zh {
-      display: block;
-      font-size: 0.66rem;
-      color: var(--accent);
-      margin-top: 2px;
-      letter-spacing: 0.02em;
-    }
-    .twn-content {
-      font-size: 0.81rem;
-      line-height: 1.85;
-      color: var(--text);
-    }
-
-    /* ── Mobile ── */
-    @media (max-width: 620px) {
-      .main { grid-template-columns: 1fr; }
-      .sidebar { position: static; margin-bottom: 1.25rem; }
-      .header-inner { gap: 0.5rem; }
-      .site-title { font-size: 0.9rem; }
-      .twn-row { grid-template-columns: 74px 1fr; gap: 0.6rem; padding: 0.6rem 0.7rem; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="site-title">📰 Bella's AI 日報</div>
-    <div class="controls">
-      <span class="count-badge" id="countBadge"></span>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" id="brandLink" href="." aria-label="Bella's AI 日報 首頁（回到最新一篇）">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">
+        <strong>Bella's AI 日報</strong>
+        <small>Marketing Trend Radar</small>
+      </span>
+    </a>
+    <div class="date-picker" role="group" aria-label="日報日期選擇">
+      <label>年 <select id="yearSelect"></select></label>
+      <label>月 <select id="monthSelect"></select></label>
+      <label>日 <select id="daySelect"></select></label>
     </div>
   </div>
 </header>
 
-<div class="main">
-  <aside class="sidebar">
-    <button class="calendar-toggle" id="calendarToggle" type="button" aria-expanded="false">
-      <span class="calendar-toggle-title">日期選擇</span>
-      <span class="calendar-toggle-hint" id="calendarToggleHint"></span>
-      <span class="calendar-toggle-arrow">▸</span>
-    </button>
-    <div class="calendar" id="calendar">
-      <div class="calendar-header">
-        <button class="cal-nav-btn" id="calPrev" type="button" aria-label="上個月">‹</button>
-        <span class="cal-month-label" id="calMonthLabel"></span>
-        <button class="cal-nav-btn" id="calNext" type="button" aria-label="下個月">›</button>
-      </div>
-      <div class="calendar-weekdays">
-        <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
-      </div>
-      <div class="calendar-grid" id="calendarGrid"></div>
-      <button class="cal-reset" id="calReset" type="button">顯示全部</button>
+<main id="top" class="shell">
+  <aside class="signal">
+    <p class="eyebrow" id="signalEyebrow">Today's Signal</p>
+    <h1 class="signal-title" id="signalTitle">載入中…</h1>
+
+    <dl class="meta-grid">
+      <div><dt>日報日期</dt><dd id="metaReportDate">—</dd></div>
+      <div><dt>資料日期</dt><dd id="metaDataDate">—</dd></div>
+      <div><dt>生成時間</dt><dd id="metaGeneratedAt">—</dd></div>
+      <div><dt>收錄則數</dt><dd id="metaCount">—</dd></div>
+    </dl>
+
+    <nav class="section-nav" id="sectionNav" aria-label="區塊導覽"></nav>
+
+    <div id="actionListWrap" style="display:none">
+      <p class="action-list-title">本日行動清單</p>
+      <ul class="action-list" id="actionList"></ul>
     </div>
   </aside>
 
-  <section class="articles" id="articleList">
-    <div class="no-results" id="noResults" style="display:none">找不到相關內容</div>
-  </section>
-</div>
+  <div class="content">
+    <div class="tag-filter-bar" id="tagFilterBar" style="display:none"></div>
+    <div id="sections">
+      <p class="no-results">載入中…</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-notice">本站內容為 AI 趨勢整理、評論與行銷應用解讀；新聞來源與原文著作權屬各原媒體與作者所有。若需完整內容，請閱讀原文。</p>
+    <div class="footer-meta">
+      <span>© 2026 <strong>Bella Yu</strong>. All rights reserved.</span>
+      <span class="sep">·</span>
+      <span>Claude Code 協作開發</span>
+      <span class="sep">·</span>
+      <span>版本 v1.0</span>
+      <span class="sep">·</span>
+      <span>2026/08/17</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-let allEntries = [];
-let activeDate = '';
-let entryDateSet = new Set();
-let calYear = 0, calMonth = 0;   // calMonth: 1-12
-let minYM = 0, maxYM = 0;        // year*12+month bounds
-let calendarOpen = false;
+const SECTIONS = [
+  { key: 'big_news',     id: 'big-news',     label: '大事件' },
+  { key: 'tool_updates', id: 'tool-updates', label: '工具動態' },
+  { key: 'trends',       id: 'trends',       label: '趨勢觀察' },
+];
 
-async function loadData() {
-  const res = await fetch('news.json');
-  allEntries = await res.json();
-  buildUI();
-}
+let manifest = [];
+let activeTag = null;
 
-function buildUI() {
-  allEntries.forEach(entry => entryDateSet.add(entry.date));
+const yearSelect  = document.getElementById('yearSelect');
+const monthSelect = document.getElementById('monthSelect');
+const daySelect   = document.getElementById('daySelect');
 
-  if (allEntries.length) {
-    const latest = new Date(allEntries[0].date + 'T00:00:00');
-    const earliest = new Date(allEntries[allEntries.length - 1].date + 'T00:00:00');
-    calYear = latest.getFullYear();
-    calMonth = latest.getMonth() + 1;
-    maxYM = latest.getFullYear() * 12 + (latest.getMonth() + 1);
-    minYM = earliest.getFullYear() * 12 + (earliest.getMonth() + 1);
-  }
-
-  document.getElementById('calPrev').addEventListener('click', () => {
-    calMonth--;
-    if (calMonth < 1) { calMonth = 12; calYear--; }
-    renderCalendar();
-  });
-  document.getElementById('calNext').addEventListener('click', () => {
-    calMonth++;
-    if (calMonth > 12) { calMonth = 1; calYear++; }
-    renderCalendar();
-  });
-  document.getElementById('calReset').addEventListener('click', () => setActiveDate(''));
-
-  document.getElementById('calendarToggle').addEventListener('click', () => {
-    setCalendarOpen(!calendarOpen);
-  });
-
-  renderCalendar();
-  updateCalendarToggleHint();
-  renderArticles(allEntries);
-}
-
-function setCalendarOpen(open) {
-  calendarOpen = open;
-  document.getElementById('calendar').classList.toggle('open', calendarOpen);
-  document.getElementById('calendarToggle').classList.toggle('is-open', calendarOpen);
-  document.getElementById('calendarToggle').setAttribute('aria-expanded', String(calendarOpen));
-}
-
-function updateCalendarToggleHint() {
-  const hint = document.getElementById('calendarToggleHint');
-  if (!activeDate) { hint.textContent = ''; return; }
-  const d = new Date(activeDate + 'T00:00:00');
-  hint.textContent = `已選 ${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
-}
-
-function pad2(n) { return String(n).padStart(2, '0'); }
-
-function renderCalendar() {
-  const label = document.getElementById('calMonthLabel');
-  const grid = document.getElementById('calendarGrid');
-  const prevBtn = document.getElementById('calPrev');
-  const nextBtn = document.getElementById('calNext');
-  const resetBtn = document.getElementById('calReset');
-
-  label.textContent = `${calYear} 年 ${calMonth} 月`;
-
-  const curYM = calYear * 12 + calMonth;
-  prevBtn.disabled = curYM <= minYM;
-  nextBtn.disabled = curYM >= maxYM;
-  resetBtn.classList.toggle('is-filtered', !!activeDate);
-
-  grid.innerHTML = '';
-
-  const firstWeekday = new Date(calYear, calMonth - 1, 1).getDay();
-  const daysInMonth = new Date(calYear, calMonth, 0).getDate();
-
-  for (let i = 0; i < firstWeekday; i++) {
-    const pad = document.createElement('div');
-    pad.className = 'cal-day pad';
-    grid.appendChild(pad);
-  }
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dateStr = `${calYear}-${pad2(calMonth)}-${pad2(day)}`;
-    const cell = document.createElement('div');
-    cell.textContent = day;
-    cell.className = 'cal-day' + (entryDateSet.has(dateStr) ? ' has-entry' : ' empty');
-    if (dateStr === activeDate) cell.classList.add('active');
-    if (entryDateSet.has(dateStr)) {
-      cell.addEventListener('click', () => setActiveDate(dateStr === activeDate ? '' : dateStr));
-    }
-    grid.appendChild(cell);
-  }
-}
-
-function renderArticles(entries) {
-  const list = document.getElementById('articleList');
-  const noResults = document.getElementById('noResults');
-  const countBadge = document.getElementById('countBadge');
-
-  list.querySelectorAll('.article-card').forEach(el => el.remove());
-
-  if (entries.length === 0) {
-    noResults.style.display = 'block';
-    countBadge.textContent = '';
+async function init() {
+  try {
+    const res = await fetch('digests/manifest.json');
+    manifest = await res.json();
+  } catch (e) {
+    showError('無法載入日報清單，請確認 digests/manifest.json 存在。');
     return;
   }
-  noResults.style.display = 'none';
-  countBadge.textContent = `${entries.length} 篇`;
+  if (!Array.isArray(manifest) || !manifest.length) {
+    showError('目前還沒有任何日報。');
+    return;
+  }
+  manifest.sort((a, b) => b.date_key.localeCompare(a.date_key));
 
-  entries.forEach(entry => {
-    const card = document.createElement('div');
-    card.className = 'article-card';
-    card.dataset.date = entry.date;
-
-    const d = new Date(entry.date + 'T00:00:00');
-    const dateLabel = `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
-
-    card.innerHTML = `
-      <div class="card-header">
-        <span class="card-date-badge">${dateLabel}</span>
-        <div class="card-title-wrap">
-          <div class="card-title">${entry.title}</div>
-          ${entry.summary ? `<div class="card-summary">${entry.summary}</div>` : ''}
-        </div>
-        <span class="card-toggle">▼</span>
-      </div>
-      <div class="card-body">${entry.content_html}</div>
-    `;
-
-    card.querySelectorAll('.card-body .tip').forEach(tipEl => {
-      const tableHtml = buildTwnTable(tipEl.textContent);
-      if (tableHtml) tipEl.outerHTML = tableHtml;
-    });
-
-    card.querySelector('.card-header').addEventListener('click', () => {
-      card.classList.toggle('open');
-    });
-
-    list.appendChild(card);
+  yearSelect.addEventListener('change', () => {
+    const y = yearSelect.value;
+    const m = monthsAvailable(y)[0];
+    const d = daysAvailable(y, m)[0];
+    loadDate(y + m + d);
+  });
+  monthSelect.addEventListener('change', () => {
+    const y = yearSelect.value, m = monthSelect.value;
+    const d = daysAvailable(y, m)[0];
+    loadDate(y + m + d);
+  });
+  daySelect.addEventListener('change', () => {
+    loadDate(yearSelect.value + monthSelect.value + daySelect.value);
+  });
+  document.getElementById('brandLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    loadDate(manifest[0].date_key);
+  });
+  window.addEventListener('popstate', () => {
+    loadDate(resolveDateKeyFromUrl(), { pushState: false });
   });
 
-  if (entries.length === 1) {
-    document.querySelector('.article-card')?.classList.add('open');
+  loadDate(resolveDateKeyFromUrl(), { pushState: false, scroll: false });
+}
+
+function resolveDateKeyFromUrl() {
+  const urlDate = new URLSearchParams(location.search).get('d');
+  return (urlDate && manifest.some(m => m.date_key === urlDate)) ? urlDate : manifest[0].date_key;
+}
+
+function yearsAvailable() {
+  return [...new Set(manifest.map(m => m.date_key.slice(0, 4)))].sort().reverse();
+}
+function monthsAvailable(year) {
+  return [...new Set(manifest.filter(m => m.date_key.slice(0, 4) === year).map(m => m.date_key.slice(4, 6)))].sort().reverse();
+}
+function daysAvailable(year, month) {
+  return manifest
+    .filter(m => m.date_key.slice(0, 4) === year && m.date_key.slice(4, 6) === month)
+    .map(m => m.date_key.slice(6, 8))
+    .sort()
+    .reverse();
+}
+
+function populateDatePicker(dateKey) {
+  const y = dateKey.slice(0, 4), mo = dateKey.slice(4, 6), da = dateKey.slice(6, 8);
+  yearSelect.innerHTML = yearsAvailable().map(yr => `<option value="${yr}" ${yr === y ? 'selected' : ''}>${yr}</option>`).join('');
+  monthSelect.innerHTML = monthsAvailable(y).map(m => `<option value="${m}" ${m === mo ? 'selected' : ''}>${m}</option>`).join('');
+  daySelect.innerHTML = daysAvailable(y, mo).map(d => `<option value="${d}" ${d === da ? 'selected' : ''}>${d}</option>`).join('');
+}
+
+async function loadDate(dateKey, opts = {}) {
+  const { pushState = true, scroll = true } = opts;
+  let digest;
+  try {
+    const res = await fetch(`digests/${dateKey}.json`);
+    if (!res.ok) throw new Error('not found');
+    digest = await res.json();
+  } catch (e) {
+    showError(`找不到 ${dateKey} 的日報資料。`);
+    return;
+  }
+
+  activeTag = null;
+  populateDatePicker(dateKey);
+  renderSignal(digest);
+  buildTagFilterBar(digest);
+  renderSections(digest);
+  applyFilter();
+
+  const url = new URL(location.href);
+  if (dateKey === manifest[0].date_key) url.searchParams.delete('d');
+  else url.searchParams.set('d', dateKey);
+  if (pushState) history.pushState({ dateKey }, '', url);
+  else history.replaceState({ dateKey }, '', url);
+
+  if (scroll) {
+    document.getElementById('top').scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 }
 
-function buildTwnTable(text) {
-  const cleaned = text.replace(/^\s*💡\s*/, '').trim();
+function formatDate(iso) { return iso ? iso.replaceAll('-', '/') : '—'; }
+
+function renderSignal(d) {
+  const total = SECTIONS.reduce((n, s) => n + (d[s.key] || []).length, 0);
+  document.getElementById('signalEyebrow').textContent = `Today's Signal · ${formatDate(d.date)}`;
+  document.getElementById('signalTitle').textContent = d.summary || '（今日無摘要）';
+  document.getElementById('metaReportDate').textContent = formatDate(d.date);
+  document.getElementById('metaDataDate').textContent = formatDate(d.data_date);
+  document.getElementById('metaGeneratedAt').textContent = d.generated_at || '—';
+  document.getElementById('metaCount').textContent = `${total} 則`;
+
+  document.getElementById('sectionNav').innerHTML = SECTIONS
+    .filter(s => (d[s.key] || []).length)
+    .map(s => `<a href="#${s.id}">${s.label} · ${d[s.key].length} 則</a>`)
+    .join('');
+
+  const tips = (d.tips_summary || []).slice(0, 6);
+  const wrap = document.getElementById('actionListWrap');
+  if (tips.length) {
+    wrap.style.display = '';
+    document.getElementById('actionList').innerHTML = tips.map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  } else {
+    wrap.style.display = 'none';
+  }
+}
+
+function buildTagFilterBar(d) {
+  const bar = document.getElementById('tagFilterBar');
+  const allTags = new Set();
+  SECTIONS.forEach(s => (d[s.key] || []).forEach(item => (item.tags || []).forEach(t => allTags.add(t))));
+  if (!allTags.size) {
+    bar.style.display = 'none';
+    bar.innerHTML = '';
+    return;
+  }
+  bar.style.display = '';
+  bar.innerHTML =
+    `<span class="tag-filter-label">依主題篩選</span>` +
+    [...allTags].map(t => `<span class="chip" data-tag="${escapeAttr(t)}">${escapeHtml(t)}</span>`).join('') +
+    `<span class="chip chip-reset" id="tagReset">清除篩選</span>`;
+  bar.querySelectorAll('.chip[data-tag]').forEach(chip => {
+    chip.addEventListener('click', () => toggleTag(chip.dataset.tag));
+  });
+  document.getElementById('tagReset').addEventListener('click', () => toggleTag(null));
+}
+
+function toggleTag(tag) {
+  activeTag = (activeTag === tag) ? null : tag;
+  applyFilter();
+}
+
+function applyFilter() {
+  document.querySelectorAll('#tagFilterBar .chip[data-tag]').forEach(chip => {
+    chip.classList.toggle('active', chip.dataset.tag === activeTag);
+  });
+
+  document.querySelectorAll('.section-block').forEach(section => {
+    let visible = 0;
+    section.querySelectorAll('.article').forEach(article => {
+      let tags = [];
+      try { tags = JSON.parse(article.dataset.tags || '[]'); } catch (e) {}
+      const match = !activeTag || tags.includes(activeTag);
+      article.style.display = match ? '' : 'none';
+      if (match) visible++;
+      article.querySelectorAll('.tag-row span').forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.tag === activeTag);
+      });
+    });
+    const countEl = section.querySelector('.section-count');
+    const total = countEl.dataset.total;
+    countEl.textContent = activeTag ? `${visible} / ${total} 則` : `${total} 則`;
+    section.style.display = (activeTag && visible === 0) ? 'none' : '';
+  });
+}
+
+function renderSections(d) {
+  const wrap = document.getElementById('sections');
+  wrap.innerHTML = '';
+  let any = false;
+  SECTIONS.forEach(s => {
+    const items = d[s.key] || [];
+    if (!items.length) return;
+    any = true;
+    const section = document.createElement('section');
+    section.className = 'section-block';
+    section.id = s.id;
+    section.innerHTML = `
+      <div class="section-head">
+        <h2>${s.label}</h2>
+        <span class="section-count" data-total="${items.length}">${items.length} 則</span>
+      </div>
+      <div class="article-list"></div>
+    `;
+    const list = section.querySelector('.article-list');
+    items.forEach(item => list.appendChild(buildArticleCard(item)));
+    wrap.appendChild(section);
+  });
+  if (!any) {
+    wrap.innerHTML = '<p class="no-results">這天沒有收錄內容。</p>';
+  }
+}
+
+function buildArticleCard(item) {
+  const el = document.createElement('article');
+  el.className = 'article';
+  const tags = Array.isArray(item.tags) ? item.tags : [];
+  el.dataset.tags = JSON.stringify(tags);
+
+  let sourceHtml = '';
+  if (Array.isArray(item.source_urls) && item.source_urls.length) {
+    const links = item.source_urls
+      .map(s => `<a href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.name)}</a>`)
+      .join('、');
+    sourceHtml = `<p class="article-source">來源：${links}</p>`;
+  }
+
+  const tagRowHtml = tags.length
+    ? `<div class="tag-row">${tags.map(t => `<span data-tag="${escapeAttr(t)}">${escapeHtml(t)}</span>`).join('')}</div>`
+    : '';
+
+  el.innerHTML = `
+    ${sourceHtml}
+    <h3 class="article-title">${escapeHtml(item.title || '')}</h3>
+    ${item.content ? `<p class="article-lede">${escapeHtml(item.content)}</p>` : ''}
+    ${tagRowHtml}
+    ${buildFrame(item.tip)}
+  `;
+
+  el.querySelectorAll('.tag-row span').forEach(chip => {
+    chip.addEventListener('click', () => toggleTag(chip.dataset.tag));
+  });
+
+  return el;
+}
+
+function buildFrame(tip) {
+  if (!tip) return '';
+  const cleaned = tip.replace(/^\s*💡\s*/, '').trim();
   const match = cleaned.match(/【What】([\s\S]*?)【So What】([\s\S]*?)【Now What】([\s\S]*)$/);
-  if (!match) return null;
-
+  if (!match) return '';
   const rows = [
-    ['What', '事件本質', match[1].trim()],
-    ['So What', '影響判讀', match[2].trim()],
-    ['Now What', '具體行動', match[3].trim()],
+    ['WHAT', '事件本質', match[1].trim()],
+    ['SO WHAT', '影響判讀', match[2].trim()],
+    ['NOW WHAT', '具體行動', match[3].trim()],
   ];
-
-  const rowsHtml = rows.map(([en, zh, content]) => `
-    <div class="twn-row">
-      <div class="twn-label"><span class="en">${en}</span><span class="zh">${zh}</span></div>
-      <div class="twn-content">${escapeHtml(content)}</div>
-    </div>
-  `).join('');
-
-  return `<div class="twn-card">${rowsHtml}</div>`;
+  const rowsHtml = rows
+    .map(([en, zh, val]) => `<div class="frame-row"><div class="lab">${en}<small>${zh}</small></div><div class="val">${escapeHtml(val)}</div></div>`)
+    .join('');
+  return `<div class="frame"><p class="frame-eyebrow">行銷判讀</p><div class="frame-rows">${rowsHtml}</div></div>`;
 }
 
 function escapeHtml(str) {
   const div = document.createElement('div');
-  div.textContent = str;
+  div.textContent = str == null ? '' : String(str);
   return div.innerHTML;
 }
+function escapeAttr(str) { return escapeHtml(str).replaceAll('"', '&quot;'); }
 
-function filter() {
-  const results = activeDate ? allEntries.filter(e => e.date === activeDate) : allEntries;
-  renderArticles(results);
+function showError(msg) {
+  document.getElementById('sections').innerHTML = `<p class="no-results">${escapeHtml(msg)}</p>`;
 }
 
-function setActiveDate(date) {
-  activeDate = date;
-
-  if (date) {
-    const d = new Date(date + 'T00:00:00');
-    calYear = d.getFullYear();
-    calMonth = d.getMonth() + 1;
-  }
-  renderCalendar();
-  updateCalendarToggleHint();
-  filter();
-
-  if (date) {
-    document.querySelector('.article-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-
-loadData().catch(() => {
-  document.getElementById('articleList').innerHTML =
-    '<div class="no-results">無法載入資料，請確認 news.json 存在。</div>';
-});
+init();
 </script>
 </body>
 </html>

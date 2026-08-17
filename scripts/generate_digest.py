@@ -106,6 +106,10 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
 【So What】對競爭格局或行銷作業的影響，誰受影響
 【Now What】這週可採取的一個具體行動（不空泛，要可執行）
 
+每則新聞（big_news / tool_updates / trends）都要附上 tags：剛好 2 個繁體中文主題標籤，
+4-6 字為主，例如「AI 政策法規」「品牌溝通」「行銷科技」，用來讓讀者依主題篩選，
+避免每天標籤都不一樣的亂象，同類新聞盡量用同一組慣用標籤。
+
 聚焦優先順序：品牌內容策略 > 社群自媒體 > 行銷自動化 > 數據分析 > 職涯定位
 
 排版：中文與英文之間加半形空格，例如「使用 Claude API」
@@ -130,6 +134,7 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
       "title": "新聞標題",
       "content": "2–3 句摘要說明",
       "source_urls": [{{"name": "來源名稱", "url": "https://..."}}],
+      "tags": ["主題標籤1", "主題標籤2"],
       "tip": "【What】...【So What】...【Now What】..."
     }}
   ],
@@ -138,6 +143,7 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
       "title": "工具名稱 — 更新重點",
       "content": "2–3 句更新說明",
       "source_urls": [{{"name": "來源名稱", "url": "https://..."}}],
+      "tags": ["主題標籤1", "主題標籤2"],
       "tip": "【What】...【So What】...【Now What】..."
     }}
   ],
@@ -145,6 +151,7 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
     {{
       "title": "趨勢標題",
       "content": "2–3 句趨勢觀察",
+      "tags": ["主題標籤1", "主題標籤2"],
       "tip": "【What】...【So What】...【Now What】..."
     }}
   ],

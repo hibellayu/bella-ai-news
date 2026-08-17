@@ -16,6 +16,36 @@ JSON_DIR = os.path.join(BASE, "digests")
 _md_path = os.path.join(BASE, "日報AI新聞動態")
 MD_DIR   = _md_path if os.path.isdir(_md_path) else None
 OUTPUT   = os.path.abspath(os.path.join(os.path.dirname(__file__), "../news.json"))
+MANIFEST_OUTPUT = os.path.join(JSON_DIR, "manifest.json")
+
+
+# ── manifest.json（供新版 index.html 的日期選單使用）────────────────────────────
+
+def build_manifest():
+    """Regenerate digests/manifest.json from every digests/YYYYMMDD.json on disk."""
+    rows = []
+    for f in glob.glob(os.path.join(JSON_DIR, "????????.json")):
+        if not re.match(r'^\d{8}\.json$', os.path.basename(f)):
+            continue  # skip manifest.json (also 8 chars before ".json")
+        with open(f, "r", encoding="utf-8") as fh:
+            try:
+                d = json.load(fh)
+            except Exception as e:
+                print(f"  manifest: JSON parse error {f}: {e}")
+                continue
+        if not isinstance(d, dict):
+            continue
+        date_key = d.get("date_key") or os.path.splitext(os.path.basename(f))[0]
+        rows.append({
+            "date_key": date_key,
+            "date": d.get("date", ""),
+            "display_date": d.get("display_date", date_key),
+            "summary": d.get("summary", ""),
+        })
+    rows.sort(key=lambda r: r["date_key"], reverse=True)
+    with open(MANIFEST_OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)
+    print(f"manifest.json：{len(rows)} 篇 → {MANIFEST_OUTPUT}")
 
 
 # ── JSON source ────────────────────────────────────────────────────────────────
@@ -220,6 +250,8 @@ def main():
 
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(sorted_entries, f, ensure_ascii=False, indent=2)
+
+    build_manifest()
 
     json_count = sum(1 for f in glob.glob(os.path.join(JSON_DIR, "????????.json")))
     md_count   = sum(1 for f in glob.glob(os.path.join(MD_DIR, "AI日報_*.md"))) if MD_DIR else 0

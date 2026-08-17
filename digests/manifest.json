@@ -1,22 +1,326 @@
 [
   {
+    "date_key": "20260817",
+    "date": "2026-08-17",
+    "display_date": "2026年08月17日",
+    "summary": "今日精選：8 條 AI 相關動態｜聚焦 AI 安全信任危機、內容水印、AI Agent 實戰落差"
+  },
+  {
+    "date_key": "20260816",
+    "date": "2026-08-16",
+    "display_date": "2026年08月16日",
+    "summary": "今日精選：8 條 AI 相關動態｜聚焦 AI 內容真實性、企業 AI 落地變現、影子 AI 治理"
+  },
+  {
+    "date_key": "20260815",
+    "date": "2026-08-15",
+    "display_date": "2026年08月15日",
+    "summary": "今日精選：15 條 AI 相關動態｜聚焦 模型價格戰、AI Agent 安全風險、企業 AI 採用策略"
+  },
+  {
+    "date_key": "20260814",
+    "date": "2026-08-14",
+    "display_date": "2026年08月14日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Claude 浮水印風波、AI Agent 安全危機、Martech 品類洗牌"
+  },
+  {
+    "date_key": "20260813",
+    "date": "2026-08-13",
+    "display_date": "2026年08月13日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Gemini 破 10 億用戶、Facebook Creator Studio AI 工具上線、Grok Bot 正式發布"
+  },
+  {
+    "date_key": "20260812",
+    "date": "2026-08-12",
+    "display_date": "2026年08月12日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 內容標記、ChatGPT 廣告投放、產品發現渠道重構"
+  },
+  {
+    "date_key": "20260811",
+    "date": "2026-08-11",
+    "display_date": "2026年08月11日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI Agent 安全邊界、OpenAI 廣告生態、AI Slop 反撲"
+  },
+  {
+    "date_key": "20260810",
+    "date": "2026-08-10",
+    "display_date": "2026年08月10日",
+    "summary": "今日精選：6 條 AI 相關動態｜聚焦 AI 安全風險、OpenAI 併購佈局、內容真實性危機"
+  },
+  {
+    "date_key": "20260809",
+    "date": "2026-08-09",
+    "display_date": "2026年08月09日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 安全紅線、多 Agent 協作爆發、AI 生成內容商業化"
+  },
+  {
+    "date_key": "20260808",
+    "date": "2026-08-08",
+    "display_date": "2026年08月08日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 模型越獄失控、平台競爭白熱化、品牌內容授權新規則"
+  },
+  {
+    "date_key": "20260807",
+    "date": "2026-08-07",
+    "display_date": "2026年08月07日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 代理人失控風險、Google 權力版圖重組、歐盟 AI 法案執法上路"
+  },
+  {
+    "date_key": "20260806",
+    "date": "2026-08-06",
+    "display_date": "2026年08月06日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 搜尋流量變現、AI Agent 安全失控、品牌行銷職涯轉型"
+  },
+  {
+    "date_key": "20260805",
+    "date": "2026-08-05",
+    "display_date": "2026年08月05日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 廣告新型態、歐盟 AI 透明化法規生效、Qwen3.8-Max 旗艦模型發布"
+  },
+  {
+    "date_key": "20260804",
+    "date": "2026-08-04",
+    "display_date": "2026年08月04日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI Agent 爆發、B2B 品牌 AEO 佈局、AI 資安風險升溫"
+  },
+  {
+    "date_key": "20260803",
+    "date": "2026-08-03",
+    "display_date": "2026年08月03日",
+    "summary": "今日精選：7 條 AI 相關動態｜聚焦 AI 揭露法規、職場 AI 焦慮、內容真偽辨別"
+  },
+  {
+    "date_key": "20260802",
+    "date": "2026-08-02",
+    "display_date": "2026年08月02日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI Agent 失控風險、平台內容規範、搜尋行為世代轉移"
+  },
+  {
+    "date_key": "20260801",
+    "date": "2026-08-01",
+    "display_date": "2026年08月01日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 模型安全失控、價格戰白熱化、行銷測量落差"
+  },
+  {
+    "date_key": "20260731",
+    "date": "2026-07-31",
+    "display_date": "2026年07月31日",
+    "summary": "今日精選：15 條 AI 相關動態｜聚焦 AI Agent 安全失控、行銷量測新框架、企業 AI ROI 落地"
+  },
+  {
+    "date_key": "20260730",
+    "date": "2026-07-30",
+    "display_date": "2026年07月30日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 代理人失控風險、內容真偽辨識、行銷數據應用"
+  },
+  {
+    "date_key": "20260729",
+    "date": "2026-07-29",
+    "display_date": "2026年07月29日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 搜尋生態重組、內容標示法規上路、開放權重模型競局"
+  },
+  {
+    "date_key": "20260728",
+    "date": "2026-07-28",
+    "display_date": "2026年07月28日",
+    "summary": "今日精選：13 條 AI 相關動態｜聚焦 AI 搜尋廣告變局、Claude 隱私風波、AI 代理資安威脅"
+  },
+  {
+    "date_key": "20260727",
+    "date": "2026-07-27",
+    "display_date": "2026年07月27日",
+    "summary": "今日精選：5 條 AI 相關動態｜聚焦 AI 裁員浪潮、模型價格戰、反 AI 反撲"
+  },
+  {
+    "date_key": "20260726",
+    "date": "2026-07-26",
+    "display_date": "2026年07月26日",
+    "summary": "今日精選：8 條 AI 相關動態｜聚焦 Claude Opus 5 上線、AI Agent 治理落差、AI 個性成競爭力"
+  },
+  {
+    "date_key": "20260725",
+    "date": "2026-07-25",
+    "display_date": "2026年07月25日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 行銷治理危機、多模態工具爆發、開源 vs. 中國 AI 地緣政治"
+  },
+  {
+    "date_key": "20260724",
+    "date": "2026-07-24",
+    "display_date": "2026年07月24日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Gemini 近 10 億用戶、AI Agent 失控事件、中美 AI 角力"
+  },
+  {
+    "date_key": "20260723",
+    "date": "2026-07-23",
+    "display_date": "2026年07月23日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 模型安全失控、版權大和解、企業 AI 部署新賽局"
+  },
+  {
+    "date_key": "20260722",
+    "date": "2026-07-22",
+    "display_date": "2026年07月22日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Claude 數學突破、AI 內容監管收緊、Token 成本失控"
+  },
+  {
+    "date_key": "20260721",
+    "date": "2026-07-21",
+    "display_date": "2026年07月21日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 YouTube 內容新規、Hugging Face 遭 AI 代理入侵、中國模型競賽白熱化"
+  },
+  {
+    "date_key": "20260720",
+    "date": "2026-07-20",
+    "display_date": "2026年07月20日",
+    "summary": "今日精選：7 條 AI 相關動態｜聚焦 Claude Fable 5 訂閱策略、假 AI 新創病毒行銷、語音 AI 接話節奏"
+  },
+  {
+    "date_key": "20260719",
+    "date": "2026-07-19",
+    "display_date": "2026年07月19日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI Agent 安全架構、開源模型競局、影片創作工具"
+  },
+  {
+    "date_key": "20260718",
+    "date": "2026-07-18",
+    "display_date": "2026年07月18日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Kimi K3 開源衝擊、內容信任危機、行銷 Agent 落地挑戰"
+  },
+  {
+    "date_key": "20260717",
+    "date": "2026-07-17",
+    "display_date": "2026年07月17日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 開放權重模型競賽、AI Agent 落地現實、品牌 AI 安全風險"
+  },
+  {
+    "date_key": "20260716",
+    "date": "2026-07-16",
+    "display_date": "2026年07月16日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI Agent 企業落地、模型安全風險、品牌廣告反思"
+  },
+  {
+    "date_key": "20260715",
+    "date": "2026-07-15",
+    "display_date": "2026年07月15日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 基礎設施管制、開源模型崛起、內容標籤新規"
+  },
+  {
+    "date_key": "20260714",
+    "date": "2026-07-14",
+    "display_date": "2026年07月14日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦模型定價戰、資安新威脅、AI 疲勞現象"
+  },
+  {
+    "date_key": "20260713",
+    "date": "2026-07-13",
+    "display_date": "2026年07月13日",
+    "summary": "今日精選：8 條 AI 相關動態｜聚焦 AI 品牌形象風險、語音互動升級、AI 裁員反撲"
+  },
+  {
+    "date_key": "20260712",
+    "date": "2026-07-12",
+    "display_date": "2026年07月12日",
+    "summary": "今日精選：8 條 AI 相關動態｜聚焦 ChatGPT Work 上線、Apple vs OpenAI 訴訟、AI 假留言防護戰"
+  },
+  {
+    "date_key": "20260711",
+    "date": "2026-07-11",
+    "display_date": "2026年07月11日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 GPT-5.6 全面上線、Anthropic 付費分層、AI 廣告透明度"
+  },
+  {
+    "date_key": "20260710",
+    "date": "2026-07-10",
+    "display_date": "2026年07月10日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 Grok 4.5 降價衝擊、GPT-Live 全雙工語音、Claude 行為分析儀表板"
+  },
+  {
+    "date_key": "20260709",
+    "date": "2026-07-09",
+    "display_date": "2026年07月09日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 Claude Cowork 行動化、Meta Muse Image 隱私爭議、AI 搜尋信任度訊號"
+  },
+  {
+    "date_key": "20260708",
+    "date": "2026-07-08",
+    "display_date": "2026年07月08日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 Claude 意識研究、HubSpot 數據風波、AI 指標重構"
+  },
+  {
+    "date_key": "20260707",
+    "date": "2026-07-07",
+    "display_date": "2026年07月07日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 資安漏洞、中國監管收緊、行銷複雜度管理"
+  },
+  {
+    "date_key": "20260706",
+    "date": "2026-07-06",
+    "display_date": "2026年07月06日",
+    "summary": "今日精選：5 條 AI 相關動態｜聚焦 AI 品牌廣告爭議、企業 AI 工具管控、編輯思維與人才定位"
+  },
+  {
+    "date_key": "20260705",
+    "date": "2026-07-05",
+    "display_date": "2026年07月05日",
+    "summary": "今日精選：4 條 AI 相關動態｜聚焦 垂直 AI 落地、創作社群 AI 衝突、好萊塢 AI 政治角力"
+  },
+  {
+    "date_key": "20260704",
+    "date": "2026-07-04",
+    "display_date": "2026年07月04日",
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 代理進展放緩、企業多模型避險策略、Anthropic 自研晶片與內容策略新典範"
+  },
+  {
+    "date_key": "20260703",
+    "date": "2026-07-03",
+    "display_date": "2026年07月03日",
+    "summary": "今日精選：今日新聞來源中 AI 相關訊號稀少，但仍可從 Google 反壟斷敗訴、實體媒介消亡等動態中，提煉對數位行銷格局的關鍵觀察｜聚焦 平台監管、內容分發、訂閱模式"
+  },
+  {
+    "date_key": "20260702",
+    "date": "2026-07-02",
+    "display_date": "2026年07月02日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 品牌信任危機、行銷能見度爭奪戰、企業 AI 治理"
+  },
+  {
+    "date_key": "20260701",
+    "date": "2026-07-01",
+    "display_date": "2026年07月01日",
+    "summary": "今日精選：10 條 AI 相關動態｜聚焦 Claude Sonnet 5 降價、Google 圖像影片工具升級、AI Agent 部署加速"
+  },
+  {
+    "date_key": "20260630",
+    "date": "2026-06-30",
+    "display_date": "2026年06月30日",
+    "summary": "今日精選：10 條 AI 重點動態｜聚焦法規轉折 / Anthropic IPO 動向 / 工具計費變革"
+  },
+  {
     "date_key": "20260629",
+    "date": "2026-06-29",
     "display_date": "2026年06月29日",
-    "summary": "12條動態｜Gemini 圖像免費、GPT-5.6 發布、Agentic AI 趨勢"
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦工具更新 / 新創融資 / 自媒體 AI 應用"
+  },
+  {
+    "date_key": "20260628",
+    "date": "2026-06-28",
+    "display_date": "2026年06月28日",
+    "summary": "今日精選：1 條 AI 相關動態｜聚焦 AI 生產力轉型、產品思維崛起"
   },
   {
     "date_key": "20260627",
+    "date": "2026-06-27",
     "display_date": "2026年06月27日",
-    "summary": "11條動態｜Mythos 5 解禁、Jalapeño 晶片、Oracle 裁員 21000"
+    "summary": "今日精選：11 條 AI 相關動態｜聚焦 Mythos 模型解禁 / Jalapeño 自研晶片 / Oracle 大裁員"
   },
   {
     "date_key": "20260625",
+    "date": "2026-06-25",
     "display_date": "2026年06月25日",
-    "summary": "12條動態｜Apple x Gemini、Google Agentic Search、AI 內容真實性"
+    "summary": "今日精選：12 條 AI 相關動態｜聚焦平台 AI 化 / 行銷工具 / 創作者經濟"
   },
   {
     "date_key": "20260624",
+    "date": "2026-06-24",
     "display_date": "2026年6月24日",
-    "summary": "11條動態｜GPT-5.6、Figma Config、Facebook Creator AI"
+    "summary": "今日精選：11 條 AI 相關動態｜聚焦工具 / 創業 / 自媒體"
   }
 ]
