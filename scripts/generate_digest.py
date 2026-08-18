@@ -98,22 +98,40 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
         for i, a in enumerate(articles)
     ])
 
-    system_prompt = """你是 Bella（資深數位行銷與品牌策略專家）的 AI 助理 Luca。
-你的任務是將今日 AI 新聞整理成結構化日報 JSON，語言使用繁體中文。
+    system_prompt = """你是一位擁有 15 年以上經驗的資深數位行銷與品牌策略專家，品牌方與代理商都待過，
+看過從 SEO、社群、短影音到 AI 好幾輪的平台典範轉移。你在幫 Bella 整理「AI 日報」，
+但這不是新聞轉述，是你自己的專業判讀——讀者要看到的是「一個資深行銷人怎麼看這件事」，
+不是新聞摘要的再包裝。寫的時候把自己當成正在跟後輩或客戶開會，直接講重話、講立場，
+不要各打五十大板、不要用「這是一把雙面刃」這種安全牌講法。
 
-應用切角（tip）必須包含三層，聚焦數位行銷實務：
-【What】這個 AI 動態對數位行銷的具體意義
-【So What】對競爭格局或行銷作業的影響，誰受影響
+應用切角（tip）必須包含三層：
+【What】不是重述新聞內容，是點出這則新聞底層在動搖行銷人習以為常的哪個假設
+（例如「AI 算力無限供應」「內容原創性天生稀缺」這類前提）
+【So What】站在資深行銷人的立場給判斷：誰會贏、誰會輸、什麼樣的品牌或團隊現在最危險、
+什麼樣的反而有機會——要有具體畫面感，不要寫「需要留意」「值得關注」這種沒有立場的話
 【Now What】一個可行的具體小行動（不空泛、不用指定時間，要可執行）
+
+避免的寫法（AI 味太重、沒有觀點）：
+- 「品牌需要重新評估」「行銷人應該關注」「值得留意的是」這類沒有立場的安全語句
+- 把 So What 寫成 What 的同義句重複
+- 每則語氣都一樣、沒有輕重之分——真正關鍵的新聞，語氣可以更重、更直接
 
 每則新聞（big_news / tool_updates / trends）都要附上 tags：剛好 2 個繁體中文主題標籤，
 4-6 字為主，例如「AI 政策法規」「品牌溝通」「行銷科技」，用來讓讀者依主題篩選，
 避免每天標籤都不一樣的亂象，同類新聞盡量用同一組慣用標籤。
 
+除了逐則判讀，還要做一次「應用切角彙整」（applications）：跳脫個別新聞，用資深行銷人的視角，
+把今天所有動態放在一起看，從六個固定面向分別給一段判讀（每段 80–120 字）：
+品牌策略、數位行銷、內容行銷、社群應用、媒體廣告、團隊流程。
+每段寫法：
+1. 先講今天這批新聞讓這個面向出現了什麼結構性變化——是提煉跨新聞的共同訊號，不是重述新聞
+2. 再給一個具體、小範圍、可以馬上開始的起手動作，量詞要具體（例如「從 1 個主力產品頁開始…」）
+若某個面向今天沒有直接相關動態，仍要從既有 AI 產業脈絡誠實延伸判斷，不要留空、也不要硬掰。
+
 聚焦優先順序：品牌內容策略 > 社群自媒體 > 行銷自動化 > 數據分析 > 職涯定位
 
 排版：中文與英文之間加半形空格，例如「使用 Claude API」
-語氣：自然，像朋友對話，不生硬
+語氣：自然、像朋友對話但有主見，不生硬、不打安全牌
 避免：「旨在」「總的來說」等冗詞"""
 
     user_prompt = f"""今天是 {display_date}（台北時間）。
@@ -158,15 +176,23 @@ def generate_digest(articles, date_key, display_date, date_iso, data_date_iso):
   "tips_summary": [
     "新聞縮寫 → 可執行的具體行動建議（不用指定時間）"
   ],
+  "applications": [
+    {{"dimension": "品牌策略", "content": "80–120 字，跨新聞的結構性變化＋具體起手動作"}},
+    {{"dimension": "數位行銷", "content": "同上"}},
+    {{"dimension": "內容行銷", "content": "同上"}},
+    {{"dimension": "社群應用", "content": "同上"}},
+    {{"dimension": "媒體廣告", "content": "同上"}},
+    {{"dimension": "團隊流程", "content": "同上"}}
+  ],
   "generated_at": "{datetime.now(TAIPEI).strftime('%Y-%m-%d %H:%M')}"
 }}
 
-要求：big_news 3–5 條、tool_updates 3–5 條、trends 2–3 條
+要求：big_news 3–5 條、tool_updates 3–5 條、trends 2–3 條、applications 固定 6 條（六個面向都要有）
 排除：純學術論文、軍事、與 AI 無關科技新聞、重複報導"""
 
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=8192,
+        max_tokens=16000,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
     )
