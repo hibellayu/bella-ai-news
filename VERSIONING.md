@@ -72,7 +72,7 @@ v1.0.0 → v1.0.1
 
 ## 目前版本
 
-目前版本：`v2.0.0`
+目前版本：`v2.0.1`
 
 定義：資料來源架構大改＋產文流程重做。RSS 來源從 12 個擴充到 18 個（新增 Marketing AI Institute、
 Search Engine Land、Search Engine Roundtable、Social Media Today、The Decoder、AI News），

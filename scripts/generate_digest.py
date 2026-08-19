@@ -313,7 +313,9 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
   "generated_at": "{datetime.now(TAIPEI).strftime('%Y-%m-%d %H:%M')}"
 }}
 
-要求：big_news 3–5 條、tool_updates 3–5 條、trends 2–3 條、applications 固定 6 條（六個面向都要有）
+要求：big_news 3–5 條（其中至少 1–2 條要是 industry 角度——產業重大新聞仍然要保留代表性，
+不能因為想強調行銷觀點就把它排除）、tool_updates 3–5 條、trends 2–3 條、
+applications 固定 6 條（六個面向都要有）
 排除：純學術論文、軍事、與 AI 無關科技新聞、重複報導"""
 
     message = client.messages.create(
