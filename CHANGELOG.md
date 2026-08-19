@@ -2,6 +2,29 @@
 
 版本規則見 [VERSIONING.md](VERSIONING.md)。
 
+## v2.0.0（2026-08-19）
+
+**大改版** — 資料來源架構大改＋產文流程重做，解決內容品質問題。
+
+- 原因：貝拉指出兩個問題（1）資訊來源不夠貼近數位行銷人的實際需要；（2）選稿邏輯讓產業新聞
+  獨佔版面，判讀常常停在「某公司推出模型／某平台競爭升級」，沒有連到行銷人真正該做的事。
+- 內容：
+  - **來源擴充**：RSS 來源從 12 個增加到 18 個，新增 Marketing AI Institute、Search Engine Land、
+    Search Engine Roundtable（實際 feed 網址與官方文件不同，需追轉址找到正確路徑）、
+    Social Media Today（官方 RSS 路徑失效，從網站原始碼找到實際路徑）、The Decoder、AI News
+  - **內容角度分類**：新增 `classify_articles()`，用一次獨立的 Claude API 呼叫，幫每篇候選新聞標記
+    content_angle（industry/brand/workflow/consumer/marketing_channel）與 marketing_relevance
+  - **配額選稿**：新增 `select_balanced_pool()`，在程式碼層面（不只靠 prompt）保證每個角度都有
+    保底名額、industry 角度設 40% 上限，避免產業新聞把版面吃滿，也避免完全沒有產業新聞
+  - **判讀立場收斂**：system prompt 新增核心判讀立場——「這則 AI 新聞代表外部環境變了，行銷人
+    要重新理解品牌入口、內容被引用方式、工具採購、社群互動、工作流與使用者習慣」
+  - 日報 JSON 每則新增 `angle` 欄位，記錄該則內容角度
+- 驗證方式：本機重新產生 8/19 日報（97 篇候選新聞，18 個來源），選稿池角度分佈
+  industry 4／brand 3／workflow 4／consumer 3／marketing_channel 8，五個角度都有代表；
+  抽查判讀內容確認語氣有連回「品牌入口／內容引用」等具體行銷意涵，非單純新聞轉述。
+  第一次測試發現 industry 角度掛零（只設了上限沒設下限），已修正並重新驗證通過。
+- Commit：待補（推送後更新）
+
 ## v1.1.0（2026-08-18）
 
 **中改版** — 新增「應用切角彙整」六大面向、判讀提示詞改為資深行銷人視角、手機版判讀排版優化。
