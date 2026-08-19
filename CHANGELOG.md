@@ -2,6 +2,20 @@
 
 版本規則見 [VERSIONING.md](VERSIONING.md)。
 
+## v2.0.2（2026-08-19）
+
+**小改版** — 補上選稿階段一直缺少的「選文優先順序」。
+
+- 原因：貝拉發現一個沒討論過的缺口——分類階段已經算出 marketing_relevance（行銷相關度），
+  但這個資訊從沒傳給最後寫作的 Claude 呼叫，導致候選新聞超過名額時，篩選完全沒有明確依據。
+  跟貝拉確認後，優先順序定為：先比 marketing_relevance（high > medium > low），同分再比事件重要性。
+- 內容：
+  - articles_text 補上「行銷相關度」欄位，讓寫作階段看得到分類結果
+  - system prompt 新增明確選文順序規則
+- 驗證方式：重新產生 8/19 日報，industry 底線守住（2 則），marketing_channel/workflow 依相關度
+  明顯排到較多名額但沒有獨佔，符合預期。
+- Commit：待補（推送後更新）
+
 ## v2.0.1（2026-08-19）
 
 **小改版** — 修正 industry 角度在最終發布名單掛零的問題。

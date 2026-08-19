@@ -207,7 +207,8 @@ def select_balanced_pool(articles, pool_size=POOL_SIZE):
 def generate_digest(client, articles, date_key, display_date, date_iso, data_date_iso):
     angle_label = lambda a: CONTENT_ANGLES.get(a.get("angle", "industry"), a.get("angle", ""))
     articles_text = "\n\n".join([
-        f"[{i+1}] 來源：{a['source']}｜內容角度：{a.get('angle', 'industry')}（{angle_label(a)}）\n"
+        f"[{i+1}] 來源：{a['source']}｜內容角度：{a.get('angle', 'industry')}（{angle_label(a)}）"
+        f"｜行銷相關度：{a.get('relevance', 'medium')}\n"
         f"標題：{a['title']}\n摘要：{a['summary']}\nURL：{a['url']}"
         for i, a in enumerate(articles)
     ])
@@ -219,8 +220,14 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
 不要各打五十大板、不要用「這是一把雙面刃」這種安全牌講法。
 
 選稿已經先依內容角度（industry／brand／workflow／consumer／marketing_channel）配好額度給你，
-每篇候選新聞前面都標了角度——寫的時候要對應著角度寫，不要每則都寫成「產業新聞」的語氣。
+每篇候選新聞前面都標了角度與行銷相關度——寫的時候要對應著角度寫，不要每則都寫成「產業新聞」的語氣。
 角度不是拿來重述用的標籤，是提醒你這則新聞該從哪個行銷人會關心的切角下手。
+
+候選新聞數量超過各欄位可發布名額時，選文優先順序固定是：
+1. 先看「行銷相關度」，high 優先於 medium，medium 優先於 low
+2. 相關度相同時，才比事件本身的重要性／時效性
+也就是說，一則行銷相關度 high 的小型工具更新，要優先於一則行銷相關度 low 的重大產業新聞——
+除非該產業新聞剛好落在「big_news 至少 1–2 條 industry」的底線內。
 
 判讀的核心立場，永遠是這一句：這則 AI 新聞代表外部環境變了，所以行銷人要重新理解
 品牌入口、內容被引用方式、工具採購、社群互動、工作流與使用者習慣——
