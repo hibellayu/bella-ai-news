@@ -14,7 +14,7 @@
   - system prompt 新增明確選文順序規則
 - 驗證方式：重新產生 8/19 日報，industry 底線守住（2 則），marketing_channel/workflow 依相關度
   明顯排到較多名額但沒有獨佔，符合預期。
-- Commit：待補（推送後更新）
+- Commit：`b0795c9`
 
 ## v2.0.1（2026-08-19）
 
