@@ -53,10 +53,14 @@ RSS_FEEDS = [
     ("Social Media Today",     "https://www.socialmediatoday.com/feeds/news/"),
     # D: 台灣 & 繁中
     ("iThome",              "https://www.ithome.com.tw/rss"),
-    ("數位時代",             "https://www.bnext.com.tw/rss"),
-    ("INSIDE",              "https://www.inside.com.tw/feed"),
     ("科技新報",             "https://technews.tw/category/ai/feed/"),
     ("AI郵報",              "https://www.aiposthub.com/feed/"),
+    # 數位時代、INSIDE 官方 RSS 已停用（2026-08-19 確認：數位時代 /rss 直接回傳網站首頁 HTML，
+    # INSIDE 所有已知 RSS 路徑皆回 403）。改用 Google News 站內搜尋代理取得內容——
+    # 代價是 source_urls 連結會先進 Google News 中繼頁、摘要也幾乎是空的，只有標題可參考。
+    # 若日後官方 RSS 復活，優先換回官方來源。
+    ("數位時代",             "https://news.google.com/rss/search?q=site:bnext.com.tw+AI&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"),
+    ("INSIDE",              "https://news.google.com/rss/search?q=site:inside.com.tw+AI&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"),
 ]
 
 # 內容角度分類（供選稿配額使用，避免產業新聞獨佔版面）
@@ -68,6 +72,16 @@ CONTENT_ANGLES = {
     "marketing_channel": "SEO、內容、社群、廣告、CRM、MarTech",
 }
 
+# 固定標籤池——每則新聞的 tags 必須從這裡選，不可另造新詞，避免同義詞每天各寫各的
+# （例如「行銷科技」「AI 工具生態」「企業工具採購」其實是同一件事，卻拆成三個標籤）。
+CONTENT_TAGS = [
+    "AI 政策法規", "AI 產業佈局", "算力基礎建設", "AI 安全風險",
+    "品牌信任危機", "AI 搜尋能見度", "品牌溝通策略",
+    "AI 工作流風險", "行銷自動化", "職涯發展定位", "團隊協作規範",
+    "使用者隱私", "AI 使用習慣", "消費者信任",
+    "SEO 策略", "內容行銷", "社群內容策略", "媒體廣告投放", "行銷科技採購",
+]
+
 AI_KEYWORDS = [
     "ai", "artificial intelligence", "machine learning", "llm", "gpt", "claude",
     "gemini", "chatgpt", "openai", "anthropic", "google ai", "meta ai",
@@ -78,11 +92,32 @@ AI_KEYWORDS = [
 
 # ── 抓取 RSS ─────────────────────────────────────────────────────────────────────
 
+import re as _re
+
+def clean_summary(raw_summary, title):
+    """去掉 RSS 摘要裡的 HTML 標籤；若摘要其實只是重複標題（Google News 代理常見情況），
+    回傳空字串，讓下游明確知道「這則沒有真正的摘要」，而不是塞一堆沒用的 HTML 進 prompt。"""
+    text = _re.sub(r"<[^>]+>", " ", raw_summary or "")
+    text = _re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return ""
+    # Google News 代理的摘要幾乎都是「標題 + 來源名」，跟標題高度重疊時視同無摘要
+    if title and (text.startswith(title[:20]) or title[:20] in text[:60]):
+        return ""
+    return text[:600]
+
+
 def fetch_articles(target_date):
     articles = []
     for source_name, url in RSS_FEEDS:
+        raw_count = matched_count = 0
         try:
             feed = feedparser.parse(url)
+            raw_count = len(feed.entries)
+            if getattr(feed, "bozo", 0) and raw_count == 0:
+                # feedparser 對連線/格式錯誤通常不丟例外，只會回傳空 entries，
+                # 沒有這行的話來源掛掉會完全無聲無息（我們已經踩過這個坑一次）。
+                print(f"  ⚠️  {source_name}: feed 解析失敗或無內容（{feed.bozo_exception if hasattr(feed, 'bozo_exception') else 'unknown'}）")
             for entry in feed.entries[:40]:
                 pub = entry.get("published_parsed") or entry.get("updated_parsed")
                 if not pub:
@@ -93,14 +128,17 @@ def fetch_articles(target_date):
                 text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
                 if not any(kw in text for kw in AI_KEYWORDS):
                     continue
+                matched_count += 1
+                title = entry.get("title", "").strip()
                 articles.append({
                     "source": source_name,
-                    "title": entry.get("title", "").strip(),
-                    "summary": entry.get("summary", "")[:600].strip(),
+                    "title": title,
+                    "summary": clean_summary(entry.get("summary", ""), title),
                     "url": entry.get("link", ""),
                 })
         except Exception as e:
             print(f"  ⚠️  {source_name}: {e}")
+        print(f"  · {source_name}：抓到 {raw_count} 篇，符合日期+關鍵字 {matched_count} 篇")
     return articles
 
 
@@ -140,16 +178,23 @@ def classify_articles(client, articles):
 
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=4000,
+        max_tokens=8000,
         system=system_prompt,
         messages=[{"role": "user", "content": f"候選新聞：\n{listing}"}],
     )
     raw = message.content[0].text.strip()
     raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-    labels = {item["i"]: item for item in json.loads(raw)}
+    parsed = json.loads(raw)
+    labels = {item["i"]: item for item in parsed if "i" in item}
+
+    # 防禦：回應被截斷或漏標會讓部分新聞靜默套用預設角度，稀釋配額的準確性——
+    # 與其這樣，不如直接判定分類失敗，讓外層 fallback 改用全部候選新聞（不做配額）。
+    missing = len(articles) - len(labels)
+    if missing > 0:
+        raise ValueError(f"分類結果只有 {len(labels)}/{len(articles)} 篇，可能被截斷")
 
     for i, a in enumerate(articles, start=1):
-        label = labels.get(i, {})
+        label = labels[i]
         a["angle"] = label.get("angle", "industry")
         a["relevance"] = label.get("relevance", "medium")
     return articles
@@ -212,8 +257,9 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
         f"標題：{a['title']}\n摘要：{a['summary']}\nURL：{a['url']}"
         for i, a in enumerate(articles)
     ])
+    tag_pool = "、".join(CONTENT_TAGS)
 
-    system_prompt = """你是一位擁有 15 年以上經驗的資深數位行銷與品牌策略專家，品牌方與代理商都待過，
+    system_prompt = f"""你是一位擁有 15 年以上經驗的資深數位行銷與品牌策略專家，品牌方與代理商都待過，
 看過從 SEO、社群、短影音到 AI 好幾輪的平台典範轉移。你在幫 Bella 整理「AI 日報」，
 但這不是新聞轉述，是你自己的專業判讀——讀者要看到的是「一個資深行銷人怎麼看這件事」，
 不是新聞摘要的再包裝。寫的時候把自己當成正在跟後輩或客戶開會，直接講重話、講立場，
@@ -228,6 +274,12 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
 2. 相關度相同時，才比事件本身的重要性／時效性
 也就是說，一則行銷相關度 high 的小型工具更新，要優先於一則行銷相關度 low 的重大產業新聞——
 除非該產業新聞剛好落在「big_news 至少 1–2 條 industry」的底線內。
+
+有些候選新聞（標記來源為數位時代、INSIDE）摘要是空的，只有標題可以參考——這是資料來源限制，
+不是要你憑空腦補。遇到摘要是空的新聞：
+- 如果你自己知道這則新聞在講什麼（是你本來就掌握的真實事件），可以照常寫判讀
+- 如果標題資訊量不足以支撐一段有實質內容的判讀，不要硬寫、不要編造標題沒提到的細節，
+  寧可不選這則，換選有完整摘要、能寫出具體判讀的候選新聞
 
 判讀的核心立場，永遠是這一句：這則 AI 新聞代表外部環境變了，所以行銷人要重新理解
 品牌入口、內容被引用方式、工具採購、社群互動、工作流與使用者習慣——
@@ -246,9 +298,11 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
 - 把 So What 寫成 What 的同義句重複
 - 每則語氣都一樣、沒有輕重之分——真正關鍵的新聞，語氣可以更重、更直接
 
-每則新聞（big_news / tool_updates / trends）都要附上 tags：剛好 2 個繁體中文主題標籤，
-4-6 字為主，例如「AI 政策法規」「品牌溝通」「行銷科技」，用來讓讀者依主題篩選，
-避免每天標籤都不一樣的亂象，同類新聞盡量用同一組慣用標籤。
+每則新聞（big_news / tool_updates / trends）都要附上 tags：剛好從下面這個固定標籤池選 2 個，
+不可以自己另外造詞（就算池子裡的詞不是最精準的形容，也要選最接近的，不要新創同義詞）：
+{tag_pool}
+這個池子每天都一樣，是為了讓讀者依主題篩選時，同類新聞會累積在同一個標籤下，而不是被
+「行銷科技」「AI 工具生態」「企業工具採購」這種意思相同但用詞不同的標籤拆散。
 
 除了逐則判讀，還要做一次「應用切角彙整」（applications）：跳脫個別新聞，用資深行銷人的視角，
 把今天所有動態放在一起看，從六個固定面向分別給一段判讀（每段 80–120 字）：
@@ -366,10 +420,11 @@ def main():
                         continue
                     pub_dt = datetime(*pub[:6], tzinfo=timezone.utc).astimezone(TAIPEI)
                     if pub_dt.date() == target_date.date():
+                        title = entry.get("title", "").strip()
                         articles.append({
                             "source": source_name,
-                            "title": entry.get("title", "").strip(),
-                            "summary": entry.get("summary", "")[:600].strip(),
+                            "title": title,
+                            "summary": clean_summary(entry.get("summary", ""), title),
                             "url": entry.get("link", ""),
                         })
             except Exception:
