@@ -23,7 +23,7 @@
   industry 4／brand 3／workflow 4／consumer 3／marketing_channel 8，五個角度都有代表；
   抽查判讀內容確認語氣有連回「品牌入口／內容引用」等具體行銷意涵，非單純新聞轉述。
   第一次測試發現 industry 角度掛零（只設了上限沒設下限），已修正並重新驗證通過。
-- Commit：待補（推送後更新）
+- Commit：`70236de`
 
 ## v1.1.0（2026-08-18）
 
