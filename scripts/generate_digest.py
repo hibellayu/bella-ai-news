@@ -51,6 +51,9 @@ RSS_FEEDS = [
     ("Search Engine Land",     "https://searchengineland.com/feed"),
     ("Search Engine Roundtable", "https://www.seroundtable.com/index.rdf"),
     ("Social Media Today",     "https://www.socialmediatoday.com/feeds/news/"),
+    # E: AI 影音／創作工具（2026-08-21 新增，補 Seedance 等生成式影音工具覆蓋率不足的缺口）
+    ("No Film School",      "https://nofilmschool.com/rss.xml"),
+    ("量子位",               "https://www.qbitai.com/feed"),
     # D: 台灣 & 繁中
     ("iThome",              "https://www.ithome.com.tw/rss"),
     ("科技新報",             "https://technews.tw/category/ai/feed/"),
@@ -86,7 +89,11 @@ AI_KEYWORDS = [
     "ai", "artificial intelligence", "machine learning", "llm", "gpt", "claude",
     "gemini", "chatgpt", "openai", "anthropic", "google ai", "meta ai",
     "midjourney", "suno", "generative", "agentic", "copilot", "nvidia",
+    # AI 影音／創作工具品牌名——沒有這些的話，標題沒寫「AI」兩字的影音工具新聞會被濾掉
+    "sora", "runway", "pika", "kling", "seedance", "veo", "heygen", "luma",
+    "elevenlabs", "hailuo", "vidu",
     "人工智慧", "ai工具", "生成式", "大語言模型", "ai行銷", "大模型",
+    "人工智能",  # 簡體中文用語，補齊量子位等中國來源
 ]
 
 
