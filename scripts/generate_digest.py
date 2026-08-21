@@ -311,6 +311,10 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
 這個池子每天都一樣，是為了讓讀者依主題篩選時，同類新聞會累積在同一個標籤下，而不是被
 「行銷科技」「AI 工具生態」「企業工具採購」這種意思相同但用詞不同的標籤拆散。
 
+trends（趨勢觀察）也要附上 source_urls，即使一則趨勢是跨好幾篇新聞歸納出來的觀察，也要把
+內文裡實際點名引用的來源都列出來（可以不只一個）——讀者要能點連結回頭查證你講的是哪幾則新聞，
+不能寫了「今天同時有三則新聞指向同一個結構」卻不給那三則新聞的連結。
+
 除了逐則判讀，還要做一次「應用切角彙整」（applications）：跳脫個別新聞，用資深行銷人的視角，
 把今天所有動態放在一起看，從六個固定面向分別給一段判讀（每段 80–120 字）：
 品牌策略、數位行銷、內容行銷、社群應用、媒體廣告、團隊流程。
@@ -362,6 +366,7 @@ def generate_digest(client, articles, date_key, display_date, date_iso, data_dat
     {{
       "title": "趨勢標題",
       "content": "2–3 句趨勢觀察",
+      "source_urls": [{{"name": "來源名稱", "url": "https://..."}}],
       "tags": ["主題標籤1", "主題標籤2"],
       "angle": "industry | brand | workflow | consumer | marketing_channel",
       "tip": "【What】...【So What】...【Now What】..."
