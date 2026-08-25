@@ -1,0 +1,258 @@
+{
+  "date": "2026-08-26",
+  "date_key": "20260826",
+  "display_date": "2026年08月26日",
+  "data_date": "2026-08-25",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 內容可信度、行銷自動化重構、本地 AI 算力崛起",
+  "big_news": [
+    {
+      "title": "Pew 研究：ChatGPT 上線後超過三分之一網頁含 AI 生成文字，商業網站是重災區",
+      "content": "Pew Research Center 分析近 50 萬個英文網頁，發現 ChatGPT 問世後發布的頁面中，超過 1/3 顯示出機器書寫痕跡。商業 .com 網站的 AI 內容密度是 .edu 與 .gov 網站的 10 倍，意味著品牌內容正在快速同質化。這不是一個「有些品牌用 AI 寫作」的個案問題，而是整個商業內容生態系的結構性崩塌。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/pew-study-shows-ai-written-text-has-surged-across-the-web-since-late-2022/"
+        }
+      ],
+      "tags": [
+        "品牌信任危機",
+        "內容行銷"
+      ],
+      "angle": "brand",
+      "tip": "【What】這則新聞動搖的前提是「原創內容天生比 AI 內容稀缺」——現在 Pew 用資料告訴你，原創才是稀缺品，AI 生成才是預設值。你的品牌內容跟競爭對手放在一起，讀者能分辨嗎？【So What】最危險的是那些把 AI 寫作當「提速工具」但沒有建立品牌聲音標準的中型品牌——他們的內容現在跟所有人一樣，在 AI 搜尋的引用池裡幾乎沒有辨識度。反而是一直堅持真人觀點、有具體立場的創作者與品牌，現在稀缺性瞬間暴增。【Now What】把你最近三個月發布的內容拿出來，問自己：哪一篇刪掉品牌名稱，讀者還能認出是你寫的？從那篇學習它的結構，把那個聲音規格化成內容標準。"
+    },
+    {
+      "title": "Stanford 研究：AI 衝擊入門職缺最深，AI 敏感職業年輕就業率下滑 19%",
+      "content": "Stanford 新研究顯示，AI 對就業市場的衝擊並不是均質分布的，而是集中在入門職位。相較於 AI 抵抗性較高的職業，AI 敏感職業的年輕就業率下滑了 19%。這直接影響行銷部門的初階人力結構，因為 copywriting、資料整理、基礎 SEO 操作等本來就是新人進場的通道。",
+      "source_urls": [
+        {
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/08/ai-is-hitting-entry-level-jobs-hardest-stanford-study-finds/"
+        }
+      ],
+      "tags": [
+        "職涯發展定位",
+        "AI 使用習慣"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞動搖的假設是「AI 工具讓初學者也能做好行銷」——資料說的是反面：AI 讓初階工作本身消失，而不是讓初階人才升級。【So What】最危險的是還在用「先找一個便宜的初階人員來學」模式擴充行銷團隊的中小企業主管。反而，能清楚定義「哪些工作 AI 做、哪些工作人來判斷」的資深行銷人，現在市場價值在漲。【Now What】在下次招聘討論時，把職缺的每一個 KPI 逐一問自己：這個 output 現在可以用 AI workflow 直接達成嗎？如果可以，那這個職缺要重新定義需要的不是執行力，而是判斷力。"
+    },
+    {
+      "title": "Perplexity x Nvidia 推出 Portable Computer：AI agent 算力全部跑在本地端，不燒 token",
+      "content": "Perplexity 與 Nvidia 合作推出 Portable Computer，讓 AI agent 完整運行在用戶自有硬體上——從 Nvidia DGX Spark 桌上型超級電腦到配備 RTX GPU 的 Linux 機器都支援。模型、檔案、運算全程在本地，不上雲、不計費用。這是目前為止最積極的一次「AI 工作負載去雲化」嘗試。",
+      "source_urls": [
+        {
+          "name": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs"
+        }
+      ],
+      "tags": [
+        "算力基礎建設",
+        "AI 工作流風險"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞動搖的是「AI 服務必然依賴訂閱制與雲端計費」的假設。當算力可以脫離雲端、工作完全本地化，SaaS 的 AI 工具定價邏輯就要重寫了。【So What】短期對大多數行銷團隊影響有限，但如果你的公司有資料隱私顧慮、或者 AI API 帳單已經失控，這個方向值得正視。最有利的是那些對資料主權有強烈需求的品牌（金融、醫療、法律），他們可以在合規框架內真正落地 AI agent。【Now What】清點你們目前每月 AI 工具的 token 費用來自哪些工作流，標記出哪些是「重複性高、資料敏感」的任務——那是未來最有可能本地化的候選清單。"
+    },
+    {
+      "title": "Meta 付費 AI agent「Hatch」即將上線，新模型「Watermelon」10 月推出",
+      "content": "Meta 計劃在未來幾週推出付費 AI agent 產品 Hatch，同時預告 10 月將發布新模型 Watermelon。Meta 把 AI agent 做成付費產品，代表它已經不只是把 AI 當成廣告優化的後台工具，而是要直接面對消費者收費。這對 AI agent 的商業模式競爭格局是一個重要訊號。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/metas-paid-ai-agent-hatch-launches-soon-with-a-new-model-called-watermelon-due-in-october/"
+        }
+      ],
+      "tags": [
+        "AI 產業佈局",
+        "品牌溝通策略"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞暗示的結構性變化是：Meta 的 AI 佈局從「廣告工具的幕後優化」轉向「直接跟用戶建立付費關係」。這條路線一旦成立，Meta 的數據護城河對廣告主的談判籌碼只會更強，不是更弱。【So What】對品牌廣告主來說，你以為的「Meta 廣告平台」正在變成一個同時賣廣告又賣 AI agent 的複合生態——Meta 未來既是你的媒體購買對象，也可能是你的競品（AI agent 直接幫消費者購物決策）。最危險的是電商品牌，尤其是高度依賴 Meta 廣告做轉換的中型 DTC 品牌。【Now What】現在就開始評估你的 Meta 廣告 ROAS 是否有下滑趨勢，並且問一個問題：如果 Meta AI agent 開始介入消費者的購物決策，你的產品頁資訊夠不夠讓 AI 正確推薦你？"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Google LSA — 10 月起對未接聽與後續來電收費",
+      "content": "Google 發信通知廣告主，自 2026 年 10 月 1 日起，Local Services Ads（LSA）將對未接聽電話及後續來電的 leads 計費。這是 Google 對 LSA 計費邏輯的重大調整，過去只有「有效接通」才收費的模式將改變。對高度依賴本地服務廣告的行業（法律、醫療、裝潢、居家服務等）衝擊明顯。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-lsa-missed-subsequent-calls-41940.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "行銷科技採購"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則更新動搖的假設是「LSA 只對有效接通收費，漏接不算錢」——10 月之後這個邏輯失效，廣告費用結構要重算。【So What】最受衝擊的是電話接聽率偏低的本地服務業主（例如一人工作室、小型診所）——他們的廣告預算可能在不知情的狀況下被大幅侵蝕。代操 LSA 的代理商如果沒有主動通知客戶，這會是信任危機的導火線。【Now What】立刻檢查你的 LSA 帳戶接聽率數據，並在 10 月前設定未接來電的自動回電或 SMS 回覆流程，把「未接聽」的損失降到最低。"
+    },
+    {
+      "title": "Google Ads — 行動版廣告載入介面加入 Gemini 動畫，標榜「正在評估贊助結果」",
+      "content": "Google Ads 在行動版搜尋結果測試一個新的廣告載入動畫，畫面上顯示 Gemini 正在「評估贊助結果」，並同時出現 Google 與 Gemini 的 logo。這個設計讓廣告投放過程更「AI 可見化」，對廣告主的品牌訊息被如何篩選與排序有重大暗示。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ads-loading-gemini-41937.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "AI 搜尋能見度"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則更新暗示的不是「Google 在廣告載入加了一個動畫」，而是 Gemini 正式成為廣告排序的顯性審核者——消費者現在知道他們看到的廣告是 AI 挑選的，這個認知本身就會改變他們對廣告的信任方式。【So What】廣告文案品質的重要性從「吸引人點擊」升級為「讓 AI 認為值得推薦」。廣告投放靠大量測試素材「刷量」的操作方式，效果會越來越差。真正受益的是素材精準、受眾定義清晰的廣告主。【Now What】把你現在跑量最大的廣告組拿出來，用 Gemini 或 ChatGPT 問：「如果你是搜尋引擎 AI，這個廣告文案對 [目標受眾] 有說服力嗎？為什麼？」用這個答案優化下一版文案。"
+    },
+    {
+      "title": "Google 搜尋 — AI Overviews 出現在股票查詢頁面頂部，搜尋結果相關性受質疑",
+      "content": "Google 搜尋在用戶查詢股票價格（如「GOOG stock」「MSFT stock」）時，開始在頁面頂部顯示 AI Overviews，覆蓋在即時股價圖表之上。Search Engine Roundtable 編輯親身驗證後認為這讓搜尋結果「明顯變得較不相關」。這顯示 Google AI Overviews 的觸發範圍正在無差別擴張，不再只針對問答型查詢。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-overviews-stock-price-queries-41934.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "SEO 策略"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則動態打破的假設是「AI Overviews 只出現在需要解釋的複雜查詢」——事實是 Google 正在把它硬插進所有查詢類型，包括本來有明確最佳答案（即時數字）的搜尋。【So What】這對 SEO 策略的衝擊是：你無法再預測哪些查詢「不會」被 AI Overviews 搶走流量。依賴特定關鍵字排名帶流量的內容網站與電商品牌，現在連「安全區」都在縮小。【Now What】進 Google Search Console，把最近 90 天曝光量最高的前 20 個關鍵字逐一搜尋，記錄哪些已經出現 AI Overview——這份清單就是你下一輪內容調整的優先排序依據。"
+    },
+    {
+      "title": "行銷自動化平台（MAP）— 三種新架構正在重新定義 lead 管理邏輯",
+      "content": "MarTech 分析指出，傳統行銷自動化平台（MAP）以「把 leads 推向銷售」為核心的邏輯正在被三種新模型取代：以顧客情境為中心、以下一步行動為驅動、以即時訊號為觸發。這不是工具升級，而是整個行銷漏斗假設的重寫。",
+      "source_urls": [
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/3-ways-marketing-automation-platforms-are-being-reinvented/"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "行銷科技採購"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則新聞動搖的是「MAP 的核心任務是 lead nurturing 漏斗」這個已經用了十幾年的假設。當 AI 能即時讀取顧客情境，靜態的分段與觸發序列邏輯就失效了。【So What】現在最危險的是那些花大錢採購 Marketo、HubSpot 並且把整個行銷流程建在「序列式 nurturing」上的企業——他們的 MAP 架構可能已經是在高效率地做錯誤的事。反而是還沒有重度投資 MAP 的中型品牌，有機會直接跳到新一代架構。【Now What】把你現在跑的自動化序列拿出一條來檢驗：它的觸發邏輯是基於「時間」還是基於「行為情境」？如果是時間，那是你第一個要重構的起點。"
+    },
+    {
+      "title": "Apple Store App — 小規模測試 AI 購物助理，協助用戶克服選擇困難",
+      "content": "蘋果開始在 Apple Store App 中對部分 iPhone 用戶推出 AI 購物助理，協助用戶在購買決策時篩選適合的產品。這是蘋果首次在自家電商 App 內公開測試對話式 AI 導購功能，目前仍在小規模測試階段。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/08/25/apple-store-app-is-testing-an-ai-shopping-assistant/"
+        }
+      ],
+      "tags": [
+        "AI 使用習慣",
+        "消費者信任"
+      ],
+      "angle": "consumer",
+      "tip": "【What】這則新聞代表「搜尋框 → 商品列表 → 消費者自己比較」這條購物路徑正在被「對話式 AI → 直接推薦」取代。當蘋果自己的生態系都這樣做，第三方電商平台不可能不跟進。【So What】受衝擊最大的是那些靠「規格表比較」和「多 SKU 堆疊」來做轉換的電商品牌——當 AI 幫消費者做篩選，你的產品描述、規格資訊是否夠結構化讓 AI 正確理解，直接決定你被推薦還是被略過。【Now What】從你最重要的 1 個主力產品頁開始，用對話式 AI 問它「我需要 [你的核心受眾情境]，這個產品適合我嗎？」——如果 AI 答不出具體理由，你的產品資訊就需要重寫。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI 內容氾濫 × 消費者信任危機：品牌原創聲音正在成為最貴的資產",
+      "content": "Pew 研究證實商業網站 AI 內容密度是學術、政府網站的 10 倍；Stanford 研究同步顯示 AI 正在消滅入門職位，而不是讓人才升級。兩個數據放在一起，呈現出同一個結構：AI 讓「產出」變便宜，卻讓「判斷力」與「品牌識別度」變貴。當所有品牌都在產出 AI 內容，你的品牌聲音有多清晰，決定你在 AI 搜尋引用池裡被挑中的機率。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/pew-study-shows-ai-written-text-has-surged-across-the-web-since-late-2022/"
+        },
+        {
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/08/ai-is-hitting-entry-level-jobs-hardest-stanford-study-finds/"
+        }
+      ],
+      "tags": [
+        "內容行銷",
+        "品牌信任危機"
+      ],
+      "angle": "brand",
+      "tip": "【What】過去「內容量」是護城河，現在護城河換成「內容識別度」。Pew 的資料代表你的競爭對手全面進入 AI 生產，而 Stanford 的資料告訴你，這個浪潮讓初階生產力消失，只留下判斷力的缺口。【So What】接下來 12 個月，贏家會是那些已經建立清晰品牌語氣規格（Brand Voice Guidelines）並且把這份規格餵進 AI workflow 的品牌——他們的 AI 內容有臉，別人的沒有。輸家是把 AI 當「省成本工具」但沒有反過來定義聲音的品牌。【Now What】寫出你的品牌「不說什麼」清單——哪些詞彙、哪些句型、哪些立場是你的品牌不用的？這份「負面風格指南」往往比正面描述更有效地讓 AI 輸出有辨識度。"
+    },
+    {
+      "title": "Google 廣告生態 AI 化：從計費邏輯到排序機制，行銷人熟悉的每一個假設都在移動",
+      "content": "同一天，Google 有三個動態同時發生：LSA 改變計費邏輯、Gemini 進入廣告排序的可見介面、AI Overviews 無差別擴張到股票查詢類型。這不是個別工具更新，而是 Google 整個廣告與搜尋生態系的 AI 整合正在從後台走向前台，直接改變廣告主的花費結構與內容被引用的方式。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable — LSA 計費",
+          "url": "https://www.seroundtable.com/google-lsa-missed-subsequent-calls-41940.html"
+        },
+        {
+          "name": "Search Engine Roundtable — Gemini 廣告動畫",
+          "url": "https://www.seroundtable.com/google-ads-loading-gemini-41937.html"
+        },
+        {
+          "name": "Search Engine Roundtable — AI Overviews 股票查詢",
+          "url": "https://www.seroundtable.com/google-ai-overviews-stock-price-queries-41934.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "AI 搜尋能見度"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】今天這三則 Google 動態共同說明了一件事：Google 廣告平台的「規則」不再是靜態的，而是由 AI 即時重新計算。你過去學的 AdWords 操作邏輯，有多少是建立在「規則不變」這個假設上？【So What】最危險的是那些把 Google 廣告操作完全外包給代理商、自己不懂計費邏輯的中型品牌——他們在不知情的狀況下，帳單結構已經在變。真正有機會的是願意花時間理解「Gemini 怎麼評估廣告相關性」的行銷人，因為這個知識現在還很少人有。【Now What】現在就讀一遍 Google 關於 Gemini 廣告評估的官方文件，並且把你現在最重要的廣告活動的受眾定義重新整理——Gemini 需要的是清晰的意圖訊號，不是大範圍的興趣標籤。"
+    },
+    {
+      "title": "AI 工作流的成熟期到了：「能不能用」不再是問題，「用得對不對」才是",
+      "content": "MarTech 同一天發出兩篇互補的文章：一篇談如何用 Claude Code 建立可靠的 AI 內容系統，另一篇警告 AI workflow 會放大既有的壞資料問題。這個組合訊號很清楚：行銷人已經過了「要不要用 AI」的第一關，現在面對的是「用了 AI 之後，問題在哪裡爆發」的第二關。",
+      "source_urls": [
+        {
+          "name": "MarTech — AI 內容系統建置",
+          "url": "https://martech.org/how-to-build-an-ai-content-system-that-works/"
+        },
+        {
+          "name": "MarTech — AI 與壞資料",
+          "url": "https://martech.org/ai-is-making-bad-marketing-data-harder-to-ignore/"
+        }
+      ],
+      "tags": [
+        "AI 工作流風險",
+        "行銷自動化"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這組新聞動搖的假設是「只要工具選對，AI workflow 自然會輸出好結果」——現實是 AI 是一個放大器，它放大你的好資料，也放大你的壞資料。【So What】最危險的行銷團隊是那些快速採購 AI 工具、卻從來沒有審計過自己資料品質的組織。他們現在可能在用 AI 更有效率地做出錯誤的決策。反而是過去被批評「流程太慢、資料要求太嚴」的大型品牌，這個階段的資料底子反而成了優勢。【Now What】在啟動下一個 AI 自動化專案之前，先問一個問題：這個 workflow 的輸入資料，是你願意讓 CEO 看到的品質嗎？如果不是，先修資料，再建 workflow。"
+    }
+  ],
+  "tips_summary": [
+    "Pew AI 內容研究 → 整理出你的品牌「不說什麼」清單（詞彙、語氣、立場），餵進你的 AI 寫作提示詞，讓每一篇 AI 輸出都有品牌辨識度",
+    "Stanford 入門職缺研究 → 下次討論招聘時，把每個職缺 KPI 逐一問：這個 output 可以用 AI workflow 直接達成嗎？能的就重新定義職缺需要的是判斷力",
+    "Google LSA 計費調整 → 在 10 月前設定未接來電的自動 SMS 或語音回覆，把「漏接」的廣告費損失壓到最低",
+    "Google Gemini 廣告介面測試 → 把現在跑量最大的廣告文案貼給 AI 問「這個廣告對 [目標受眾] 有說服力嗎」，用回答優化下一版",
+    "Google AI Overviews 擴張 → 進 Search Console 把前 20 個高曝光關鍵字逐一手動搜尋，記錄哪些已被 AI Overview 搶走版位，建成優先調整清單",
+    "Apple AI 購物助理 → 用對話式 AI 問你主力產品「我需要 [核心受眾情境]，這個適合我嗎」，如果 AI 答不出具體理由，先重寫產品描述",
+    "MAP 重構趨勢 → 抽一條現有的自動化序列，確認觸發條件是「時間」還是「行為情境」，「時間觸發」的就列為下一輪重構的第一優先",
+    "AI 壞資料放大效應 → 下一個 AI 自動化專案啟動前，先確認輸入資料品質是否達到你願意給主管看的標準，資料不行就先修資料"
+  ],
+  "applications": [
+    {
+      "dimension": "品牌策略",
+      "content": "今天最關鍵的結構性訊號是：Pew 資料證實商業網站 AI 內容已經是主流，這代表「我有內容」不再是競爭優勢，「我的內容有辨識度」才是。品牌策略層面，原創觀點、具名立場、真實案例，這三種元素的稀缺性正在快速上升。具體起手動作：從你最重要的 1 個品牌核心主張出發，整理出 5 個「只有你們品牌會這樣說」的句型，這就是你的 AI 時代 Brand Voice 基礎版。"
+    },
+    {
+      "dimension": "數位行銷",
+      "content": "Google 同一天在廣告計費、廣告排序介面、AI Overviews 觸發範圍三個維度同步變動，這是一個結構性訊號：Google 廣告生態的「已知規則」正在被 AI 即時改寫，過去依賴靜態操作手冊的代操模式會越來越難用。數位行銷人現在需要從「記住規則」轉向「理解 AI 評估邏輯」。起手動作：讀一遍 Google 關於 Gemini 如何評估廣告相關性的官方說明，把你的廣告受眾定義重新用意圖語言描述。"
+    },
+    {
+      "dimension": "內容行銷",
+      "content": "Pew 研究 + MarTech 的 AI 內容系統文章放在一起，給出一個清晰的二元分裂：全面 AI 生產的品牌正在稀釋自己，而把 AI 用作有人監督的加速工具的品牌正在拉開差距。內容行銷的下一個競爭維度不是「量」而是「AI 引用性」——你的內容是否足夠結構化、立場足夠清晰，讓 AI 搜尋願意引用你。起手動作：把你最近一個月的內容逐篇問：這篇有沒有一個讀完之後會被記得的立場？沒有的就回頭補一句觀點摘要句。"
+    },
+    {
+      "dimension": "社群應用",
+      "content": "今天的新聞沒有直接的社群平台動態，但 AI 內容氾濫的結構性壓力對社群同樣成立——當用戶在搜尋與電商都開始接觸 AI 生成內容，社群反而成為「確認這個品牌是真人在說話」的最後陣地。品牌的社群帳號如果也在用 AI 無修改直出，就失去了這個差異化功能。起手動作：把你的社群發文頻率降低 20%，空出來的時間用在確保每一則發文都有一個真人觀點或真實情境，而不是再多一篇格式正確的 AI 文。"
+    },
+    {
+      "dimension": "媒體廣告",
+      "content": "今天 Google LSA 計費調整與 Gemini 廣告介面測試，共同說明了一件事：媒體廣告的「花費控制」越來越難靠人工規則管理，AI 正在接手計費邏輯與排序決策。廣告主如果不懂 AI 評估標準，就是把預算控制權拱手相讓。最直接的影響是本地服務廣告主：LSA 帳單在 10 月後會變得難以預測。起手動作：立刻查你（或客戶）的 LSA 帳戶過去 60 天的未接聽通話率，這個數字就是 10 月之後的額外費用預估依據。"
+    },
+    {
+      "dimension": "團隊流程",
+      "content": "今天 MarTech 兩篇文章加上 Stanford 研究，給出一個行銷團隊流程的新現實：AI 讓執行層的產出變快，但同時放大資料品質問題、讓入門人才職位消失。這意味著行銷團隊的流程設計必須從「人做 + AI 加速」轉向「AI 執行 + 人審核判斷」。最危險的是那些還在用 AI 工具、但沒有明確「人類審核節點」的團隊。起手動作：在你現有的一個 AI 工作流程中，明確標注哪個步驟需要人類做 Yes/No 的最終決定，並且把這個節點排進固定行程。"
+    }
+  ],
+  "generated_at": "2026-08-26 07:17"
+}
