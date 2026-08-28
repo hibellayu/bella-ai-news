@@ -49,9 +49,13 @@ jobs:
           git config user.email "bella.lomo@gmail.com"
           git config user.name "Bella AI Bot"
           git add digests/ news.json
-          git diff --staged --quiet && echo "no changes" || \
-            git commit -m "auto: daily update $(TZ=Asia/Taipei date +%Y%m%d)" && \
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "auto: daily update $(TZ=Asia/Taipei date +%Y%m%d)"
+            git pull --rebase origin main
             git push
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
