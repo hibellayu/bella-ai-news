@@ -1,0 +1,263 @@
+{
+  "date": "2026-09-09",
+  "date_key": "20260909",
+  "display_date": "2026年09月09日",
+  "data_date": "2026-09-08",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 搜尋能見度、品牌信任危機、內容工作流重構",
+  "big_news": [
+    {
+      "title": "Meta 廣告審查失守：350 則兒童性剝削 AI 廣告流過，品牌安全危機升級",
+      "content": "Meta 平台出現至少 350 則含有兒童性剝削影像的 AI 生成廣告，部分圖像甚至取自歐洲皇室真實兒童照片。事件曝光後，多國立法機構宣布啟動調查，Meta 廣告審查機制再度被公開質疑。",
+      "source_urls": [
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/meta-failed-to-catch-hundreds-of-ai-child-abuse-ads-some-included-images-of-real-kids/"
+        }
+      ],
+      "tags": [
+        "品牌信任危機",
+        "AI 安全風險"
+      ],
+      "angle": "brand",
+      "tip": "【What】這件事動搖的不是「Meta 夠不夠好」的平台選擇問題，而是一個長期假設：把廣告預算投進 Meta，平台的內容審查會保護品牌環境的安全。這個假設現在已經破洞了。【So What】任何品牌只要廣告還在跑 Meta，就和這個事件共享同一個廣告版位生態。對消費者來說，品牌選擇在哪裡出現，本身就是一種背書。消費品牌、親子品牌、教育類客戶是最危險的那一群——使用者的反應速度會快過品牌的應變速度。最有機會的反而是本來就在 Meta 以外建立直接觸達（EDM、自有社群、LINE 官方帳號）的品牌，現在正是拉開差距的時機。【Now What】清查目前 Meta 廣告的版位設定，把「Audience Network」和「Instagram Reels 以外的未知版位」先暫時排除，同時準備一份品牌安全聲明草稿備用，不是現在發，是萬一被問到時有東西可以講。"
+    },
+    {
+      "title": "Mistral 完成歐洲最大科技募資：主權 AI 不是概念，是 3 億歐元的商業現實",
+      "content": "法國 AI 實驗室 Mistral 以 210 億歐元估值完成 30 億歐元 D 輪融資，由三星、Scaleup Europe 與 PSG Equity 領投，創下歐洲科技史上最大單輪融資紀錄。儘管技術表現仍落後 OpenAI 與 Google，但「非美國 AI」的地緣政治價值正在被資本大規模定價。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+        },
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/mistral-ai-raises-3-billion-euros-in-europes-largest-ever-tech-funding-round-despite-lagging-behind-rivals/"
+        }
+      ],
+      "tags": [
+        "AI 產業佈局",
+        "行銷科技採購"
+      ],
+      "angle": "industry",
+      "tip": "【What】主權 AI 的資本化代表一件事：企業採購 AI 工具，未來的決策權重裡「這個模型是誰的」會和「這個模型夠不夠強」一樣重要——尤其是在歐洲、東南亞、中東等地有業務的品牌。【So What】對台灣行銷團隊來說，現在最直接的影響是：如果你的品牌或客戶有歐洲市場，未來 MarTech 工具的選型清單裡，Mistral-based 的方案會開始出現，而且會被合規部門點名優先評估。那些只熟悉 OpenAI 生態的 AI 行銷顧問，會在這些場景裡被問倒。【Now What】把你正在使用的 AI 工具清單過一遍，標記每個工具背後的模型來源（OpenAI / Google / Anthropic / 開源），如果有歐洲客戶，這份清單你遲早要拿出來報告。"
+    },
+    {
+      "title": "AI 工具反被用來散播極端主義內容：平台治理的速度根本跟不上生成速度",
+      "content": "Wired 揭露新一代伊斯蘭激進支持者正在大規模使用生成式 AI 製作「Slop Jihad」內容，並透過 TikTok 快速擴散觸及新受眾。AI 生成讓極端內容的製作成本趨近於零，傳統平台的人工審查速度已完全追不上。",
+      "source_urls": [
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/gen-ai-tools-are-now-being-used-to-push-slop-jihad/"
+        }
+      ],
+      "tags": [
+        "AI 安全風險",
+        "品牌信任危機"
+      ],
+      "angle": "industry",
+      "tip": "【What】這件事打破的是「平台演算法會自動過濾有害內容」這個假設。生成式 AI 讓內容產製速度跑贏了任何現有的審查機制——不管是人工還是演算法。【So What】對品牌來說，TikTok 上的版位安全問題比 Meta 更難管控，因為 TikTok 的審查透明度更低。如果你的品牌廣告投放在 TikTok，你其實不知道自己的廣告在哪些內容旁邊出現。中大型品牌的法務和公關部門現在是最應該被拉進媒體採購決策的人，但大多數公司根本還沒有這個 SOP。【Now What】跟你的媒體代理商要一份 TikTok 廣告版位的品牌安全設定清單，確認目前有沒有啟用 Inventory Filter，沒有的話立刻開。"
+    },
+    {
+      "title": "ChatGPT 流量份額回升至 55.5%，但一年內掉了近 18 個百分點——市場不再只有一個入口",
+      "content": "根據 Similarweb 數據，ChatGPT 的 AI 聊天機器人網站流量份額回升至 55.5%，Gemini 短暫反彈後退縮，但年比來看 ChatGPT 從 73.3% 大幅下滑，Gemini 份額翻倍、Claude 成長近五倍。AI 入口的碎片化正在加速。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-claws-back-web-traffic-share-to-55-5-percent-as-geminis-brief-comeback-fades/"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "品牌溝通策略"
+      ],
+      "angle": "brand",
+      "tip": "【What】這份數據動搖的是「做好 ChatGPT 的品牌能見度就夠了」這個假設。Claude 年比成長近五倍，代表有一大批高意圖使用者正在從 ChatGPT 以外的入口尋找答案——而品牌在 Claude 裡面的能見度，幾乎沒有人在認真管。【So What】做 AI 搜尋優化（AIO）如果只盯著 ChatGPT 和 Google AI Overview，你正在漏掉成長最快的那個入口。Perplexity、Claude、Gemini 的回答邏輯和引用來源都不同——這不是做一套就全部通吃的事。中小型品牌如果沒有資源全面布局，至少要知道你的核心受眾主要用哪個工具在問問題，然後集中火力。【Now What】用你品牌的核心關鍵字，分別在 ChatGPT、Claude、Perplexity 各問一次「推薦哪個 [品類] 品牌」，截圖比較三者的引用來源，找出你目前在哪個入口最弱。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "ChatGPT Work — 個人寫作風格自主學習，串接 Gmail 與 Slack",
+      "content": "OpenAI 為 ChatGPT Work 推出寫作風格自主學習功能，授權串接 Gmail、Google Drive、Slack 與 SharePoint 後，AI 會分析歷史溝通內容，自動學習個人用詞習慣、正式/非正式語氣切換，並與 Email 和 Slack 情境分離。目標是讓 AI 生成內容聽起來是「你寫的」，而不是 AI 腔。",
+      "source_urls": [
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/chatgpt-work-learning-writing-style-gmail-slack/"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "團隊協作規範"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這個功能打破的假設是「AI 生成內容要有 AI 味才算 AI 做的」。OpenAI 現在直接往「讓 AI 完全消失在你的語言裡」的方向走，代表下一個競爭點不是生成速度，而是個人化程度。【So What】對行銷人來說，這個功能最直接的意義是：品牌的 tone of voice 再也不只是一份文件，而是要能被 AI 學習的數位資產。那些已經有清晰、一致溝通風格的品牌和個人，會比現在就開始用 AI 但風格混亂的人更快得到好輸出。反過來說，如果你的 Gmail 和 Slack 記錄本身就是一團混亂，這個功能只會學到混亂。【Now What】在開放授權串接之前，先花 20 分鐘整理你最近 30 封對外 Email 的共同語氣特徵——寫成一段「我的溝通風格說明」，這份說明本身就可以先當 prompt 用，不用等到串接才開始。"
+    },
+    {
+      "title": "Google Ads — Gemini 驅動 AI Dashboards 開始向部分廣告主開放",
+      "content": "Google Ads 的 AI 儀表板功能開始正式向部分廣告主推出，這是自去年五月發布預覽、今年八月宣告即將上線後的首批實際部署。儀表板以 Gemini 為核心，提供廣告表現的 AI 診斷與建議。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ads-ai-dashboards-live-42031.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "行銷自動化"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個更新動搖的假設是「廣告優化的判斷仍然主要靠人」。Google 把 AI 診斷直接嵌進廣告主每天看的儀表板，目的是讓廣告主照著 Gemini 的建議走——這是 Google 在廣告操盤決策鏈上系統性地往前推一步。【So What】短期看起來是效率提升，但廣告主對 Google 建議的依賴度會進一步加深，而 Google 的利益和廣告主的利益並不總是一致。最危險的是那些沒有內部廣告操盤人才、完全依賴代理商的品牌——代理商如果也只是照著 AI 儀表板跑，中間的人就完全沒有在做判斷了。【Now What】要求你的代理商或內部操盤人，在 AI 儀表板建議正式開放後的第一個月，每週提交一份「AI 建議 vs 我們實際決策」的對比紀錄，建立自己的判斷基準，而不是讓 AI 直接駕駛。"
+    },
+    {
+      "title": "Google AI Overview — 引用連結面板測試更細窄設計，點擊率可能再降",
+      "content": "Google 正在測試 AI Overview 右側引用來源面板的更細窄版本，視覺上更不顯眼。這個設計方向若正式上線，使用者注意到來源連結的機率會再下降，對內容網站的有機流量引導產生更大壓力。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-thinner-ai-overview-citations-panel-42040.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "SEO 策略"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個測試在動搖的假設是「被 AI Overview 引用就等於有流量回來」。被引用但面板更細窄、更難點——代表 Google 要的是你的內容，不是要把流量還給你。【So What】SEO 策略如果還是以「被引用＝成功」為目標，你正在幫 Google 賺錢但自己沒有得到什麼。那些在 AI Overview 以外還有其他流量來源（YouTube、EDM、LINE 社群）的品牌，現在反而更穩。純靠 Google 搜尋自然流量維持的內容媒體和部落格，這個測試是一個明確的警示。【Now What】在 Google Search Console 裡，把過去 90 天內「曝光數高但點擊率低於 1%」的頁面抓出來，這些很可能就是已經被 AI Overview 消化但流量沒回來的頁面，開始思考這些頁面的內容是否有辦法往 YouTube 或 podcast 形式轉。"
+    },
+    {
+      "title": "Google AI Mode — 測試分頁式追問回應介面，附「跳過」按鈕",
+      "content": "Google AI Mode 正在測試一種新的回應呈現方式：把追問與回應拆成多個分頁（paginated）呈現，並提供跳過按鈕。這個設計暗示 Google 在思考如何讓 AI 對話更像引導式探索，而不是單次問答。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-mode-paginated-responses-skip-42029.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "使用者隱私"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個介面測試說明 Google 正在把搜尋重新設計成「對話旅程」而不是「單次查詢」——每一頁的追問都是 Google 在引導使用者的決策路徑，而品牌在這個旅程的哪個節點出現，決定了你在購買決策鏈的哪個位置。【So What】對做 SEO 和 AIO 的行銷人來說，現在需要思考的不只是「如何出現在第一個回答裡」，而是「如何出現在第二、第三個追問的答案裡」——也就是說，品牌內容要開始為「比較場景」和「細節追問」做準備，而不只是大關鍵字頁面。【Now What】列出你品牌核心產品的五個最常見「使用者追問」（例如「哪個適合初學者」「和 A 品牌有什麼差別」），確認你的網站上有獨立的內容頁面在回答這些問題，而不是全都塞在一頁。"
+    },
+    {
+      "title": "Coca-Cola Coke Buddy — AI 驅動零售商訂貨推薦平台在馬來西亞落地",
+      "content": "可口可樂透過 Coke Buddy 平台的 Perfect Basket 功能，在馬來西亞約 39,000 個零售通路導入 AI 訂貨推薦，整合歷史訂單、季節性、天氣與同類店型購買模式進行預測。這是 FMCG 品牌把 AI 直接嵌入通路關係管理的實際案例。",
+      "source_urls": [
+        {
+          "name": "AI News",
+          "url": "https://www.artificialintelligence-news.com/news/coca-cola-ai-retailer-ordering-malaysia/"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "AI 產業佈局"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這個案例打破的假設是「AI 行銷就是做內容和廣告」。可口可樂這次用 AI 做的是通路關係管理——品牌方透過推薦演算法，主動影響零售商的採購決策，把行銷的觸角延伸到了貨架庫存層面。【So What】對大多數品牌來說，這個層級的 AI 應用短期內學不來，但它代表的訊號很清楚：誰能用數據直接影響通路行為，誰就在下一輪競爭裡擁有結構性優勢。對 FMCG 品牌的行銷人來說，現在不理解自家通路數據架構的人，很快會在內部資源爭奪裡輸給技術部門。【Now What】找你的業務或通路團隊確認一件事：你們目前有沒有在系統裡記錄「零售商的訂貨頻率和品項組合」——如果有，這份數據就是你說服老闆投資 AI 通路工具的起點。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "YouTube 成為 AI Overview 最高引用來源：影片內容正在接管 AI 搜尋的答案層",
+      "content": "最新研究顯示，在維他命與保健品類別的 Google AI Overview 中，YouTube 出現在 53.1% 的 AI 生成答案裡，是唯一超過半數引用率的網站，遠高於任何文字型內容來源。同一時間，Google AI Overview 的引用面板設計持續被壓縮，文字來源的可見度進一步下降。這兩個訊號加在一起，指向同一個結論：AI 搜尋更偏愛影片內容作為引用依據。",
+      "source_urls": [
+        {
+          "name": "AI News",
+          "url": "https://www.artificialintelligence-news.com/news/youtube-appears-in-53-of-google-ai-overviews-for-vitamin-and-supplement-searches/"
+        },
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-thinner-ai-overview-citations-panel-42040.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "內容行銷"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】「寫好 SEO 文章就能被 AI 引用」這個假設正在失效。Google 的 AI 在保健品類的引用行為告訴我們，YouTube 影片才是現在 AI Overview 最想用的來源——而這個模式很可能在更多品類裡複製。【So What】沒有 YouTube 策略的品牌，在 AI 搜尋能見度的競賽裡正在系統性輸掉。保健、美妝、食品、親子這類高搜尋意圖品類的品牌最危險——你的競爭對手如果已經在 YouTube 上有持續更新的說明影片，他們的 AI 引用份額就是在你之上。另一方面，已經有 YouTube 頻道但從來沒有認真做搜尋優化的品牌，現在是補課的好時機，因為 AI 引用不需要百萬訂閱，需要的是結構清晰、主題明確的影片內容。【Now What】把你品牌的三個最重要搜尋關鍵字，分別在 Google 搜尋後觀察 AI Overview 的內容來源——有幾個是 YouTube？你的品牌在 YouTube 上有沒有對應的影片？沒有的話，從最高流量的那個關鍵字開始拍第一支說明影片。"
+    },
+    {
+      "title": "AI 加速了產出，但行銷人的策略時間反而更少——效率悖論已經確認",
+      "content": "MarTech 的分析與科技新報的企業 AI 評估框架共同指向同一個現象：AI 工具讓內容產製變快了，但省下的時間並沒有流向策略與規劃，而是被更多的內容製作填滿。企業評估 AI 效益的方式也從「用了多少 token」轉向「產出了多少數位勞動力」，但真正的問題——AI 到底為行銷帶來了什麼思考品質的提升——仍然沒人在量化。",
+      "source_urls": [
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/why-ai-hasnt-solved-marketings-time-problem/"
+        },
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/09/08/rethinking-enterprise-ai-as-a-digital-workforce/"
+        }
+      ],
+      "tags": [
+        "AI 工作流風險",
+        "職涯發展定位"
+      ],
+      "angle": "workflow",
+      "tip": "【What】「AI 工具讓我有更多時間做策略」這個假設被打臉了。實際數據顯示，省下來的時間被更多執行填滿，行銷人變成了 AI 的品質控管員，而不是更有餘裕的策略思考者。【So What】那些把「導入 AI 工具」當成提升團隊效率終點的主管，現在應該要知道：你的團隊可能生產了更多內容，但不一定生產了更好的策略。最危險的狀況是：AI 讓一個中等品質的行銷團隊變成一個高產出的中等品質團隊——量多了，但天花板沒有升高。反過來說，那些用 AI 省下的時間刻意去做客戶訪談、競品分析、創意發想的個人或小團隊，才是真正在拉開差距的人。【Now What】看一下你自己過去兩週的工作紀錄，把用在「AI 輸出內容的修改與發布」的時間加總，和用在「思考策略方向、定義目標受眾、分析競爭格局」的時間比較——如果前者超過後者，你的 AI 工作流需要結構性調整，而不是更多工具。"
+    },
+    {
+      "title": "可信度正在成為 AI 時代品牌能見度的新貨幣",
+      "content": "Marketing AI Institute 的觀點文章直指：行銷人長期追求的「曝光量極大化」邏輯，在 AI 搜尋時代已經不夠用了。AI 系統引用的是可信度高的來源，而不是曝光量最大的來源。同一時間，Meta 廣告審查事件和 AI 生成極端內容的擴散，讓「品牌出現在哪裡」的平台選擇本身，就已經是一種信任訊號的輸出。",
+      "source_urls": [
+        {
+          "name": "Marketing AI Institute",
+          "url": "https://www.marketingaiinstitute.com/blog/credibility-in-the-ai-era"
+        },
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/meta-failed-to-catch-hundreds-of-ai-child-abuse-ads-some-included-images-of-real-kids/"
+        },
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/gen-ai-tools-are-now-being-used-to-push-slop-jihad/"
+        }
+      ],
+      "tags": [
+        "品牌溝通策略",
+        "消費者信任"
+      ],
+      "angle": "brand",
+      "tip": "【What】「曝光越多，品牌越強」這個工業時代的行銷公理正在被 AI 搜尋邏輯和平台信任危機同時瓦解。AI 系統會主動選擇引用可信度高的來源，而消費者也開始把「品牌選擇在哪裡出現」當作判斷品牌價值觀的依據。【So What】追求病毒式傳播和最大化曝光的品牌策略，現在有可能反過來損害 AI 搜尋能見度——因為 AI 不喜歡引用看起來像在「刷存在感」的來源，它要的是有深度、有立場、被其他可信來源交叉引用的內容。媒體採購如果還在用 CPM 當唯一指標，你在 AI 時代的品牌建設就是在燒錢買可能沒有長尾效益的曝光。【Now What】從你品牌最重要的一個產品類別開始，找出三到五個在你的領域裡被反覆引用的可信外部來源（產業報告、學術機構、知名媒體），思考你的品牌內容有沒有在引用他們、有沒有被他們引用——這是建立 AI 可信度的起點，不是發更多貼文。"
+    }
+  ],
+  "tips_summary": [
+    "Meta 廣告審查失守 → 進 Meta 廣告帳戶，關掉 Audience Network 版位，並把品牌安全聲明草稿準備好備用",
+    "Mistral 主權 AI 崛起 → 整理現有 AI 工具的模型來源清單，如有歐洲客戶，標記哪些工具可能面臨合規挑戰",
+    "ChatGPT 流量份額下滑、Claude 年比成長五倍 → 用品牌核心關鍵字分別在 ChatGPT、Claude、Perplexity 問一遍，找出你最弱的那個入口",
+    "ChatGPT Work 寫作風格學習 → 在授權串接之前，先整理自己近 30 封對外 Email 的語氣特徵，寫成一段 prompt 先用起來",
+    "Google Ads AI 儀表板上線 → 要求代理商或操盤人建立「AI 建議 vs 實際決策」對比記錄，避免完全讓 AI 駕駛",
+    "Google AI Overview 引用面板縮小 → 在 Search Console 找出「高曝光、低點擊」頁面，評估是否轉化為 YouTube 影片內容",
+    "YouTube 佔 AI Overview 引用 53% → 找出品牌三個核心關鍵字，確認 YouTube 上有沒有對應的說明影片，沒有就從最高流量那個開始拍",
+    "AI 沒有解決行銷人的時間問題 → 統計自己兩週內用在 AI 輸出修改 vs 策略思考的時間比，前者若超過後者，立刻調整工作流結構",
+    "可信度成為 AI 時代新貨幣 → 從一個產品類別開始，找出 3-5 個你的品牌可以引用、也值得被引用的可信外部來源，納入內容策略"
+  ],
+  "applications": [
+    {
+      "dimension": "品牌策略",
+      "content": "今天有三個訊號同時在說同一件事：Meta 廣告審查失守、AI 內容被用來散播極端主義、Marketing AI Institute 點出可信度才是新貨幣——加在一起，代表「品牌出現在哪裡」正在成為品牌價值觀輸出的一部分，而不只是媒體效益計算。品牌策略主管現在要做的不是等危機發生再應對，而是主動建立「平台選擇準則」：哪些平台的內容環境符合品牌可以背書的標準。從你品牌目前最大的廣告投放平台開始，整理一份版位安全評估，這是今天就可以啟動的事。"
+    },
+    {
+      "dimension": "數位行銷",
+      "content": "Google 今天同時有三個動作：AI Overview 引用面板縮小、AI Mode 測試分頁追問、Ads AI 儀表板上線——方向完全一致：Google 要讓使用者留在 Google，讓廣告主依賴 Gemini 的建議。這對數位行銷人的意義是：靠 Google 自然流量的策略正在被系統性壓縮，而廣告的操盤決策如果不建立自己的判斷基準，就會慢慢被 AI 儀表板接管。從 Search Console 找出你最重要的 5 個關鍵字頁面，確認這些頁面在 AI Overview 的引用狀況是起點。"
+    },
+    {
+      "dimension": "內容行銷",
+      "content": "YouTube 在 Google AI Overview 保健品類的 53% 引用率，加上 AI Overview 引用面板持續壓縮，兩件事合在一起就是一個結構性訊號：文字內容的 AI 搜尋能見度正在被影片內容侵蝕。內容策略如果還是「寫好文章就能被引用」，你正在針對一個已經在移動的目標做錯誤的準備。現在不是要你放棄文字，而是要在最重要的主題上做影片版本的對應內容。從一個主力產品頁開始，把這頁的核心說明拍成一支 5-8 分鐘的 YouTube 說明影片。"
+    },
+    {
+      "dimension": "社群應用",
+      "content": "Meta 廣告審查事件和 TikTok 上的 AI 極端內容擴散，同一天出現，代表兩大社群平台的內容環境都在惡化，而品牌對版位安全的掌控力幾乎是零。在社群投放預算的分配上，自有觸達管道（LINE 官方帳號、EDM、品牌社群）的投資報酬率評估標準應該被重新拉高——因為你在這些管道裡知道受眾是誰、內容在什麼環境被看到。把你品牌目前在 Meta 和 TikTok 的廣告預算佔比，和自有觸達管道的投入對比一次，找出再平衡的空間。"
+    },
+    {
+      "dimension": "媒體廣告",
+      "content": "MarTech 點出 CTV（連網電視）2027 預算決策視窗正在收窄，加上 Google Ads AI 儀表板上線讓平台演算法在採購決策鏈上更進一步——這兩件事指向同一個問題：媒體採購正在被 AI 系統雙向擠壓，一邊是 Google 的自動建議，一邊是新渠道（CTV）的評估需求。對媒體採購人來說，現在最重要的能力是「能夠獨立設計小規模測試並解讀結果」，而不是「會操作後台」。針對 CTV，用一個窄受眾、一個月預算跑一次 A/B 測試，建立你自己的 CPM 基準數據。"
+    },
+    {
+      "dimension": "團隊流程",
+      "content": "MarTech 和科技新報的數據一致確認：AI 工具讓團隊產出增加了，但策略思考時間並沒有增加，甚至被壓縮。這代表現在大多數行銷團隊的 AI 工作流設計有根本缺陷——把 AI 當成內容機器在用，而不是當成思考夥伴。ChatGPT Work 的寫作風格學習功能上線，更讓個人層面的 AI 適應成為新的競爭點。團隊流程要調整的不是「用更多 AI 工具」，而是明確規定每週有多少時間是禁止開 AI 工具的純策略思考時間。從下週開始，在每個 weekly meeting 的議程裡，加入一個「本週我們不靠 AI 的判斷是什麼」的固定討論槽。"
+    }
+  ],
+  "generated_at": "2026-09-09 08:53"
+}
