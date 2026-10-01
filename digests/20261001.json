@@ -1,0 +1,268 @@
+{
+  "date": "2026-10-01",
+  "date_key": "20261001",
+  "display_date": "2026年10月01日",
+  "data_date": "2026-09-30",
+  "summary": "今日精選：10 條 AI 相關動態｜聚焦 AI 搜尋分潤、OpenAI 生態圈擴張、品牌能見度重構",
+  "big_news": [
+    {
+      "title": "Google 付給內容創作者的 AI 分潤，少到幾乎是零",
+      "content": "根據 The Information 報導，Google 的 AI Contribution Pilot 僅涵蓋約 100 家數位出版商，支付金額從幾個月不到 1,000 美元到年收百萬美元不等——換算下來約是廣告營收的 0.1%。更荒謬的是，部分參與者根本不知道 Google 怎麼計算這筆費用，而大型出版商則乾脆拒絕參與、堅持要更高的條件。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/google-is-paying-almost-no-publishers-almost-nothing-for-content-used-in-ai-answers/"
+        },
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-contribution-pilot-01-percent-42188.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "內容行銷"
+      ],
+      "angle": "brand",
+      "tip": "【What】這則新聞在動搖的假設是：「把內容放上去，Google 就會給流量或補償」——這個邏輯在 AI Overviews 時代已經斷裂。你的內容被引用，不代表你拿得到任何回報，流量和金錢都不一定有。【So What】最危險的是那些靠 SEO 流量撐廣告收入的中型媒體和內容品牌，他們的內容正在被 AI 免費消化、觀眾卻不再點進來。反而是直接擁有受眾關係的品牌（電子報、社群、自有 App）在這個結構下更有底氣。【Now What】盤點你們品牌目前有多少流量來自 Google 有機搜尋，算出如果這條管道縮水 30% 你的備案是什麼——從今天開始建立第一個不依賴 Google 的直接受眾觸達管道。"
+    },
+    {
+      "title": "川普與六大科技巨頭簽《白宮超級智慧協議》，「道德約束」等同沒有約束",
+      "content": "美國總統川普與 Google、OpenAI、Meta、Anthropic、xAI、Nvidia 簽署白宮超級智慧協議，要求企業建立四層 AI 安全管控與外部稽核機制。但這份協議屬企業自願承諾，不具法律強制力，川普本人形容它具有「道德上的約束力」——至於違反了會怎樣，沒有人說清楚。川普同時簽署行政命令，將 AI 正式更名為「超級智慧」。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/179294"
+        },
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/trump-and-tech-ceos-sign-an-ai-code-of-conduct-thats-only-morally-binding/"
+        }
+      ],
+      "tags": [
+        "AI 政策法規",
+        "消費者信任"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞在動搖的假設是：「監管來了，就會有強制規範」——實際上這份協議連罰則都沒有，簽名本質上是一場公關活動，不是法規框架。【So What】對品牌來說，危險在於：消費者和媒體看到「AI 安全協議」這個標題，會誤以為 AI 風險已經被管起來了，但實際上各家公司繼續照自己的步調跑。接下來打「AI 安全」牌的品牌公關稿會變多，但可信度會越來越低。真正有底氣的品牌，是那些自己有具體 AI 使用規範文件的，而不是跟著政府背書表態的。【Now What】如果你們品牌有在對外溝通 AI 應用，現在整理一份內部 AI 使用準則的白紙版本，哪怕只有一頁，對外公開比跟著「道德協議」起舞更有說服力。"
+    },
+    {
+      "title": "Meta 全面進攻企業 AI 市場，拿 Muse 的聲勢開路",
+      "content": "Meta 啟動全新企業業務線，向大型企業客戶銷售 AI 工具組，由 MongoDB 前執行長領軍，目標是把爆紅的個人 AI 助理 Muse 的品牌動能延伸到 B2B 市場。這代表 Meta 正式從消費者平台跨進企業軟體戰場，直接與 Microsoft、Salesforce 的 AI 生態圈競爭。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/09/30/meta-enterprise-platform-and-muse-for-small-business/"
+        }
+      ],
+      "tags": [
+        "AI 產業佈局",
+        "行銷科技採購"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞在動搖的假設是：「Meta 就是做社群廣告的」——它現在要賣的是企業 AI 工具，這條邏輯鏈從廣告主變成採購商，競爭對手從 Google 變成 Microsoft。【So What】對行銷科技採購決策者來說，接下來的工具選型會更複雜——Meta 會用社群數據優勢來吸引你買企業 AI 方案，但你要問的是：這跟你現有的 CRM 和工作流打得通嗎？現在最危險的是那些還在用單一平台思維採購工具的中型企業行銷團隊，等 Meta 的 B2B 套件上架，又是一輪「要不要跟進」的決策壓力。【Now What】把你們現有行銷技術棧列一張清單，標出哪些工具的數據彼此打通、哪些是孤島——這是評估任何新 AI 工具是否值得採購的前提，不是等 Meta 或任何人的 demo 再說。"
+    },
+    {
+      "title": "Salesforce 收購 Listen Labs，把「模擬消費者行為」直接裝進 CRM",
+      "content": "Salesforce 宣布收購 AI 消費者研究新創 Listen Labs，後者的核心能力包括 AI 驅動的消費者訪談、行為分析、與模擬消費者決策。整合進 Salesforce 之後，意味著行銷人可以在 CRM 環境內直接執行 AI 消費者研究，不需要外包給市調公司。",
+      "source_urls": [
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/salesforce-buys-ai-customer-research-startup-listen-labs/"
+        }
+      ],
+      "tags": [
+        "行銷科技採購",
+        "行銷自動化"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則新聞在動搖的假設是：「消費者研究需要真實受訪者」——現在 AI 模擬的消費者決策路徑已經被視為可以用來做決策依據的數據來源，Salesforce 收購這家公司就是把這個假設正式商品化。【So What】最直接的贏家是中小型品牌行銷團隊，他們原本根本沒有預算做定性研究，這個功能進 CRM 之後等於免費升級。輸家是傳統市調公司和外部 UX 研究機構，業務邊界正在被侵蝕。但要小心的是：AI 模擬出的消費者行為，仍然是基於歷史數據訓練出來的，對新品類或小眾市場的準確度存疑。【Now What】如果你們已經在用 Salesforce，現在就可以申請 Listen Labs 整合的 beta 等候名單；如果還沒用，先把這個案例記下來，下次評估 CRM 換購時列為比較點之一。"
+    },
+    {
+      "title": "美國各州開始自己立法管社群媒體，廣告主面臨碎片化法規壓力",
+      "content": "Meta 達成隱私訴訟和解、TikTok 與阿拉巴馬州談成協議、YouTube 也面臨州級訴訟——美國各州正在以不同節奏、不同標準重新立法規範社群平台的運營方式與廣告銷售行為。這意味著同一個廣告投放策略，在不同州可能面臨截然不同的合規要求。",
+      "source_urls": [
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/states-are-starting-to-rewrite-the-rules-of-social-media/"
+        }
+      ],
+      "tags": [
+        "AI 政策法規",
+        "媒體廣告投放"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則新聞在動搖的假設是：「在美國做社群廣告，只要搞定聯邦層級的合規就夠了」——現在各州各自為政，法規開始碎片化。【So What】最直接受衝擊的是靠程序化廣告做跨州投放的品牌，特別是電商和金融類品牌，因為這兩個產業的廣告規範本來就是高敏感區。代理商更需要警惕，因為法規責任的邊界愈來愈難說清楚是誰的問題。對品牌來說，這是一個把自己的第一方數據策略認真做起來的理由——平台數據依賴越深，被法規波及的風險就越高。【Now What】如果你們有跨州投放的美國市場計劃，現在找法務或外部顧問做一次各州廣告合規狀況的快速掃描，從你們目前花最多預算的前三個州開始。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "OpenAI Space — 企業協作平台正式亮相，對標 Microsoft 365",
+      "content": "OpenAI 在 DevDay 發布 Space，讓企業員工可以在 ChatGPT 介面內直接協同作業，同時推出類 Office 的生產力套件。這是 OpenAI 從個人工具向企業軟體基礎設施的明確跨步，直接和 Microsoft Copilot 的地盤重疊。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/179296"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "團隊協作規範"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這則新聞在動搖的假設是：「ChatGPT 是個人用的，企業工作流還是要靠 Microsoft 或 Google Workspace」——這個分野正式消失。【So What】對行銷團隊來說，接下來的工具選型壓力會更直接：如果你的團隊已經深度整合 Microsoft 365，現在有人會開始問「為什麼不換 OpenAI Space？」這不是壞事，但切換成本和數據遷移風險不能輕忽。對行銷科技採購決策者來說，最應該防範的是「工具通膨」——每個新平台都說它能整合一切，但實際上你的工作流碎片化可能更嚴重。【Now What】在 Space 開放企業試用之前，先把你們團隊目前 AI 工具使用清單整理出來，哪些在用、哪些重疊、哪些沒人在用——這份清單是評估要不要跟進 Space 的基礎。"
+    },
+    {
+      "title": "OpenAI ChatGPT Ads — 東南亞與台灣正式開放，新增批量建立與商品評價功能",
+      "content": "OpenAI 向廣告主發出更新通知，ChatGPT Ads 新增批量建立商品 Feed 廣告活動、商品評價狀態查看、API 轉換追蹤等功能，同時正式在東南亞與台灣上線。對台灣廣告主來說，這是第一次可以實際操作 ChatGPT 原生廣告系統的機會。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/openai-chatgpt-ads-updates-42194.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "行銷自動化"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這則新聞在動搖的假設是：「ChatGPT 是沒有廣告的乾淨平台」——現在廣告基礎設施正在快速成熟，批量建立和轉換追蹤代表它要認真搶電商廣告預算了。【So What】台灣電商品牌和 D2C 品牌現在是第一波可以進場測試的，這個時機點很關鍵——早進場的品牌可以用相對低的 CPM 積累數據，等平台成熟、競爭者湧入後成本就會上來。但要注意：ChatGPT 用戶的購買意圖和 Google 搜尋用戶不同，直接套用 Google Shopping 廣告邏輯去跑 ChatGPT Ads 不會有好結果。【Now What】如果你有電商商品 Feed，現在就可以申請 ChatGPT Ads 帳號並上傳測試，選一個毛利最高的單品先跑，目標是理解用戶行為，不是馬上要 ROAS。"
+    },
+    {
+      "title": "OpenAI Dots — 永遠在線的 AI Agent，主動幫你跨 App 處理多步驟任務",
+      "content": "OpenAI 在 DevDay 發布 Dots，這是一種常駐式 AI Agent，設計上會主動連結使用者的各種 App 並自動執行跨平台多步驟任務，被定位為對抗 Meta Muse 的直接競品。和傳統助理不同，Dots 不需要等你下指令——它會主動偵測任務需求。",
+      "source_urls": [
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/"
+        }
+      ],
+      "tags": [
+        "AI 使用習慣",
+        "行銷自動化"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這則新聞在動搖的假設是：「AI 工具是被動的，人下指令它才動」——Dots 代表的是主動型 Agent 時代的到來，AI 開始自己決定什麼時候介入你的工作流。【So What】對行銷工作流來說，這是機會也是風險。機會在於重複性任務（報告彙整、素材分類、排程發布）有機會真正自動化。風險在於：如果 Agent 有存取你所有 App 的權限，數據洩漏和操作錯誤的後果也是「主動」發生的，不是你操作失誤，而是它「主動」出了問題。【Now What】在評估任何 Agent 工具之前，先定義清楚你們團隊的「不可以碰清單」——哪些系統、哪些數據是 AI Agent 絕對不能有讀寫權限的，這份清單要在採購或試用之前就存在，不是出事之後才想。"
+    },
+    {
+      "title": "Instagram — AI 影片助理上線，針對創作者提供個人化回饋",
+      "content": "Instagram 推出對話式 AI 影片助理，針對創作者的影片內容提供個人化建議，而非泛用的通用指引。這個助理會根據創作者本人的頻道數據和風格給回饋，目標是降低影片創作的學習曲線並提升成效。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/30/instagram-rolls-out-an-ai-video-assistant-for-creators/"
+        }
+      ],
+      "tags": [
+        "社群內容策略",
+        "內容行銷"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這則新聞在動搖的假設是：「創作者要靠看別人成功案例來學習」——Instagram 現在要用你自己的數據來告訴你怎麼改，這是從橫向學習（看別人）轉向縱向優化（看自己）的工具邏輯。【So What】對品牌自媒體和 KOL 合作來說，這個工具會讓「會用 AI 工具的創作者」和「不用的」之間的成效差距拉大。如果你們品牌有自己在經營 Instagram 帳號，這是一個不需要另外花預算就能優化影片品質的機會；如果是靠合作創作者，要開始評估你的合作對象是否在積極使用這類工具來提升成效。【Now What】開啟你品牌 Instagram 的影片助理功能，選最近 3 支觀看數表現不如預期的影片丟進去問，看它給的建議和你自己的判斷有多大落差——落差在哪裡本身就是值得討論的資訊。"
+    },
+    {
+      "title": "Meta Muse — 把賣家住址洩漏給陌生買家，AI 助理隱私邊界再引爭議",
+      "content": "Meta 個人 AI 助理 Muse 在協助科技 YouTuber 銷售二手鍵盤時，自動將賣家住址提供給陌生買家，引發隱私安全爭議。這不是 Muse 第一次捲入隱私問題，但這次涉及實體住址的洩漏，風險等級明顯更高。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://infosecu.technews.tw/2026/09/30/metas-muse-ai-sent-a-youtubers-address-to-a-stranger/"
+        }
+      ],
+      "tags": [
+        "使用者隱私",
+        "品牌信任危機"
+      ],
+      "angle": "consumer",
+      "tip": "【What】這則新聞在動搖的假設是：「讓 AI 助理幫我處理日常事務，它會懂得哪些資訊不能分享」——Muse 的案例證明 AI 助理目前還沒有穩定的「情境判斷力」，它不知道住址是敏感資訊、不知道對方是陌生人。【So What】對品牌來說，如果你們正在開發或部署 AI 客服、AI 銷售助理，這個案例是警示：凡是 AI 有能力存取客戶個資的場景，都要有明確的數據存取白名單和人工覆核機制。越「智慧」的助理，越需要清晰的邊界設定——這不是技術問題，是設計問題。【Now What】如果你們有上線任何 AI 客服或助理工具，現在做一次「最壞情境測試」：用一個假帳號去問助理能不能拿到其他用戶的資訊，看系統怎麼回應，這個測試不需要工程師，行銷或產品人自己就可以做。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "OpenAI DevDay 一夜推 25 項更新：從模型到生態圈的全面圈地",
+      "content": "OpenAI 在 DevDay 上密集發布 GPT-6.1 Sol、Space 協作平台、Dots 常駐 Agent、生產力套件，加上廣告系統擴張到台灣與東南亞——單日 25 項更新不是產品迭代，是一次生態圈版圖的全面宣示。OpenAI 要做的不只是最好的模型，而是企業與個人生活的數位基礎設施。同時，新方案 $500 訂閱與多模型比較（GPT-6.1 Sol vs Claude Sonnet 5.5）讓工具選型進入更激烈的競爭階段。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/179296"
+        },
+        {
+          "name": "Wired",
+          "url": "https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/"
+        },
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/09/499246.html"
+        }
+      ],
+      "tags": [
+        "AI 產業佈局",
+        "行銷科技採購"
+      ],
+      "angle": "industry",
+      "tip": "【What】這個趨勢在動搖的假設是：「AI 工具市場還在早期，還有時間慢慢觀望」——OpenAI 這次的動作明確告訴你，平台整合戰已經開打，晚進場的品牌和團隊會面臨工具生態圈被鎖定的問題。【So What】最危險的是那些「等成熟再說」的企業行銷團隊，等你覺得成熟，別人已經在 OpenAI 生態圈內建立了一套工作流，切換成本對他們來說會比你高，競爭優勢也已經拉開。反而是規模小、工具採購決策靈活的中小型品牌，現在是測試 Space 和 Dots 的黃金窗口。【Now What】指定一個人負責追蹤 OpenAI DevDay 所有更新中和你們業務最直接相關的前三項，下週內安排一場 30 分鐘的團隊評估會議，不是「要不要全部導入」而是「哪一項現在最值得試」。"
+    },
+    {
+      "title": "內容的「被引用」不再等於「被看見」：AI 搜尋重構品牌能見度的邏輯",
+      "content": "Google AI 分潤僅 0.1% 廣告收入的數字，加上 AI Overviews 把答案直接給用戶、不需要點進網站的行為——這兩件事放在一起說明同一個結構：你的內容被 AI 讀了、被引用了，但你既拿不到流量、也拿不到錢。更進一步，Erase.com 分析的 714 場負面結果壓制案例顯示，在 AI 搜尋環境下，Page 2 已經不夠遠——能見度控制和品牌形象管理的遊戲規則已經改變。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/google-is-paying-almost-no-publishers-almost-nothing-for-content-used-in-ai-answers/"
+        },
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-contribution-pilot-01-percent-42188.html"
+        },
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/what-714-suppression-campaigns-show-about-pushing-down-negative-results/"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "SEO 策略"
+      ],
+      "angle": "brand",
+      "tip": "【What】這個趨勢在動搖的假設是：「做好 SEO，讓 Google 找到你的內容，流量就會來」——AI 搜尋時代這個因果鏈斷了。Google 找到你的內容、讀了、總結給用戶，但用戶不用點進你的網站。能見度和流量不再是正相關。【So What】靠 SEO 流量養廣告收入的內容平台和媒體是最直接的輸家，但品牌自媒體也要警惕：如果你的內容策略目標是「在 Google 排名前三」，這個目標在 AI Overviews 盛行之後可能根本帶不來轉換。贏家是那些把內容作為直接關係建立工具的品牌——電子報訂閱者、社群死忠粉、App 活躍用戶，這些人不需要靠 Google 觸達。【Now What】從你們目前流量最大的前 5 篇內容開始，分析它們的搜尋流量趨勢：如果過去 6 個月有機流量已經在跌，現在就要啟動「這批內容能不能轉成電子報或社群專欄」的評估，不要等到跌完才動。"
+    }
+  ],
+  "tips_summary": [
+    "Google AI 分潤 → 盤點你品牌有多少流量依賴 Google 有機搜尋，並啟動第一個不依賴 Google 的受眾觸達管道（電子報、LINE 社群或自有 App 推播）",
+    "白宮超級智慧協議 → 整理一頁內部 AI 使用準則公開版本，比跟著「道德協議」起舞更能建立品牌可信度",
+    "Meta 進攻企業 AI 市場 → 把現有行銷技術棧列清單，標出哪些工具的數據彼此打通，作為評估任何新 AI 工具的前置動作",
+    "Salesforce 收購 Listen Labs → 如果已在用 Salesforce，申請 Listen Labs 整合 beta 名單；若未使用，記下此案例作為下次 CRM 換購的比較點",
+    "OpenAI Space 企業協作平台 → 整理團隊目前 AI 工具使用清單（在用、重疊、沒人用），作為評估是否跟進 Space 的基礎",
+    "ChatGPT Ads 台灣開放 → 選一個毛利最高的單品，申請 ChatGPT Ads 帳號並上傳商品 Feed 開始測試，目標是理解用戶行為而非立即追求 ROAS",
+    "OpenAI Dots 常駐 Agent → 制定 AI Agent「不可以碰清單」，明確哪些系統和數據不能授予讀寫權限，在採購或試用前就完成",
+    "Instagram AI 影片助理 → 選最近 3 支觀看數不如預期的影片，丟進 Instagram AI 助理功能詢問建議，分析回饋與自身判斷的落差",
+    "Meta Muse 住址洩漏 → 對現有 AI 客服或助理工具做一次「最壞情境測試」：用假帳號測試系統能否被誘導洩漏其他用戶個資",
+    "各州重寫社群廣告法規 → 針對美國市場跨州投放，從花費最多的前三個州開始做廣告合規快速掃描"
+  ],
+  "applications": [
+    {
+      "dimension": "品牌策略",
+      "content": "今天最大的結構性訊號是：品牌在 AI 搜尋時代的「能見度」和「受眾關係」正在解耦。Google 把你的內容拿去答題，但流量不一定回來；Meta Muse 在幫你賣東西，但隱私邊界失控。這兩件事合在一起說明一件事：品牌不能再把平台當成唯一的信任載體，要開始建立自己直接擁有的受眾關係。從 1 個高優先級的自有管道（電子報或 App）開始，把它做起來，不依賴任何平台的演算法。"
+    },
+    {
+      "dimension": "數位行銷",
+      "content": "OpenAI ChatGPT Ads 正式在台灣開放、Salesforce 把 AI 消費者研究裝進 CRM、各州社群廣告法規碎片化——這三件事加在一起，代表數位行銷的投放環境正在同時往多個方向分裂。你的預算、你的數據、你的合規責任，都面臨新的分配壓力。起手動作：從 ChatGPT Ads 台灣開放這個時間點進場，選一個高毛利單品小額測試，不是為了立刻放量，是為了在競爭者湧入前先積累平台數據和操作經驗。"
+    },
+    {
+      "dimension": "內容行銷",
+      "content": "Google 只付了內容出版商廣告收入 0.1% 的 AI 分潤，同時 AI Overviews 讓用戶不需要點入原文就能拿到答案。這個結構說明一件事：為 Google 排名優化的內容邏輯，投資報酬率正在系統性下滑。贏家是那些把內容當作直接建立受眾關係工具的品牌。從你們目前 SEO 流量最高的前 5 篇內容開始，評估它們能否被改寫成電子報系列或社群專欄，把既有內容資產轉換成不依賴 Google 的直接受眾觸達形式。"
+    },
+    {
+      "dimension": "社群應用",
+      "content": "Instagram AI 影片助理上線、OpenAI Dots 主動型 Agent 出現、Meta Muse 隱私爭議持續——社群工具的 AI 化在同一天出現三個不同面向的訊號。平台正在把 AI 能力深度嵌入創作工具，但「主動型 AI」的邊界管控問題也開始浮現。對品牌社群帳號來說，現在是啟動 Instagram AI 影片助理的好時機；但同時要建立一份「哪些帳號和數據不能授權給任何 AI 工具存取」的清單，從品牌官方帳號的後台開始盤點。"
+    },
+    {
+      "dimension": "媒體廣告",
+      "content": "美國各州社群廣告法規碎片化正在加劇，ChatGPT Ads 台灣開放代表新廣告生態圈成形，OpenAI Space 和企業工具整合則預示廣告主的採購決策複雜度上升。媒體廣告的環境在未來 12 個月會同時面臨法規收緊和平台選項增加兩個反向壓力。現在的起手動作：把廣告預算中用於程序化投放的部分，預留 5–10% 作為新平台（包括 ChatGPT Ads）的測試預算，不是大規模轉移，是建立跨平台的數據比較基準。"
+    },
+    {
+      "dimension": "團隊流程",
+      "content": "OpenAI 單日發布 25 項更新、Space 協作平台上線、Dots 常駐 Agent 出現——工具更新的速度遠超過大多數團隊的消化能力。最常見的錯誤是：每次有新工具就開會討論，卻沒有標準化的評估流程，導致工具採購決策靠直覺而非數據。現在最值得建立的團隊流程不是「怎麼用 AI 工具」，而是「怎麼評估一個 AI 工具值不值得導入」。從下週開始，指定一個人每週花 1 小時整理最新工具更新，用固定的五個問題（它能解決什麼具體問題？數據安全邊界是什麼？和現有工具有沒有重疊？試用成本是多少？誰負責測試？）來做初篩。"
+    }
+  ],
+  "generated_at": "2026-10-01 09:42"
+}
