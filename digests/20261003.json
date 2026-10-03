@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-03",
+  "date_key": "20261003",
+  "display_date": "2026年10月03日",
+  "data_date": "2026-10-02",
+  "summary": "今日精選：12 條 AI 相關動態｜聚焦 AI 搜尋能見度、消費者期望升高、GTM 工程師崛起",
+  "big_news": [
+    {
+      "title": "法院駁回 Chegg 與 Penske 對 Google AI 搜尋的反壟斷訴訟",
+      "content": "美國聯邦法院駁回兩起針對 Google AI Overviews 的反壟斷訴訟，法官認定 AI 搜尋雖然對內容產業造成實質衝擊，但不構成反壟斷問題。這意味著品牌與內容創作者無法靠法律途徑扭轉流量外流的現實，AI 搜尋吃掉點擊率的結構從此確立為「合法競爭」。",
+      "source_urls": [
+        {
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "SEO 策略"
+      ],
+      "angle": "brand",
+      "tip": "【What】這則判決動搖的假設是「流量損失可以靠外力糾正」——過去 SEO 團隊還抱著一絲希望，覺得法規或競爭裁罰會讓 Google 收斂 AI Overviews。現在這條路堵死了。【So What】最危險的是那些還在用傳統 SEO 邏輯做內容、靠排名帶流量的品牌——他們的商業模式是建立在一個已經不存在的假設上。反而是那些早就把 SEO 目標從「排名」換成「被 AI 引用」的品牌，現在的策略方向是對的。Chegg 這種靠 Google 有機流量維生的教育內容平台，在這個判決後幾乎沒有翻身的籌碼。【Now What】從你最重要的 3 個落地頁開始，檢查內容有沒有清晰的結構化答案格式（問答式、定義式），因為 AI Overviews 引用的是「能直接回答問題」的內容，不是「排名最高」的頁面。"
+    },
+    {
+      "title": "企業 AI 使用量上升、支出反而下降——Ramp AI Index 最新數據",
+      "content": "Ramp 經濟學家 Ara Kharazian 發布最新 AI 指數顯示，美國企業使用 AI 工具的頻率持續增加，但整體 AI 支出卻在下滑。這反映出市場競爭白熱化後，AI 工具的議價空間大幅擴大，採購成本正在快速壓縮。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/businesses-are-using-more-ai-and-paying-less-for-it-ramp-ai-index-shows/"
+        }
+      ],
+      "tags": [
+        "行銷科技採購",
+        "AI 產業佈局"
+      ],
+      "angle": "industry",
+      "tip": "【What】這則新聞戳破的假設是「AI 工具的價格會因為需求高漲而居高不下」——實際上，供給側競爭已經讓定價快速崩塌，這跟 SaaS 早期的軌跡幾乎一樣。【So What】對行銷團隊來說，這是重新談合約的窗口——如果你現在付的 AI 工具費用跟一年前差不多，你可能是在補貼供應商。最危險的是那些簽了長約、鎖定高單價方案的企業，靈活度直接輸給競爭對手。反而是中小型品牌，現在進場採購的時機比大企業早期衝進去簽約要划算得多。【Now What】把現在在用的 AI 工具清單列出來，挑出月費超過 5,000 元台幣的項目，主動詢問供應商有沒有新的定價方案或競品比價，現在是買方市場。"
+    },
+    {
+      "title": "OpenAI 安全團隊接連異動：三人被解雇、一人主動離職",
+      "content": "《華爾街日報》報導，OpenAI 以洩漏機密資訊給外部 AI 安全組織為由，解雇了三名研究人員，同期另有一名成員主動請辭。這是近一年內 OpenAI 安全團隊第二波大規模人員流失，外界對其安全承諾的實質性再度產生疑慮。",
+      "source_urls": [
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/three-firings-and-a-fourth-departure-shake-up-openais-safety-team/"
+        }
+      ],
+      "tags": [
+        "AI 安全風險",
+        "品牌信任危機"
+      ],
+      "angle": "industry",
+      "tip": "【What】這件事動搖的是「OpenAI 的安全架構是可信賴的企業護城河」這個假設——如果連內部安全研究員都覺得需要對外洩漏才能引起重視，那所謂的內部治理機制有多少實質效力？【So What】對企業採購決策者來說，這不是新聞八卦，而是供應商風險評估的訊號。重度依賴 OpenAI API 做品牌客服、自動化內容的團隊，現在應該認真評估是否需要多一套備援模型。品牌若把 OpenAI 作為唯一 AI 供應商，在公關危機爆發時會很被動。【Now What】把你們目前依賴 OpenAI 的工作流節點列出來，確認至少有一個替代模型（Claude、Gemini 均可）能在 48 小時內切換，不是要你馬上換，是要你有應急能力。"
+    },
+    {
+      "title": "AI 讓消費者期望升高、容忍度卻在崩潰——MarTech 研究報告",
+      "content": "MarTech 最新研究指出，AI 驅動的快速服務反而讓消費者期望水位大幅拉高——當 AI 速度快但問題沒解決，或找不到真人接手，顧客的挫敗感比以前更強烈。速度承諾兌現了，服務品質卻沒跟上，這個落差正在侵蝕品牌信任。",
+      "source_urls": [
+        {
+          "name": "MarTech",
+          "url": "https://martech.org/ai-is-making-customers-expect-more-and-tolerate-less/"
+        }
+      ],
+      "tags": [
+        "消費者信任",
+        "品牌溝通策略"
+      ],
+      "angle": "consumer",
+      "tip": "【What】這則新聞打臉的假設是「AI 讓服務更快，顧客就會更滿意」——速度只是入場券，不是勝負關鍵。真正的問題是品牌把 AI 當成降低成本的工具，卻對外宣傳成提升體驗的升級。【So What】最危險的是那些用 AI chatbot 取代整個客服一線、卻沒有建立清晰真人轉接機制的品牌。這些品牌正在用「效率」換「信任」，而且是在顧客最脆弱（有問題、有情緒）的時刻。反過來，那些把 AI 定位為「先快速篩選、再精準轉人工」的品牌，顧客體驗反而比純人工更好。【Now What】去測試你們自己品牌的 AI 客服流程，刻意問一個 AI 答不出來的複雜問題，計時看多久能轉到真人，如果超過 2 分鐘或根本找不到出口，這是優先要修的破口。"
+    },
+    {
+      "title": "新加坡美珍香 AI 操作失誤，9.5 萬顧客個資外洩——當地首例",
+      "content": "新加坡知名肉乾品牌美珍香（Bee Cheng Hiang）因員工操作 AI 工具不當，導致逾 9.5 萬名顧客的電子信箱地址外洩，是新加坡首起因 AI 工具使用不當造成的個資外洩事件。",
+      "source_urls": [
+        {
+          "name": "科技新報",
+          "url": "https://infosecu.technews.tw/2026/10/02/bee-cheng-hiang-ai-personal-information-leaked/"
+        }
+      ],
+      "tags": [
+        "使用者隱私",
+        "AI 工作流風險"
+      ],
+      "angle": "consumer",
+      "tip": "【What】這件事揭示的是「AI 工具操作風險等同於傳統軟體操作風險」這個假設有多危險——AI 工具的資料處理邊界遠比傳統工具模糊，員工不一定知道自己把什麼資料丟進去、丟去哪裡。【So What】這對品牌的衝擊是雙重的：一是法規罰款與法律責任，二是顧客信任崩潰。品牌花了多年建立的會員資料庫，可能因為一個員工的 AI 操作失誤而變成負債。台灣電商與零售品牌尤其危險，因為 AI 工具導入速度快，但 SOP 和教育訓練還在追趕。【Now What】盤點你們團隊目前在使用哪些 AI 工具會接觸到顧客資料（CRM 匯出、名單上傳、客服對話記錄），然後確認每一個工具的資料處理條款有沒有明確的資料不用於訓練的保證，這一步不能等。"
+    }
+  ],
+  "tool_updates": [
+    {
+      "title": "Google Loyalty Customer Match — 擴展至 AI Mode 與 Gemini",
+      "content": "Google Merchant Center 更新忠誠度顧客比對（Loyalty Customer Match）功能，正式擴展至 AI Mode 和 Gemini，並開放更多地區使用。這代表品牌的第一方顧客資料現在可以直接影響 AI 模式下的廣告觸及與個人化呈現。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-loyalty-customer-match-expands-42216.html"
+        }
+      ],
+      "tags": [
+        "媒體廣告投放",
+        "行銷自動化"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個更新改變的假設是「第一方資料的價值主要體現在傳統 Search 廣告」——現在它直接影響 AI Mode 的廣告排序與個人化，第一方資料的戰略重要性再往上提了一層。【So What】有在建立會員制度、有忠誠度計畫的品牌現在有明顯的廣告效率優勢；那些還在靠第三方受眾包做投放的品牌，在 AI Mode 的廣告競爭中會愈來愈吃虧。零售業和電商最應該立刻行動，因為他們本來就有顧客資料，只是沒接進 Merchant Center。【Now What】如果你還沒把品牌的 CRM 顧客名單上傳至 Google Merchant Center 並啟用 Customer Match，先從這一步開始——這個動作不需要技術團隊，行銷自己就能設定。"
+    },
+    {
+      "title": "Google AI Overviews — 測試加入 URL 追蹤參數",
+      "content": "Google 正在測試在 AI Overviews 的連結 URL 中加入追蹤參數，若全面推出，SEO 分析師將首次能在 GA4 或 Search Console 中清楚區分「來自 AI Overviews 的點擊」與「來自一般搜尋結果的點擊」。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "SEO 策略"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個測試要打破的假設是「我們根本不知道 AI Overviews 有沒有帶流量」——過去行銷團隊對 AI 搜尋的實際貢獻是黑盒子，這個追蹤參數一旦上線，盲區就消失了。【So What】這對 SEO 預算分配是一個分水嶺：以後你能用數據說明「優化 AI 引用」這件事值不值得投資。先建好追蹤架構的團隊，未來在向客戶或主管報告 AI 搜尋 ROI 時會有具體數字，其他人還在用估算。【Now What】在 Google Search Console 和 GA4 先建立好專屬的 AI Overviews 流量區隔篩選器，等 Google 正式推出追蹤參數後你能立刻接收數據，不用再重新設定。"
+    },
+    {
+      "title": "Google — 更新 AI 生成內容指南，要求人工事實查核",
+      "content": "Google 正式更新搜尋品質指南，明確要求使用 AI 生成內容的網站在發布前必須「人工逐一事實查核與可信度審查」，並強調主要內容（Main Content）的品質是搜尋評分的核心依據，新增 E-E-A-T 評估員審查說明。",
+      "source_urls": [
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-updates-ai-content-guidelines-factcheck-review-42217.html"
+        }
+      ],
+      "tags": [
+        "內容行銷",
+        "SEO 策略"
+      ],
+      "angle": "marketing_channel",
+      "tip": "【What】這個指南更新在打臉的是「AI 批量生成內容可以直接發布」這個操作假設——Google 現在白紙黑字要求人工查核，這不是建議，是會影響排名評分的標準。【So What】那些用 AI 大量灌內容、沒有編輯流程把關的網站，這波 2026 年 9 月 Spam Update 加上新指南，會是雙重打擊。反而是有真人編輯流程、AI 只用來起草再人工精修的內容團隊，在這個標準下更有競爭力，因為他們原本就在做 Google 現在要求的事。【Now What】把你們現有的 AI 內容生產 SOP 加入一個強制步驟：每篇 AI 生成稿件在發布前必須由真人逐段確認數據來源，這個動作留下紀錄，未來萬一被手動審查也有憑據。"
+    },
+    {
+      "title": "Meta Muse for Small Business — 小型企業版 AI 助理上線",
+      "content": "Meta 在推出消費者版 AI 助理 Muse 後，緊接推出針對小型企業的 Muse for Small Business，功能涵蓋行銷、行政與客戶服務自動化，定位為能理解企業目標與產品的「營運工具鏈夥伴」，而非單純的問答機器人。",
+      "source_urls": [
+        {
+          "name": "iThome",
+          "url": "https://www.ithome.com.tw/news/179371"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "品牌溝通策略"
+      ],
+      "angle": "consumer",
+      "tip": "【What】這個產品在挑戰的假設是「AI 行銷工具是中大型企業的特權」——Meta 把入口直接開給沒有行銷團隊的小型店家，這會改變中小企業在 Meta 平台上的廣告競爭生態。【So What】對代理商來說，這是一個值得正視的威脅信號：如果 Meta 自己就能幫小型客戶做行銷、跑廣告、處理客服，你能提供的附加價值在哪裡？那些服務小型客戶、主要靠操作 Meta 廣告收費的代理商，未來一年內會感受到最直接的壓力。反而有機會的是那些能提供「AI 工具整合顧問」角色的行銷人。【Now What】用一個小型客戶的帳號去試用 Muse for Small Business，記錄它能做到哪些你現在在做的事，這個清單就是你未來重新定位服務價值的起點。"
+    },
+    {
+      "title": "Perplexity Automations — AI 定時執行任務，支援觸發、記憶與人工覆核",
+      "content": "Perplexity 推出 Automations 功能，允許使用者設定定期自動執行的 AI 任務（如價格追蹤、郵件草稿），並支援自訂觸發條件、記憶基準資料與人工覆核機制，讓 AI 在有監督的情況下持續運作。",
+      "source_urls": [
+        {
+          "name": "AI郵報",
+          "url": "https://www.aiposthub.com/perplexity-computer-automations-triggers-memory-review/"
+        }
+      ],
+      "tags": [
+        "行銷自動化",
+        "AI 工作流風險"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這個功能在模糊的是「AI 是單次工具」和「AI 是持續運作的流程夥伴」之間的界線——Perplexity 開始往 Agent 方向走，行銷人的工作流假設要跟著重設。【So What】這對內容監控、競品追蹤、市場動態蒐集這類重複性高的行銷情報工作是個實用工具。但「人工覆核」機制的設計很重要——沒有審核就自動執行的 AI 流程，在行銷場景裡風險很高（想像 AI 自動發出還沒確認的郵件草稿）。【Now What】找你們團隊裡一件每週重複做的「資料蒐集→整理→報告」任務，用 Perplexity Automations 設定一個有人工覆核節點的自動化版本試跑兩週，評估時間節省量再決定要不要擴大使用。"
+    }
+  ],
+  "trends": [
+    {
+      "title": "AI 搜尋吃掉品牌流量已成定局，SEO 必須從「排名」轉向「被引用」",
+      "content": "本週多個訊號同時指向同一個結構性轉變：Chegg 反壟斷訴訟被駁回（法律途徑無效）、Google 更新 AI 內容指南強調主要內容品質、AI Overviews 追蹤參數即將上線。這三件事合起來傳遞的訊息很清楚：AI 搜尋改變流量分配是合法且不可逆的，品牌唯一能做的是主動調整讓自己被 AI 引用的策略，而不是等待外力干預。哥本哈根大學研究也同步指出 AI 聊天機器人的知識範圍比傳統搜尋更窄——這意味著能出現在 AI 引用池裡的品牌，競爭優勢會愈來愈大。",
+      "source_urls": [
+        {
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/"
+        },
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-updates-ai-content-guidelines-factcheck-review-42217.html"
+        },
+        {
+          "name": "Search Engine Roundtable",
+          "url": "https://www.seroundtable.com/google-ai-overview-link-tracking-parameters-42219.html"
+        },
+        {
+          "name": "科技新報",
+          "url": "https://technews.tw/2026/10/02/ai-chatbots-serve-you-a-narrower-slice-of-knowledge-than-a-plain-old-google-search-study-finds/"
+        }
+      ],
+      "tags": [
+        "AI 搜尋能見度",
+        "內容行銷"
+      ],
+      "angle": "brand",
+      "tip": "【What】整個行業還在用「如何提高排名」的框架在討論 SEO，但 AI 搜尋引用的邏輯根本不是排名，是「這份內容能不能直接回答問題、夠不夠可信、來源夠不夠清楚」。【So What】用傳統關鍵字密度和反向連結邏輯優化的內容，在 AI 搜尋時代幾乎沒有被引用的機會。最快掉隊的是那些大量靠 AI 批量生內容、沒有真實觀點和數據的網站；最有機會的是有自己原創研究、有清晰作者背景的品牌內容。【Now What】從你的核心產品或服務頁中選一頁，把它改寫成「問題→直接答案→佐證資料→延伸說明」的結構，這是目前已知最容易被 AI 引用的內容格式。"
+    },
+    {
+      "title": "GTM Engineer 崛起：行銷與技術的界線正在消失，新型態行銷人才的輪廓成形",
+      "content": "Clay 共同創辦人 Kareem Amin 在 TechCrunch Disrupt 2026 公開討論 GTM Engineer（Go-to-Market Engineer）這個新角色的崛起——這種人能同時理解業務邏輯、行銷流程和 AI 工具整合，不需要寫完整程式碼，但能用 AI 工具架構自動化的 GTM 流程。與此同時，Ramp AI Index 顯示 AI 工具成本下滑，讓中小型團隊也能負擔起過去只有大企業才有的自動化能力，進一步加速這個角色的普及。",
+      "source_urls": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/02/techcrunch-disrupt-2026-clays-kareem-amin-on-the-rise-of-the-gtm-engineer/"
+        },
+        {
+          "name": "The Decoder",
+          "url": "https://the-decoder.com/businesses-are-using-more-ai-and-paying-less-for-it-ramp-ai-index-shows/"
+        }
+      ],
+      "tags": [
+        "職涯發展定位",
+        "行銷自動化"
+      ],
+      "angle": "workflow",
+      "tip": "【What】這個趨勢打破的假設是「行銷人懂策略，技術人懂執行，兩個是不同的人」——GTM Engineer 的出現代表市場開始獎勵那些能跨越這條線的人。【So What】傳統行銷人如果繼續把「我不懂技術」當護城河，接下來幾年會持續看到薪資停滯和被取代的風險。真正有機會的是那些願意用 Clay、Make、n8n 這類 no-code AI 工具動手搭流程的行銷人——不是要你變工程師，是要你有能力設計自動化邏輯。【Now What】花兩小時學會用 Clay 或 Make 搭一個最簡單的自動化流程（比如「每週自動彙整競品更新」），不是為了上線用，是為了建立「我能設計流程」的肌肉記憶。"
+    }
+  ],
+  "tips_summary": [
+    "AI 搜尋合法化 → 從你最重要的 3 個落地頁開始，改寫成「問題→直接答案→佐證資料」格式，提升 AI 引用機率",
+    "AI 工具成本下滑 → 列出月費超過 5,000 元台幣的 AI 訂閱，主動詢問供應商新定價或競品比價",
+    "OpenAI 安全團隊動盪 → 盤點依賴 OpenAI 的工作流節點，確認至少一個替代模型能在 48 小時內切換",
+    "消費者容忍度下降 → 測試自家 AI 客服，刻意問複雜問題，計時看多久能轉真人，超過 2 分鐘就優先修這個破口",
+    "美珍香個資外洩事件 → 盤點哪些 AI 工具接觸了顧客資料，逐一確認資料處理條款是否有「不用於訓練」保證",
+    "Google Loyalty Customer Match 擴展至 AI Mode → 把 CRM 顧客名單上傳 Google Merchant Center 並啟用 Customer Match",
+    "Google AI Overviews 追蹤參數測試中 → 在 GA4 和 Search Console 預先建立 AI Overviews 流量區隔篩選器",
+    "Google AI 內容指南要求人工查核 → 在 AI 內容生產 SOP 加入強制查核步驟，每篇發布前真人逐段確認數據來源",
+    "Meta Muse for Small Business 上線 → 用小型客戶帳號試用，記錄它能取代哪些你現在在做的事，作為重新定位服務價值的依據",
+    "Perplexity Automations → 找一件每週重複的情報蒐集任務，設定有人工覆核節點的自動化版本試跑兩週",
+    "GTM Engineer 趨勢 → 花兩小時用 Clay 或 Make 搭一個最簡單的自動化流程，建立設計流程的肌肉記憶"
+  ],
+  "applications": [
+    {
+      "dimension": "品牌策略",
+      "content": "今天最關鍵的結構性訊號是：AI 搜尋改變品牌能見度的方式已獲法律背書，品牌再也無法靠外力糾正流量外流。與此同時，AI 客服讓消費者期望升高但容忍度崩潰，品牌信任的維護成本正在增加。兩件事合起來意味著「被看見」和「被信任」的門檻同步提高。起手動作：從 1 個核心品牌主張開始，確認它在 AI 搜尋語境下能被清晰引用的格式，以及在客戶接觸點上有沒有真人接手的機制。"
+    },
+    {
+      "dimension": "數位行銷",
+      "content": "Google 本週同步推出三個與 AI 相關的廣告和搜尋更新——Loyalty Customer Match 進 AI Mode、AI Overviews 追蹤參數測試、Ads Sitelinks 在 AI Mode 測試。這三個動作指向同一個方向：Google 正在把 AI Mode 建構成完整的廣告生態，第一方資料和品牌直接廣告的優勢會在這裡放大。起手動作：從確認 Google Merchant Center 的 Customer Match 是否已上傳最新顧客名單開始，這是進入 AI Mode 廣告生態的第一張門票。"
+    },
+    {
+      "dimension": "內容行銷",
+      "content": "Google 明確要求 AI 生成內容需人工事實查核，加上哥本哈根大學研究顯示 AI 聊天機器人知識範圍比傳統搜尋窄，兩個訊號共同指出：內容的「原創性與可信度」正在成為稀缺資源。那些有真實研究、有具名作者、有清晰資料來源的內容，在 AI 引用競爭中會有結構性優勢。起手動作：從 1 篇現有的 AI 生成草稿開始，加入真人可驗證的數據來源和作者觀點，建立這個編輯流程的標準範本。"
+    },
+    {
+      "dimension": "社群應用",
+      "content": "Meta Muse for Small Business 的推出，代表 Meta 正在把 AI 行銷工具的入口直接開給沒有行銷團隊的小型商家。這會改變 Meta 平台上的競爭基準——以前小型商家因為缺人力而在廣告質量上輸給大品牌，這個差距正在縮小。大品牌和代理商如果還在靠「我們懂平台操作」作為護城河，這個護城河正在被 Meta 自己填平。起手動作：用一個小型客戶帳號親自試用 Muse for Small Business 的行銷功能，找出它做不到的事，那就是你的差異化服務價值所在。"
+    },
+    {
+      "dimension": "媒體廣告",
+      "content": "Google Ads 在 AI Mode 的多個格式測試（Sitelinks、Business Name 政策鬆綁）顯示，Google 正在積極讓廣告在 AI 搜尋環境中找到新的點擊率公式。這個階段是廣告主測試的黃金期，因為 AI Mode 的廣告競爭還不激烈，現在進場測試的成本比六個月後便宜。起手動作：在現有的 Google Ads 帳戶中開一個專門針對 AI Mode 的實驗活動，預算可以小（台幣 3,000–5,000 元），目的是累積 AI Mode 的點擊率基準數據。"
+    },
+    {
+      "dimension": "團隊流程",
+      "content": "今天有兩個訊號同時衝擊團隊流程：一是美珍香個資外洩事件顯示 AI 工具的資料邊界風險被嚴重低估，二是 GTM Engineer 趨勢顯示行銷團隊需要有人能設計 AI 自動化流程。這兩件事代表行銷團隊的 AI 治理和 AI 能力，必須同步升級。起手動作：下週開一次 30 分鐘的團隊會議，做兩件事：（1）列出所有接觸顧客資料的 AI 工具清單，（2）指定一個人負責在一週內確認每個工具的資料使用條款。"
+    }
+  ],
+  "generated_at": "2026-10-03 09:34"
+}
